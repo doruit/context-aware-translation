@@ -453,19 +453,7 @@
                 finalStepExplanation.innerHTML = '<strong>Azure OpenAI API:</strong> GPT-4 improved the fluency and grammar while preserving all glossary terms from Step 2.';
             } else {
                 postEditBadge.style.display = 'none';
-                finalStepExplanation.innerHTML = '<strong>Result:</strong> Translation with enforced terminology ready for use.
-            // Final translation
-            document.getElementById('finalTranslation').textContent = result.final_translation;
-            
-            // Update badges
-            const termsCount = result.applied_terms.length;
-            document.getElementById('termsCount').textContent = `${termsCount} term${termsCount !== 1 ? 's' : ''} applied`;
-            
-            const postEditBadge = document.getElementById('postEditBadge');
-            if (result.post_edited) {
-                postEditBadge.style.display = 'inline-block';
-            } else {
-                postEditBadge.style.display = 'none';
+                finalStepExplanation.innerHTML = '<strong>Result:</strong> Translation with enforced terminology ready for use.';
             }
             
             // Applied terms list
