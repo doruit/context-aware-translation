@@ -273,6 +273,20 @@
             color: #0d47a1;
             line-height: 1.6;
         }
+        
+        .step-explanation {
+            background: #f0f4ff;
+            border-left: 3px solid #667eea;
+            padding: 0.75rem 1rem;
+            margin-top: 0.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+        
+        .step-explanation strong {
+            color: #667eea;
+        }
     </style>
 </head>
 <body>
@@ -341,25 +355,37 @@
             
             <div class="results" id="results">
                 <div class="result-card">
-                    <h3>📝 Raw Translation</h3>
+                    <h3>📝 Step 1: Raw Translation</h3>
+                    <div class="step-explanation">
+                        <strong>Azure Translator API:</strong> Direct translation from source language to Dutch using Microsoft's neural machine translation engine.
+                    </div>
                     <div class="result-text" id="rawTranslation"></div>
                 </div>
                 
                 <div class="result-card">
-                    <h3>✅ Enforced Translation <span class="badge badge-info" id="termsCount">0 terms applied</span></h3>
+                    <h3>✅ Step 2: Glossary Enforcement <span class="badge badge-info" id="termsCount">0 terms applied</span></h3>
+                    <div class="step-explanation">
+                        <strong>Backend Processing:</strong> Our algorithm finds glossary terms in the translation and replaces them with exact terminology from your TSV glossary file, preserving case and word boundaries.
+                    </div>
                     <div class="result-text" id="enforcedTranslation"></div>
                 </div>
                 
                 <div class="result-card" id="finalCard">
                     <h3>
-                        🎯 Final Translation 
+                        🎯 Step 3: Final Translation 
                         <span class="badge badge-success" id="postEditBadge" style="display: none;">Post-edited</span>
                     </h3>
+                    <div class="step-explanation" id="finalStepExplanation">
+                        <strong>Result:</strong> Translation with enforced terminology ready for use.
+                    </div>
                     <div class="result-text" id="finalTranslation"></div>
                 </div>
                 
                 <div class="result-card" id="termsCard">
                     <h3>📌 Applied Glossary Terms</h3>
+                    <div class="step-explanation">
+                        Shows which terms from your glossary.tsv file were found and enforced in the translation.
+                    </div>
                     <div class="terms-list" id="termsList"></div>
                 </div>
             </div>
@@ -421,10 +447,13 @@
             // Raw translation
             document.getElementById('rawTranslation').textContent = result.raw_translation;
             
-            // Enforced translation with highlights
-            const enforcedHtml = highlightTerms(result.enforced_translation, result.applied_terms);
-            document.getElementById('enforcedTranslation').innerHTML = enforcedHtml;
-            
+            const finalStepExplanation = document.getElementById('finalStepExplanation');
+            if (result.post_edited) {
+                postEditBadge.style.display = 'inline-block';
+                finalStepExplanation.innerHTML = '<strong>Azure OpenAI API:</strong> GPT-4 improved the fluency and grammar while preserving all glossary terms from Step 2.';
+            } else {
+                postEditBadge.style.display = 'none';
+                finalStepExplanation.innerHTML = '<strong>Result:</strong> Translation with enforced terminology ready for use.
             // Final translation
             document.getElementById('finalTranslation').textContent = result.final_translation;
             
