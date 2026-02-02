@@ -1,0 +1,108 @@
+name: Deploy Infrastructure
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+      location:
+        description: 'Azure region'
+        required: false
+        default: 'westeurope'
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AZURE_RESOURCE_GROUP_PREFIX: 'rg-translation'
+
+jobs:
+  deploy-infrastructure:
+    name: Deploy Azure Infrastructure
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      
+      - name: Set Resource Group Name
+        id: vars
+        run: |
+          RESOURCE_GROUP="${{ env.AZURE_RESOURCE_GROUP_PREFIX }}-${{ github.event.inputs.environment }}"
+          echo "resource_group=$RESOURCE_GROUP" >> $GITHUB_OUTPUT
+          echo "Resource Group: $RESOURCE_GROUP"
+      
+      - name: Create Resource Group
+        run: |
+          az group create \
+            --name ${{ steps.vars.outputs.resource_group }} \
+            --location ${{ github.event.inputs.location }} \
+            --tags \
+              Environment="${{ github.event.inputs.environment }}" \
+              Application="translation-service" \
+              ManagedBy="GitHub-Actions"
+      
+      - name: Validate Bicep Template
+        run: |
+          az deployment group validate \
+            --resource-group ${{ steps.vars.outputs.resource_group }} \
+            --template-file infra/main.bicep \
+            --parameters infra/main.parameters.${{ github.event.inputs.environment }}.json
+      
+      - name: Deploy Infrastructure
+        id: deploy
+        run: |
+          DEPLOYMENT_NAME="translation-${{ github.event.inputs.environment }}-$(date +%Y%m%d-%H%M%S)"
+          
+          az deployment group create \
+            --resource-group ${{ steps.vars.outputs.resource_group }} \
+            --template-file infra/main.bicep \
+            --parameters infra/main.parameters.${{ github.event.inputs.environment }}.json \
+            --name "$DEPLOYMENT_NAME"
+          
+          echo "deployment_name=$DEPLOYMENT_NAME" >> $GITHUB_OUTPUT
+      
+      - name: Get Deployment Outputs
+        id: outputs
+        run: |
+          OUTPUTS=$(az deployment group show \
+            --resource-group ${{ steps.vars.outputs.resource_group }} \
+            --name ${{ steps.deploy.outputs.deployment_name }} \
+            --query "properties.outputs" \
+            -o json)
+          
+          echo "Deployment Outputs:"
+          echo "$OUTPUTS" | jq '.'
+          
+          APP_SERVICE_URL=$(echo "$OUTPUTS" | jq -r '.appServiceUrl.value')
+          echo "app_service_url=$APP_SERVICE_URL" >> $GITHUB_OUTPUT
+      
+      - name: Deployment Summary
+        run: |
+          echo "## Deployment Summary :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment:** ${{ github.event.inputs.environment }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Resource Group:** ${{ steps.vars.outputs.resource_group }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Location:** ${{ github.event.inputs.location }}" >> $GITHUB_STEP_SUMMARY
+          echo "**App Service URL:** ${{ steps.outputs.app_service_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Configure Custom Translator category (optional)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Deploy Azure OpenAI model (if enabled)" >> $GITHUB_STEP_SUMMARY
+          echo "3. Upload glossary file" >> $GITHUB_STEP_SUMMARY
+          echo "4. Deploy application code" >> $GITHUB_STEP_SUMMARY

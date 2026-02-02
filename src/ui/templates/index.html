@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Translation Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .input-section {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 120px;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .results {
+            display: none;
+            margin-top: 2rem;
+        }
+        
+        .results.visible {
+            display: block;
+        }
+        
+        .result-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .result-card h3 {
+            color: #333;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .result-text {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .terms-list {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            margin-top: 0.5rem;
+        }
+        
+        .term-item {
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            background: #fff3cd;
+            border-left: 3px solid #ffc107;
+            border-radius: 4px;
+        }
+        
+        .term-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .term-arrow {
+            color: #667eea;
+            font-weight: bold;
+            margin: 0 0.5rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.15rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+        
+        .loading.visible {
+            display: block;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #f5c6cb;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .error.visible {
+            display: block;
+        }
+        
+        .info-banner {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .info-banner p {
+            margin: 0;
+            color: #0d47a1;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Azure Translation Service</h1>
+            <p>Preserve Domain-Specific Terminology During Translation</p>
+        </header>
+        
+        <div class="content">
+            <div class="info-banner">
+                <p>
+                    <strong>Pipeline:</strong> Azure Translator Text v3 
+                    {% if post_editor_enabled %}
+                    → Glossary Enforcement → Azure OpenAI Post-Editor
+                    {% else %}
+                    → Glossary Enforcement
+                    {% endif %}
+                    → <strong>{{ target_language.upper() }}</strong>
+                </p>
+            </div>
+            
+            <div class="input-section">
+                <form id="translateForm">
+                    <div class="form-group">
+                        <label for="sourceText">Text to Translate</label>
+                        <textarea 
+                            id="sourceText" 
+                            name="text" 
+                            placeholder="Enter text to translate with domain-specific terminology..."
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sourceLanguage">Source Language</label>
+                        <select id="sourceLanguage" name="source_language" required>
+                            <option value="de">German (de)</option>
+                            <option value="fr">French (fr)</option>
+                            <option value="pl">Polish (pl)</option>
+                            <option value="es">Spanish (es)</option>
+                            <option value="it">Italian (it)</option>
+                            <option value="en" selected>English (en)</option>
+                        </select>
+                    </div>
+                    
+                    {% if post_editor_enabled %}
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="enablePostEditor" name="enable_post_editor">
+                            <label for="enablePostEditor">Enable Azure OpenAI Post-Editor (fluency improvements)</label>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    <button type="submit" id="translateBtn">Translate</button>
+                </form>
+            </div>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Translating...</p>
+            </div>
+            
+            <div class="error" id="error"></div>
+            
+            <div class="results" id="results">
+                <div class="result-card">
+                    <h3>📝 Raw Translation</h3>
+                    <div class="result-text" id="rawTranslation"></div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>✅ Enforced Translation <span class="badge badge-info" id="termsCount">0 terms applied</span></h3>
+                    <div class="result-text" id="enforcedTranslation"></div>
+                </div>
+                
+                <div class="result-card" id="finalCard">
+                    <h3>
+                        🎯 Final Translation 
+                        <span class="badge badge-success" id="postEditBadge" style="display: none;">Post-edited</span>
+                    </h3>
+                    <div class="result-text" id="finalTranslation"></div>
+                </div>
+                
+                <div class="result-card" id="termsCard">
+                    <h3>📌 Applied Glossary Terms</h3>
+                    <div class="terms-list" id="termsList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const form = document.getElementById('translateForm');
+        const loading = document.getElementById('loading');
+        const error = document.getElementById('error');
+        const results = document.getElementById('results');
+        const translateBtn = document.getElementById('translateBtn');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Reset UI
+            loading.classList.add('visible');
+            error.classList.remove('visible');
+            results.classList.remove('visible');
+            translateBtn.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = {
+                text: formData.get('text'),
+                source_language: formData.get('source_language'),
+                enable_post_editor: formData.get('enable_post_editor') === 'on',
+                use_custom_category: true
+            };
+            
+            try {
+                const response = await fetch('/api/translate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail || 'Translation failed');
+                }
+                
+                const result = await response.json();
+                displayResults(result);
+                
+            } catch (err) {
+                error.textContent = `Error: ${err.message}`;
+                error.classList.add('visible');
+            } finally {
+                loading.classList.remove('visible');
+                translateBtn.disabled = false;
+            }
+        });
+        
+        function displayResults(result) {
+            // Raw translation
+            document.getElementById('rawTranslation').textContent = result.raw_translation;
+            
+            // Enforced translation with highlights
+            const enforcedHtml = highlightTerms(result.enforced_translation, result.applied_terms);
+            document.getElementById('enforcedTranslation').innerHTML = enforcedHtml;
+            
+            // Final translation
+            document.getElementById('finalTranslation').textContent = result.final_translation;
+            
+            // Update badges
+            const termsCount = result.applied_terms.length;
+            document.getElementById('termsCount').textContent = `${termsCount} term${termsCount !== 1 ? 's' : ''} applied`;
+            
+            const postEditBadge = document.getElementById('postEditBadge');
+            if (result.post_edited) {
+                postEditBadge.style.display = 'inline-block';
+            } else {
+                postEditBadge.style.display = 'none';
+            }
+            
+            // Applied terms list
+            const termsList = document.getElementById('termsList');
+            if (termsCount > 0) {
+                termsList.innerHTML = result.applied_terms.map(term => `
+                    <div class="term-item">
+                        <code>${escapeHtml(term.original_text)}</code>
+                        <span class="term-arrow">→</span>
+                        <strong>${escapeHtml(term.target_term)}</strong>
+                    </div>
+                `).join('');
+                document.getElementById('termsCard').style.display = 'block';
+            } else {
+                document.getElementById('termsCard').style.display = 'none';
+            }
+            
+            // Show results
+            results.classList.add('visible');
+            results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function highlightTerms(text, appliedTerms) {
+            let highlighted = escapeHtml(text);
+            
+            // Sort terms by position (reverse) to maintain positions during replacement
+            const sortedTerms = [...appliedTerms].sort((a, b) => b.position - a.position);
+            
+            for (const term of sortedTerms) {
+                const escapedTerm = escapeHtml(term.target_term);
+                const highlightedTerm = `<span class="highlight">${escapedTerm}</span>`;
+                
+                // Find and replace the term at the approximate position
+                // This is approximate because HTML escaping may shift positions
+                const regex = new RegExp(escapeRegex(escapedTerm), 'gi');
+                highlighted = highlighted.replace(regex, highlightedTerm);
+            }
+            
+            return highlighted;
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function escapeRegex(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+    </script>
+</body>
+</html>
