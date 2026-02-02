@@ -37,6 +37,10 @@ ENV/
 .env
 .env.local
 
+# Customer-specific data
+data/glossary.tsv
+data/glossary-*.tsv
+
 # Testing
 .pytest_cache/
 .coverage
