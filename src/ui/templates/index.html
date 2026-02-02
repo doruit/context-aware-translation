@@ -447,6 +447,18 @@
             // Raw translation
             document.getElementById('rawTranslation').textContent = result.raw_translation;
             
+            // Enforced translation with highlights
+            const enforcedHtml = highlightTerms(result.enforced_translation, result.applied_terms);
+            document.getElementById('enforcedTranslation').innerHTML = enforcedHtml;
+            
+            // Final translation
+            document.getElementById('finalTranslation').textContent = result.final_translation;
+            
+            // Update badges
+            const termsCount = result.applied_terms.length;
+            document.getElementById('termsCount').textContent = `${termsCount} term${termsCount !== 1 ? 's' : ''} applied`;
+            
+            const postEditBadge = document.getElementById('postEditBadge');
             const finalStepExplanation = document.getElementById('finalStepExplanation');
             if (result.post_edited) {
                 postEditBadge.style.display = 'inline-block';
