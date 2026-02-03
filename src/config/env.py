@@ -60,6 +60,20 @@ class Settings(BaseSettings):
         description="Azure OpenAI API version"
     )
     
+    # Translator API Preview Configuration (optional)
+    translator_api_preview_endpoint: Optional[str] = Field(
+        default=None,
+        description="Translator API preview endpoint"
+    )
+    translator_api_preview_key: Optional[str] = Field(
+        default=None,
+        description="Translator API preview key"
+    )
+    translator_api_preview_location: Optional[str] = Field(
+        default=None,
+        description="Translator API preview location/region"
+    )
+    
     # Server Configuration
     host: str = Field(default="0.0.0.0", description="Server host")
     port: int = Field(default=8000, description="Server port")

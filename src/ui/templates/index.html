@@ -333,11 +333,47 @@
                         </select>
                     </div>
                     
+                    <div class="form-group">
+                        <label for="translationMethod">Translation Method</label>
+                        <select id="translationMethod" required>
+                            <option value="standard">Standard (Text v3 - Fast & Deterministic)</option>
+                            {% if preview_available %}<option value="preview">Preview (LLM-Enhanced - Fluent & Flexible)</option>{% endif %}
+                        </select>
+                    </div>
+                    
+                    <!-- Preview-specific options -->
+                    <div id="previewOptions" style="display: none;">
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="enableLlm" name="enable_llm" checked>
+                                <label for="enableLlm">Enable LLM Enhancement</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="llmModel">LLM Model</label>
+                            <select id="llmModel" name="llm_model">
+                                <option value="gpt-4o-mini" selected>GPT-4o-mini (Fast)</option>
+                                <option value="gpt-4o">GPT-4o (Quality)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tone">Translation Tone</label>
+                            <select id="tone" name="tone">
+                                <option value="neutral" selected>Neutral</option>
+                                <option value="formal">Formal</option>
+                                <option value="informal">Informal</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                    </div>
+                    
                     {% if post_editor_enabled %}
                     <div class="form-group">
                         <div class="checkbox-group">
                             <input type="checkbox" id="enablePostEditor" name="enable_post_editor">
-                            <label for="enablePostEditor">Enable Azure OpenAI Post-Editor (fluency improvements)</label>
+                            <label for="enablePostEditor">Enable Post-Editor (fluency improvements)</label>
                         </div>
                     </div>
                     {% endif %}
@@ -398,6 +434,17 @@
         const error = document.getElementById('error');
         const results = document.getElementById('results');
         const translateBtn = document.getElementById('translateBtn');
+        const translationMethod = document.getElementById('translationMethod');
+        const previewOptions = document.getElementById('previewOptions');
+        
+        // Show/hide preview options based on method selection
+        translationMethod.addEventListener('change', (e) => {
+            if (e.target.value === 'preview') {
+                previewOptions.style.display = 'block';
+            } else {
+                previewOptions.style.display = 'none';
+            }
+        });
         
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -410,15 +457,32 @@
             
             // Get form data
             const formData = new FormData(form);
-            const data = {
+            const method = translationMethod.value;
+            
+            let endpoint = '/api/translate';
+            let data = {
                 text: formData.get('text'),
                 source_language: formData.get('source_language'),
                 enable_post_editor: formData.get('enable_post_editor') === 'on',
                 use_custom_category: true
             };
             
+            // Add preview-specific data if preview method selected
+            if (method === 'preview') {
+                endpoint = '/api/preview/translate';
+                data = {
+                    text: formData.get('text'),
+                    source_language: formData.get('source_language'),
+                    enable_llm: formData.get('enable_llm') === 'on',
+                    llm_model: document.getElementById('llmModel').value,
+                    tone: document.getElementById('tone').value,
+                    enforce_glossary: true,
+                    enable_post_editor: formData.get('enable_post_editor') === 'on'
+                };
+            }
+            
             try {
-                const response = await fetch('/api/translate', {
+                const response = await fetch(endpoint, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

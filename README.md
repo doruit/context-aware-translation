@@ -11,6 +11,27 @@ A production-ready service for translating text to any target language using **A
 ![Translation Service Demo](assets/screenshot.png)
 *Live demonstration showing glossary term enforcement: "critical incident" → "incident" and "service desk" → "servicedesk" are correctly preserved from the glossary during translation.*
 
+## 🎯 The Problem This Solves
+
+### Real-World Challenge: Contoso Corp Case Study
+
+**Contoso Corp**, a multinational retail and service organization, needed to translate customer support tickets in real-time through their ServiceNow platform. The core challenge:
+
+> "We need **real-time translation** for customer support tickets, but also **guaranteed terminology consistency**. Our technical terms, product names, and internal jargon must ALWAYS translate the same way, regardless of context. However, Azure's Text Translation API doesn't natively support glossary injection like Document Translation does."
+
+**The Tension:**
+- **Real-time requirement:** Support tickets need fast translation (~1s latency) to keep customer support flowing
+- **Terminology demand:** Consistent translation of company-specific terms (e.g., "critical incident" → "incident", "service desk" → "servicedesk")
+- **API limitation:** Azure Text Translation API lacks built-in glossary support for real-time scenarios
+
+**The Solution:** This service implements a **two-layer enforcement mechanism**:
+1. **Azure Translator Text v3** for native NMT quality (~300-500ms latency)
+2. **Deterministic Glossary Enforcer** to guarantee term consistency (100% deterministic, ~10-50ms overhead)
+
+Result: **< 1 second latency with guaranteed terminology consistency**
+
+---
+
 ## 🎯 Use Cases
 
 - **IT Service Management**: Translate support tickets while preserving technical terms
@@ -45,6 +66,67 @@ A production-ready service for translating text to any target language using **A
   - Environment-based configuration
   - Health check endpoint
   - Low latency (< 2s typical)
+
+## 🏗️ Architecture: Why This Works
+
+### The Three-Layer Translation Pipeline
+
+```
+[Layer 1] Azure Translator Text v3
+          └─→ Native neural translation, context-aware
+             └─→ ~300-500ms latency
+                └─→ Optional: Use custom-trained model (category parameter)
+
+[Layer 2] Deterministic Glossary Enforcer
+          └─→ 100% guaranteed term replacement
+             └─→ Case-preserving (Service Desk → Servicedesk)
+                └─→ Word-boundary detection (incident vs incidental)
+                   └─→ Audit trail of all replacements
+                      └─→ ~10-50ms overhead (negligible)
+
+[Layer 3] Optional Azure OpenAI Post-Editor
+          └─→ Improves fluency without changing terms
+             └─→ System prompt: "DO NOT change glossary terms"
+                └─→ Validation: confirms all terms still present
+```
+
+**Why Two Layers?**
+- **Scenario A:** You have a custom-trained model → Use native Custom Translator support
+- **Scenario B:** You don't have custom training → Deterministic regex enforcer guarantees consistency
+- **Result:** Works in both cases, and provides audit trail for compliance
+
+### Real Example: Contoso Corp Support Ticket
+
+**Input (English):**
+```
+"We have a critical incident affecting the service desk. 
+ Please escalate this problem to the knowledge base team."
+```
+
+**Step 1 - Raw Translation:**
+```
+"We hebben een critical incident dat de service desk raakt. 
+ Escaleer dit problem naar het kennisbank team."
+```
+
+**Step 2 - Glossary Enforcement** (applying Contoso glossary):
+```
+"We hebben een CRITICAL INCIDENT (→ incident) dat de SERVICE DESK (→ servicedesk) raakt.
+ Escaleer dit PROBLEM (→ probleem) naar het KNOWLEDGE BASE (→ kennisbank) team."
+
+Result: "We hebben een incident dat de servicedesk raakt. 
+         Escaleer dit probleem naar het kennisbank team."
+```
+
+**Step 3 - Optional Post-Edit** (improve fluency):
+```
+"We hebben een incident dat het servicedesk team raakt. 
+ Escaleer dit probleem naar het kennisbank team."
+```
+
+**Guarantee:** No matter how many similar tickets, "critical incident" ALWAYS becomes "incident", "service desk" ALWAYS becomes "servicedesk".
+
+---
 
 ## 📋 Requirements
 
@@ -106,11 +188,20 @@ domain-specific terminology:
 
 ```tsv
 # source<TAB>target format
-# IT Service Management Example
+# Retail & Service Management Example (Contoso Corp)
 incident	incident
 problem	probleem
-critical incident	kritiek incident
+critical incident	incident
 service desk	servicedesk
+help desk	helpdesk
+customer	klant
+cash register	kassa
+store manager	filiaalbeheerder
+knowledge base	kennisbank
+ticket	ticket
+priority	prioriteit
+resolved	opgelost
+pending	in behandeling
 
 # Healthcare Example
 # diagnosis	diagnose
@@ -121,9 +212,6 @@ service desk	servicedesk
 # contract	contract
 # liability	aansprakelijkheid
 # jurisdiction	rechtsgebiedverzoek
-service desk	servicedesk
-critical incident	kritiek incident
-knowledge base	kennisbank
 ```
 
 **Format Rules:**
@@ -327,6 +415,55 @@ elif original[0].isupper():
 else:
     return replacement.lower()
 ```
+
+### ServiceNow Integration Example (Contoso Corp)
+
+**Scenario:** Translate customer support ticket descriptions in real-time as they arrive in ServiceNow
+
+**ServiceNow Workflow:**
+```
+1. Customer submits ticket in English
+2. ServiceNow triggers REST API call to translation service
+3. Service returns translated text with guaranteed terminology
+4. Translation automatically updates ticket description
+5. Support team works with consistently-translated tickets
+```
+
+**ServiceNow Integration Code (REST API Call):**
+```javascript
+// In ServiceNow Business Rule or Flow Designer
+var request = new XMLHttpRequest();
+var payload = {
+  "text": incident.short_description,  // Original English text
+  "source_language": "en",
+  "enable_post_editor": false,
+  "use_custom_category": true
+};
+
+request.open('POST', 'https://your-service.azurewebsites.net/api/translate', true);
+request.setRequestHeader('Content-Type', 'application/json');
+request.onload = function() {
+  var response = JSON.parse(request.responseText);
+  
+  // Use the enforced translation with guaranteed terms
+  incident.description = response.enforced_translation;
+  incident.setWorkflow(false);
+  incident.update();
+  
+  // Log which terms were applied
+  gs.log('Applied terms: ' + JSON.stringify(response.applied_terms));
+};
+request.send(JSON.stringify(payload));
+```
+
+**Result for Contoso:**
+- All incoming tickets translated consistently
+- "critical incident" always becomes "incident"
+- "service desk" always becomes "servicedesk"
+- Support team immediately sees correct terminology
+- Audit trail available for compliance
+
+---
 
 ## 🎨 UI Features
 
