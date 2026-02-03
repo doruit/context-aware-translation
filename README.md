@@ -8,6 +8,10 @@
 
 A production-ready service for translating text to any target language using **Azure Translator Text v3** with **Custom Translator** categories and deterministic **TSV glossary enforcement**. Preserve domain-specific terminology while improving fluency with optional **Azure OpenAI** post-editing.
 
+<div align="center">
+    <img src="../media/screenshot1.png" alt="UI Screenshot" width="100%" />
+</div>
+
 > **Live demonstration:** The service enforces glossary terms like "critical incident" → "incident" and "service desk" → "servicedesk", preserving them correctly during translation.
 
 ## 🎯 The Problem This Solves
@@ -512,7 +516,7 @@ Before implementing, it's helpful to understand the architectural challenge this
 
 This analysis includes the Contoso Corp case study showing how organizations can translate real-time support tickets while maintaining strict terminology consistency.
 
-## �🐛 Troubleshooting
+## �� Troubleshooting
 
 **"Glossary file not found"**
 - Create `data/glossary.tsv` with at least one term
