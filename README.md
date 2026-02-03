@@ -9,7 +9,7 @@
 A production-ready service for translating text to any target language using **Azure Translator Text v3** with **Custom Translator** categories and deterministic **TSV glossary enforcement**. Preserve domain-specific terminology while improving fluency with optional **Azure OpenAI** post-editing.
 
 <div align="center">
-    <img src="https://github.com/doruit/azure-translation-glossary/blob/main/src/ui/media/screenshot1.png?raw=true" alt="UI Screenshot" width="80%" />
+    <img src="https://github.com/doruit/azure-translation-glossary/blob/main/src/ui/media/screenshot2.png?raw=true" alt="UI Screenshot" width="80%" />
 </div>
 
 > **Live demonstration:** The service enforces glossary terms like "critical incident" → "incident" and "service desk" → "servicedesk", preserving them correctly during translation.
