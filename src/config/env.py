@@ -82,11 +82,13 @@ class Settings(BaseSettings):
     @field_validator("glossary_path")
     @classmethod
     def validate_glossary_path(cls, v: str) -> str:
-        """Ensure glossary path is valid."""
-        path = Path(v)
-        if not path.exists():
-            # Don't fail during initialization; log warning instead
-            print(f"Warning: Glossary file not found at {v}")
+        """Ensure glossary path(s) are valid."""
+        raw_paths = [p.strip() for p in v.split(",") if p.strip()]
+        for raw_path in raw_paths:
+            path = Path(raw_path)
+            if not path.exists():
+                # Don't fail during initialization; log warning instead
+                print(f"Warning: Glossary file not found at {raw_path}")
         return v
     
     @field_validator("enable_post_editor")
@@ -99,8 +101,13 @@ class Settings(BaseSettings):
         return v
     
     def get_glossary_path(self) -> Path:
-        """Get glossary path as Path object."""
-        return Path(self.glossary_path)
+        """Get glossary path as Path object (first path if multiple)."""
+        paths = self.get_glossary_paths()
+        return paths[0] if paths else Path(self.glossary_path)
+
+    def get_glossary_paths(self) -> list[Path]:
+        """Get glossary paths as a list of Path objects."""
+        return [Path(p.strip()) for p in self.glossary_path.split(",") if p.strip()]
 
 
 # Global settings instance

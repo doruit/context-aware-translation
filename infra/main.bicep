@@ -159,6 +159,7 @@ resource appService 'Microsoft.Web/sites@2025-03-01' = {
     httpsOnly: true
     siteConfig: {
       linuxFxVersion: 'PYTHON|3.11'
+      appCommandLine: 'python run.py'
       alwaysOn: true
       ftpsState: 'Disabled'
       minTlsVersion: '1.2'
@@ -186,7 +187,7 @@ resource appService 'Microsoft.Web/sites@2025-03-01' = {
         }
         {
           name: 'GLOSSARY_PATH'
-          value: 'data/glossary.tsv'
+          value: 'data/glossary.tsv,data/glossary-action.tsv'
         }
         {
           name: 'ENABLE_POST_EDITOR'

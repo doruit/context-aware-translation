@@ -31,9 +31,9 @@ class PreviewTranslateRequest(BaseModel):
         default=True,
         description="Enable LLM enhancement for fluency"
     )
-    llm_model: str = Field(
-        default="gpt-4o-mini",
-        description="LLM model: gpt-4o-mini (fast) or gpt-4o (quality)"
+    deployment_name: Optional[str] = Field(
+        default=None,
+        description="GPT-4o-mini deployment name from Foundry"
     )
     tone: str = Field(
         default="neutral",
@@ -61,7 +61,7 @@ class PreviewTranslateResponse(BaseModel):
     target_language: str
     method: str = "preview"
     llm_used: bool
-    llm_model: Optional[str] = None
+    deployment_name: Optional[str] = None
     tone: str
     available: bool = True
 
@@ -111,6 +111,14 @@ async def translate_preview(request: PreviewTranslateRequest):
         )
     
     try:
+        settings = get_settings()
+        target_language = settings.target_language
+
+        if request.enable_llm and not request.deployment_name:
+            raise HTTPException(
+                status_code=400,
+                detail="deployment_name is required when enable_llm is true."
+            )
         # Step 1: Optional glossary enforcement
         applied_terms = []
         text_to_translate = request.text
@@ -147,9 +155,9 @@ async def translate_preview(request: PreviewTranslateRequest):
         translation_result = await preview_translator.translate(
             text=text_to_translate,
             source_language=request.source_language,
-            target_language="nl",
+            target_language=target_language,
             enable_llm=request.enable_llm,
-            model=request.llm_model,
+            deployment_name=request.deployment_name,
             tone=request.tone,
             allow_fallback=True
         )
@@ -218,9 +226,9 @@ async def translate_preview(request: PreviewTranslateRequest):
             post_edited=post_edited,
             applied_terms=applied_terms,
             source_language=request.source_language,
-            target_language="nl",
+            target_language=target_language,
             llm_used=request.enable_llm,
-            llm_model=request.llm_model if request.enable_llm else None,
+            deployment_name=request.deployment_name if request.enable_llm else None,
             tone=request.tone,
             available=True
         )

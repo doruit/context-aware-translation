@@ -1,0 +1,4 @@
+<step title="Incoming Request" date="2026-02-03T10:18:29.135" instance="eccd12" url="/api/vfs/site/wwwroot/output.tar.gz" method="GET" type="request" pid="770,1,20" Accept="*/*" Host="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" User-Agent="curl/8.7.1" Authorization="Bas..." X-ARR-LOG-ID="a626bcc0-e4c4-4ec5-9c50-7a2ce4b086d7" CLIENT-IP="198.184.231.254:53344" X-SITE-DEPLOYMENT-ID="translate-app-dev-<unique-suffix>" WAS-DEFAULT-HOSTNAME="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/vfs/site/wwwroot/output.tar.gz" X-Client-IP="198.184.231.254" X-Client-Port="53344" >
+  <step title="Cleanup Xml Logs" date="2026-02-03T10:18:29.157" /><!-- duration: 60ms -->
+  <step title="Outgoing response" date="2026-02-03T10:19:43.126" type="response" statusCode="200" statusText="OK" /><!-- duration: 18ms -->
+</step><!-- duration: 74020ms -->

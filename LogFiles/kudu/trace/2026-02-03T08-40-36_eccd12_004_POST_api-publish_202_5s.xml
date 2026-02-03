@@ -1,0 +1,14 @@
+<step title="Incoming Request" date="2026-02-03T08:40:36.964" instance="eccd12" url="/api/publish?type=zip&amp;async=True" method="POST" type="request" pid="770,1,22" Accept="*/*" Host="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" User-Agent="AZURECLI/2.69.0 (HOMEBREW)" Accept-Encoding="gzip, deflate" Authorization="Bas..." Cache-Control="no-cache" Content-Type="application/octet-stream" Content-Length="295477" x-ms-client-request-id="fdadf652-00db-11f1-a8e5-8ae5da1b75e8" x-ms-artifact-checksum="134b72be01fce4e3d68bdbfa99078c72f06736c9683e73ba7e6471f74b213b44" X-ARR-LOG-ID="fdadf652-00db-11f1-a8e5-8ae5da1b75e8" CLIENT-IP="198.184.231.254:52814" X-SITE-DEPLOYMENT-ID="translate-app-dev-<unique-suffix>" WAS-DEFAULT-HOSTNAME="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/publish?type=zip&amp;async=True" X-Client-IP="198.184.231.254" X-Client-Port="52814" >
+  <step title="Cleanup Xml Logs" date="2026-02-03T08:40:37.048" /><!-- duration: 88ms -->
+  <step title="OneDeploy" date="2026-02-03T08:40:37.711" >
+    <step title="Starting PushDeployAsync" date="2026-02-03T08:40:37.806" /><!-- duration: 52ms -->
+    <step title="Writing artifact to /tmp/zipdeploy/18e6b6cf-a57a-4c10-ae68-e99821884639.zip" date="2026-02-03T08:40:38.031" >
+      <step title="Writing multipart request body to /tmp/zipdeploy/18e6b6cf-a57a-4c10-ae68-e99821884639.zip" date="2026-02-03T08:40:38.138" /><!-- duration: 82ms -->
+    </step><!-- duration: 454ms -->
+    <step title="Start deployment in the background" date="2026-02-03T08:40:38.608" >
+      <step title="Acquiring Deployment Lock" date="2026-02-03T08:40:40.187" /><!-- duration: 107ms -->
+      <step title="Acquired Deployment Lock" date="2026-02-03T08:40:40.689" /><!-- duration: 39ms -->
+    </step><!-- duration: 2674ms -->
+  </step><!-- duration: 3678ms -->
+  <step title="Outgoing response" date="2026-02-03T08:40:41.480" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 38ms -->
+</step><!-- duration: 4583ms -->

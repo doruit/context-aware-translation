@@ -2,7 +2,7 @@
 
 import csv
 from pathlib import Path
-from typing import List, Dict
+from typing import List, Dict, Iterable
 
 
 class GlossaryEntry:
@@ -27,57 +27,67 @@ class GlossaryEntry:
 class GlossaryLoader:
     """Loads and manages TSV glossary files."""
     
-    def __init__(self, glossary_path: Path):
+    def __init__(self, glossary_paths: Iterable[Path]):
         """Initialize glossary loader.
         
         Args:
-            glossary_path: Path to TSV file (source<tab>target format)
+            glossary_paths: Iterable of TSV file paths (source<tab>target format)
         """
-        self.glossary_path = glossary_path
+        self.glossary_paths = list(glossary_paths)
         self._entries: List[GlossaryEntry] = []
     
     def load(self) -> List[GlossaryEntry]:
-        """Load glossary from TSV file.
+        """Load glossary from TSV file(s).
         
         Returns:
             List of glossary entries sorted by source length (longest first)
             
         Raises:
-            FileNotFoundError: If glossary file doesn't exist
+            FileNotFoundError: If any glossary file doesn't exist
             ValueError: If glossary format is invalid
         """
-        if not self.glossary_path.exists():
-            raise FileNotFoundError(f"Glossary file not found: {self.glossary_path}")
+        if not self.glossary_paths:
+            raise FileNotFoundError("No glossary paths provided")
         
-        entries = []
+        entries: List[GlossaryEntry] = []
+        seen_pairs = set()
         
-        with open(self.glossary_path, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f, delimiter='\t')
+        for glossary_path in self.glossary_paths:
+            if not glossary_path.exists():
+                raise FileNotFoundError(f"Glossary file not found: {glossary_path}")
             
-            for line_num, row in enumerate(reader, start=1):
-                # Skip empty lines
-                if not row or all(not cell.strip() for cell in row):
-                    continue
+            with open(glossary_path, 'r', encoding='utf-8') as f:
+                reader = csv.reader(f, delimiter='\t')
                 
-                # Skip comment lines
-                if row[0].strip().startswith('#'):
-                    continue
-                
-                # Validate format
-                if len(row) < 2:
-                    raise ValueError(
-                        f"Invalid glossary format at line {line_num}: "
-                        f"Expected 2 columns (source<tab>target), got {len(row)}"
-                    )
-                
-                source = row[0].strip()
-                target = row[1].strip()
-                
-                # Skip empty entries
-                if not source or not target:
-                    continue
-                
-                entries.append(GlossaryEntry(source, target))
+                for line_num, row in enumerate(reader, start=1):
+                    # Skip empty lines
+                    if not row or all(not cell.strip() for cell in row):
+                        continue
+                    
+                    # Skip comment lines
+                    if row[0].strip().startswith('#'):
+                        continue
+                    
+                    # Validate format
+                    if len(row) < 2:
+                        raise ValueError(
+                            f"Invalid glossary format at line {line_num} in {glossary_path}: "
+                            f"Expected 2 columns (source<tab>target), got {len(row)}"
+                        )
+                    
+                    source = row[0].strip()
+                    target = row[1].strip()
+                    
+                    # Skip empty entries
+                    if not source or not target:
+                        continue
+                    
+                    pair_key = (source, target)
+                    if pair_key in seen_pairs:
+                        continue
+                    
+                    seen_pairs.add(pair_key)
+                    entries.append(GlossaryEntry(source, target))
         
         # Sort by source length descending to handle overlapping terms
         # (e.g., "critical incident" before "incident")

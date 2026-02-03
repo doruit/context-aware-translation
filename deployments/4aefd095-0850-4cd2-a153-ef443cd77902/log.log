@@ -1,0 +1,284 @@
+2026-02-02T19:49:27.2933576Z,Updating submodules.,f39988e6-b557-4cc7-8bbe-8e817813460a,0
+2026-02-02T19:49:28.5464536Z,Preparing deployment for commit id '4aefd095-0'.,b8d681fe-6008-42b8-8848-fa00b9ea4d07,0
+2026-02-02T19:49:29.4798730Z,PreDeployment: context.CleanOutputPath False,0c1b30bf-f0b0-467d-8a03-a54901a9a3e3,0
+2026-02-02T19:49:29.7249933Z,PreDeployment: context.OutputPath /home/site/wwwroot,20b98734-94aa-4c7f-a019-81f57b14b26e,0
+2026-02-02T19:49:29.9966622Z,Repository path is /tmp/zipdeploy/extracted,bbbebdce-1c21-49b4-9053-8460f568cedd,0
+2026-02-02T19:49:30.2569141Z,Running oryx build...,aa19b7b6-11ba-4626-854d-d38acc94e0ec,0
+	2026-02-02T19:49:30.2712686Z,Command: oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.11 -p virtualenv_name=antenv --log-file /tmp/build-debug.log  -i /tmp/8de62942d566c49 --compress-destination-dir | tee /tmp/oryx-build.log,,0
+	2026-02-02T19:49:34.0802879Z,Operation performed by Microsoft Oryx&comma; https://github.com/Microsoft/Oryx,,0
+	2026-02-02T19:49:34.1773311Z,You can report issues at https://github.com/Microsoft/Oryx/issues,,0
+	2026-02-02T19:49:34.2268444Z,,,0
+	2026-02-02T19:49:34.2658843Z,Oryx Version: 0.2.20251022.1+bef98bc7139feefaa74be16de9d835e2c85385d4&comma; Commit: bef98bc7139feefaa74be16de9d835e2c85385d4&comma; ReleaseTagName: 20251022.1,,0
+	2026-02-02T19:49:34.3346409Z,,,0
+	2026-02-02T19:49:34.3754886Z,Build Operation ID: 906d332d34c91114,,0
+	2026-02-02T19:49:34.4062287Z,Repository Commit : 4aefd095-0850-4cd2-a153-ef443cd77902,,0
+	2026-02-02T19:49:34.4986875Z,OS Type           : bullseye,,0
+	2026-02-02T19:49:34.5398887Z,Image Type        : githubactions,,0
+	2026-02-02T19:49:34.5752472Z,,,0
+	2026-02-02T19:49:34.6314068Z,Primary SDK Storage URL: https://oryx-cdn.microsoft.io,,0
+	2026-02-02T19:49:34.6988775Z,Backup SDK Storage URL: ,,0
+	2026-02-02T19:49:34.7914299Z,Detecting platforms...,,0
+	2026-02-02T19:49:34.8299615Z,External SDK provider is enabled.,,0
+	2026-02-02T19:49:34.8811188Z,Requesting metadata for platform python from external SDK provider,,0
+	2026-02-02T19:49:36.9464975Z,Requesting metadata for platform python from external SDK provider,,0
+	2026-02-02T19:49:37.9172563Z,Successfully requested blob for platform python&comma; blobName defaultVersion.bullseye.txt&comma; available at /var/OryxSdks/python/defaultVersion.bullseye.txt,,0
+	2026-02-02T19:49:38.2729881Z,Detected following platforms:,,0
+	2026-02-02T19:49:38.3480852Z,  python: 3.11.14,,0
+	2026-02-02T19:49:38.3662292Z,Requesting metadata for platform python from external SDK provider,,0
+	2026-02-02T19:49:47.7437515Z,Successfully requested blob for platform python&comma; blobName python-bullseye-3.11.14.tar.gz&comma; available at /var/OryxSdks/python/python-bullseye-3.11.14.tar.gz,,0
+	2026-02-02T19:49:49.1241322Z,Version '3.11.14' of platform 'python' is not installed. Generating script to install it...,,0
+	2026-02-02T19:49:50.1606012Z,,,0
+	2026-02-02T19:49:50.3844328Z,Using intermediate directory '/tmp/8de62942d566c49'.,,0
+	2026-02-02T19:49:50.4121313Z,,,0
+	2026-02-02T19:49:50.4545950Z,Copying files to the intermediate directory...,,0
+	2026-02-02T19:49:50.6237020Z,Done in 0 sec(s).,,0
+	2026-02-02T19:49:50.6891322Z,,,0
+	2026-02-02T19:49:50.7275380Z,Source directory     : /tmp/8de62942d566c49,,0
+	2026-02-02T19:49:50.7576406Z,Destination directory: /home/site/wwwroot,,0
+	2026-02-02T19:49:50.7858004Z,,,0
+	2026-02-02T19:49:50.8350751Z,,,0
+	2026-02-02T19:49:50.8827698Z,Downloading and extracting 'python' version '3.11.14' to '/tmp/oryx/platforms/python/3.11.14'...,,0
+	2026-02-02T19:49:50.9712993Z,Detected image debian flavor: bullseye.,,0
+	2026-02-02T19:49:51.0308876Z,Skipping download of python version 3.11.14 as it is available in external sdk provider cache...,,0
+	2026-02-02T19:49:51.0800453Z,Extracting contents...,,0
+	2026-02-02T19:50:23.7622552Z,Successfully extracted python version 3.11.14 from external sdk provider cache...,,0
+	2026-02-02T19:50:23.8988262Z,Done in 33 sec(s).,,0
+	2026-02-02T19:50:23.9861823Z,,,0
+	2026-02-02T19:50:24.0439172Z,image detector file exists&comma; platform is python..,,0
+	2026-02-02T19:50:24.0917287Z,OS detector file exists&comma; OS is bullseye..,,0
+	2026-02-02T19:50:24.7417579Z,Python Version: /tmp/oryx/platforms/python/3.11.14/bin/python3.11,,0
+	2026-02-02T19:50:24.8100512Z,Creating directory for command manifest file if it does not exist,,0
+	2026-02-02T19:50:24.8808954Z,Removing existing manifest file,,0
+	2026-02-02T19:50:24.9047592Z,Python Virtual Environment: antenv,,0
+	2026-02-02T19:50:24.9927923Z,Creating virtual environment...,,0
+	2026-02-02T19:50:25.0988295Z,Executing: /tmp/oryx/platforms/python/3.11.14/bin/python3.11 -m venv antenv --copies --system-site-packages,,0
+	2026-02-02T19:50:54.8355066Z,Activating virtual environment...,,0
+	2026-02-02T19:50:54.9982794Z,Running pip install...,,0
+	2026-02-02T19:54:13.3111859Z,[19:51:01+0000] Collecting fastapi==0.115.6 (from -r requirements.txt (line 2)),,0
+	2026-02-02T19:54:13.4558808Z,[19:51:01+0000]   Downloading fastapi-0.115.6-py3-none-any.whl.metadata (27 kB),,0
+	2026-02-02T19:54:13.5449666Z,[19:51:02+0000] Collecting uvicorn==0.34.0 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:13.6195550Z,[19:51:02+0000]   Downloading uvicorn-0.34.0-py3-none-any.whl.metadata (6.5 kB),,0
+	2026-02-02T19:54:13.7062285Z,[19:51:02+0000] Collecting jinja2==3.1.5 (from -r requirements.txt (line 4)),,0
+	2026-02-02T19:54:13.8266047Z,[19:51:02+0000]   Downloading jinja2-3.1.5-py3-none-any.whl.metadata (2.6 kB),,0
+	2026-02-02T19:54:13.9176255Z,[19:51:03+0000] Collecting python-multipart==0.0.20 (from -r requirements.txt (line 5)),,0
+	2026-02-02T19:54:13.9896903Z,[19:51:03+0000]   Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB),,0
+	2026-02-02T19:54:14.0772575Z,[19:51:03+0000] Collecting httpx==0.28.1 (from -r requirements.txt (line 8)),,0
+	2026-02-02T19:54:14.1406010Z,[19:51:03+0000]   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB),,0
+	2026-02-02T19:54:14.2198208Z,[19:51:05+0000] Collecting pydantic==2.10.6 (from -r requirements.txt (line 11)),,0
+	2026-02-02T19:54:14.2747991Z,[19:51:05+0000]   Downloading pydantic-2.10.6-py3-none-any.whl.metadata (30 kB),,0
+	2026-02-02T19:54:14.3388183Z,[19:51:06+0000] Collecting pydantic-settings==2.7.1 (from -r requirements.txt (line 12)),,0
+	2026-02-02T19:54:14.3610054Z,[19:51:06+0000]   Downloading pydantic_settings-2.7.1-py3-none-any.whl.metadata (3.5 kB),,0
+	2026-02-02T19:54:14.3826899Z,[19:51:06+0000] Collecting python-dotenv==1.0.1 (from -r requirements.txt (line 13)),,0
+	2026-02-02T19:54:14.3972860Z,[19:51:06+0000]   Downloading python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB),,0
+	2026-02-02T19:54:14.4308501Z,[19:51:06+0000] Collecting openai==2.16.0 (from -r requirements.txt (line 16)),,0
+	2026-02-02T19:54:14.4971219Z,[19:51:06+0000]   Downloading openai-2.16.0-py3-none-any.whl.metadata (29 kB),,0
+	2026-02-02T19:54:14.5383871Z,[19:51:07+0000] Collecting azure-identity==1.20.0 (from -r requirements.txt (line 17)),,0
+	2026-02-02T19:54:14.5518192Z,[19:51:07+0000]   Downloading azure_identity-1.20.0-py3-none-any.whl.metadata (81 kB),,0
+	2026-02-02T19:54:14.5657709Z,[19:51:07+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.2/81.2 kB 6.1 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:14.5796803Z,[19:51:07+0000] Collecting pytest==8.3.5 (from -r requirements.txt (line 20)),,0
+	2026-02-02T19:54:14.5937056Z,[19:51:07+0000]   Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB),,0
+	2026-02-02T19:54:14.6350340Z,[19:51:07+0000] Collecting pytest-asyncio==0.25.2 (from -r requirements.txt (line 21)),,0
+	2026-02-02T19:54:14.6492859Z,[19:51:07+0000]   Downloading pytest_asyncio-0.25.2-py3-none-any.whl.metadata (3.9 kB),,0
+	2026-02-02T19:54:14.6683606Z,[19:51:07+0000] Collecting pytest-cov==6.0.0 (from -r requirements.txt (line 22)),,0
+	2026-02-02T19:54:14.6833061Z,[19:51:07+0000]   Downloading pytest_cov-6.0.0-py3-none-any.whl.metadata (27 kB),,0
+	2026-02-02T19:54:14.7022164Z,[19:51:08+0000] Collecting black==25.1.0 (from -r requirements.txt (line 25)),,0
+	2026-02-02T19:54:14.7361197Z,[19:51:08+0000]   Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (81 kB),,0
+	2026-02-02T19:54:14.7603168Z,[19:51:08+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 6.6 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:14.8177468Z,[19:51:10+0000] Collecting ruff==0.9.3 (from -r requirements.txt (line 26)),,0
+	2026-02-02T19:54:14.8318087Z,[19:51:10+0000]   Downloading ruff-0.9.3-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB),,0
+	2026-02-02T19:54:14.8673212Z,[19:51:10+0000] Collecting starlette<0.42.0&comma;>=0.40.0 (from fastapi==0.115.6->-r requirements.txt (line 2)),,0
+	2026-02-02T19:54:14.9048771Z,[19:51:10+0000]   Downloading starlette-0.41.3-py3-none-any.whl.metadata (6.0 kB),,0
+	2026-02-02T19:54:14.9689398Z,[19:51:11+0000] Collecting typing-extensions>=4.8.0 (from fastapi==0.115.6->-r requirements.txt (line 2)),,0
+	2026-02-02T19:54:15.0299145Z,[19:51:11+0000]   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB),,0
+	2026-02-02T19:54:15.9001208Z,[19:51:11+0000] Collecting click>=7.0 (from uvicorn==0.34.0->uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:15.9884489Z,[19:51:11+0000]   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB),,0
+	2026-02-02T19:54:16.0409019Z,[19:51:11+0000] Collecting h11>=0.8 (from uvicorn==0.34.0->uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:16.0774178Z,[19:51:11+0000]   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB),,0
+	2026-02-02T19:54:16.0971679Z,[19:51:12+0000] Collecting MarkupSafe>=2.0 (from jinja2==3.1.5->-r requirements.txt (line 4)),,0
+	2026-02-02T19:54:16.1327627Z,[19:51:12+0000]   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB),,0
+	2026-02-02T19:54:16.1603401Z,[19:51:12+0000] Collecting anyio (from httpx==0.28.1->-r requirements.txt (line 8)),,0
+	2026-02-02T19:54:16.1801624Z,[19:51:12+0000]   Downloading anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB),,0
+	2026-02-02T19:54:16.2205055Z,[19:51:12+0000] Collecting certifi (from httpx==0.28.1->-r requirements.txt (line 8)),,0
+	2026-02-02T19:54:16.2888408Z,[19:51:12+0000]   Downloading certifi-2026.1.4-py3-none-any.whl.metadata (2.5 kB),,0
+	2026-02-02T19:54:16.3269034Z,[19:51:12+0000] Collecting httpcore==1.* (from httpx==0.28.1->-r requirements.txt (line 8)),,0
+	2026-02-02T19:54:16.3846901Z,[19:51:12+0000]   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB),,0
+	2026-02-02T19:54:16.4249354Z,[19:51:12+0000] Collecting idna (from httpx==0.28.1->-r requirements.txt (line 8)),,0
+	2026-02-02T19:54:16.4632329Z,[19:51:12+0000]   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB),,0
+	2026-02-02T19:54:16.5428559Z,[19:51:12+0000] Collecting annotated-types>=0.6.0 (from pydantic==2.10.6->-r requirements.txt (line 11)),,0
+	2026-02-02T19:54:16.5833545Z,[19:51:12+0000]   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB),,0
+	2026-02-02T19:54:16.6153717Z,[19:51:18+0000] Collecting pydantic-core==2.27.2 (from pydantic==2.10.6->-r requirements.txt (line 11)),,0
+	2026-02-02T19:54:16.6506845Z,[19:51:18+0000]   Downloading pydantic_core-2.27.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB),,0
+	2026-02-02T19:54:16.7168494Z,[19:51:21+0000] Collecting distro<2&comma;>=1.7.0 (from openai==2.16.0->-r requirements.txt (line 16)),,0
+	2026-02-02T19:54:16.7582123Z,[19:51:21+0000]   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB),,0
+	2026-02-02T19:54:16.8467630Z,[19:51:24+0000] Collecting jiter<1&comma;>=0.10.0 (from openai==2.16.0->-r requirements.txt (line 16)),,0
+	2026-02-02T19:54:16.9129687Z,[19:51:24+0000]   Downloading jiter-0.13.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB),,0
+	2026-02-02T19:54:16.9367611Z,[19:51:25+0000] Collecting sniffio (from openai==2.16.0->-r requirements.txt (line 16)),,0
+	2026-02-02T19:54:17.0110942Z,[19:51:25+0000]   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB),,0
+	2026-02-02T19:54:17.0497817Z,[19:51:27+0000] Collecting tqdm>4 (from openai==2.16.0->-r requirements.txt (line 16)),,0
+	2026-02-02T19:54:17.0865195Z,[19:51:27+0000]   Downloading tqdm-4.67.2-py3-none-any.whl.metadata (57 kB),,0
+	2026-02-02T19:54:17.1376781Z,[19:51:27+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.6/57.6 kB 682.0 kB/s eta 0:00:00,,0
+	2026-02-02T19:54:17.1667515Z,[19:51:28+0000] Collecting azure-core>=1.31.0 (from azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:17.2144362Z,[19:51:28+0000]   Downloading azure_core-1.38.0-py3-none-any.whl.metadata (47 kB),,0
+	2026-02-02T19:54:17.2777716Z,[19:51:28+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━��━━━━━━━ 47.7/47.7 kB 1.8 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:17.3892697Z,[19:51:31+0000] Collecting cryptography>=2.5 (from azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:17.4476932Z,[19:51:31+0000]   Downloading cryptography-46.0.4-cp311-abi3-manylinux_2_28_x86_64.whl.metadata (5.7 kB),,0
+	2026-02-02T19:54:17.4770559Z,[19:51:31+0000] Collecting msal>=1.30.0 (from azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:17.5341386Z,[19:51:31+0000]   Downloading msal-1.34.0-py3-none-any.whl.metadata (11 kB),,0
+	2026-02-02T19:54:17.5687997Z,[19:51:31+0000] Collecting msal-extensions>=1.2.0 (from azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:17.6227297Z,[19:51:31+0000]   Downloading msal_extensions-1.3.1-py3-none-any.whl.metadata (7.8 kB),,0
+	2026-02-02T19:54:17.6459411Z,[19:51:32+0000] Collecting iniconfig (from pytest==8.3.5->-r requirements.txt (line 20)),,0
+	2026-02-02T19:54:17.6734745Z,[19:51:32+0000]   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB),,0
+	2026-02-02T19:54:17.7047979Z,[19:51:32+0000] Collecting packaging (from pytest==8.3.5->-r requirements.txt (line 20)),,0
+	2026-02-02T19:54:17.7939035Z,[19:51:32+0000]   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB),,0
+	2026-02-02T19:54:17.8597028Z,[19:51:32+0000] Collecting pluggy<2&comma;>=1.5 (from pytest==8.3.5->-r requirements.txt (line 20)),,0
+	2026-02-02T19:54:17.9235106Z,[19:51:32+0000]   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB),,0
+	2026-02-02T19:54:18.0197746Z,[19:51:37+0000] Collecting coverage>=7.5 (from coverage[toml]>=7.5->pytest-cov==6.0.0->-r requirements.txt (line 22)),,0
+	2026-02-02T19:54:18.0789342Z,[19:51:37+0000]   Downloading coverage-7.13.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.5 kB),,0
+	2026-02-02T19:54:18.1788413Z,[19:51:37+0000] Collecting mypy-extensions>=0.4.3 (from black==25.1.0->-r requirements.txt (line 25)),,0
+	2026-02-02T19:54:18.2252741Z,[19:51:38+0000]   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB),,0
+	2026-02-02T19:54:18.2749421Z,[19:51:38+0000] Collecting pathspec>=0.9.0 (from black==25.1.0->-r requirements.txt (line 25)),,0
+	2026-02-02T19:54:18.2941185Z,[19:51:38+0000]   Downloading pathspec-1.0.4-py3-none-any.whl.metadata (13 kB),,0
+	2026-02-02T19:54:18.3263897Z,[19:51:38+0000] Collecting platformdirs>=2 (from black==25.1.0->-r requirements.txt (line 25)),,0
+	2026-02-02T19:54:18.4022174Z,[19:51:38+0000]   Downloading platformdirs-4.5.1-py3-none-any.whl.metadata (12 kB),,0
+	2026-02-02T19:54:18.4404198Z,[19:51:38+0000] Collecting httptools>=0.6.3 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:18.4531332Z,[19:51:38+0000]   Downloading httptools-0.7.1-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB),,0
+	2026-02-02T19:54:18.4848554Z,[19:51:39+0000] Collecting pyyaml>=5.1 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:18.5505194Z,[19:51:39+0000]   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB),,0
+	2026-02-02T19:54:18.5837713Z,[19:51:41+0000] Collecting uvloop!=0.15.0&comma;!=0.15.1&comma;>=0.14.0 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:18.6259262Z,[19:51:41+0000]   Downloading uvloop-0.22.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB),,0
+	2026-02-02T19:54:18.7012732Z,[19:51:44+0000] Collecting watchfiles>=0.13 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:18.7774579Z,[19:51:44+0000]   Downloading watchfiles-1.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB),,0
+	2026-02-02T19:54:18.7934903Z,[19:51:44+0000] Collecting websockets>=10.4 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 3)),,0
+	2026-02-02T19:54:18.8440373Z,[19:51:44+0000]   Downloading websockets-16.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.8 kB),,0
+	2026-02-02T19:54:18.8629906Z,[19:51:47+0000] Collecting requests>=2.21.0 (from azure-core>=1.31.0->azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:18.8818186Z,[19:51:47+0000]   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB),,0
+	2026-02-02T19:54:18.9562492Z,[19:51:49+0000] Collecting cffi>=2.0.0 (from cryptography>=2.5->azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:19.0248872Z,[19:51:49+0000]   Downloading cffi-2.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB),,0
+	2026-02-02T19:54:19.0716116Z,[19:51:51+0000] Collecting PyJWT<3&comma;>=1.0.0 (from PyJWT[crypto]<3&comma;>=1.0.0->msal>=1.30.0->azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:19.1328720Z,[19:51:51+0000]   Downloading pyjwt-2.11.0-py3-none-any.whl.metadata (4.0 kB),,0
+	2026-02-02T19:54:19.2013702Z,[19:51:52+0000] Collecting pycparser (from cffi>=2.0.0->cryptography>=2.5->azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:19.2334041Z,[19:51:52+0000]   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB),,0
+	2026-02-02T19:54:19.2717988Z,[19:51:53+0000] Collecting charset_normalizer<4&comma;>=2 (from requests>=2.21.0->azure-core>=1.31.0->azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:19.3215383Z,[19:51:53+0000]   Downloading charset_normalizer-3.4.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB),,0
+	2026-02-02T19:54:19.3593555Z,[19:51:55+0000] Collecting urllib3<3&comma;>=1.21.1 (from requests>=2.21.0->azure-core>=1.31.0->azure-identity==1.20.0->-r requirements.txt (line 17)),,0
+	2026-02-02T19:54:19.3888313Z,[19:51:55+0000]   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB),,0
+	2026-02-02T19:54:19.4584228Z,[19:51:56+0000] Downloading fastapi-0.115.6-py3-none-any.whl (94 kB),,0
+	2026-02-02T19:54:19.4929447Z,[19:51:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.8/94.8 kB 1.5 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:19.5230064Z,[19:51:56+0000] Downloading uvicorn-0.34.0-py3-none-any.whl (62 kB),,0
+	2026-02-02T19:54:19.5491575Z,[19:51:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.3/62.3 kB 1.3 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:19.5767637Z,[19:51:56+0000] Downloading jinja2-3.1.5-py3-none-any.whl (134 kB),,0
+	2026-02-02T19:54:19.6360264Z,[19:51:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.6/134.6 kB 2.7 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:19.7333558Z,[19:51:56+0000] Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB),,0
+	2026-02-02T19:54:19.7632018Z,[19:51:56+0000] Downloading httpx-0.28.1-py3-none-any.whl (73 kB),,0
+	2026-02-02T19:54:19.7899184Z,[19:51:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 7.1 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:19.8430763Z,[19:51:57+0000] Downloading pydantic-2.10.6-py3-none-any.whl (431 kB),,0
+	2026-02-02T19:54:19.8922304Z,[19:51:57+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 kB 9.1 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:19.9227322Z,[19:51:57+0000] Downloading pydantic_settings-2.7.1-py3-none-any.whl (29 kB),,0
+	2026-02-02T19:54:19.9364898Z,[19:51:57+0000] Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB),,0
+	2026-02-02T19:54:19.9497075Z,[19:51:57+0000] Downloading openai-2.16.0-py3-none-any.whl (1.1 MB),,0
+	2026-02-02T19:54:20.0007151Z,[19:51:57+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 25.9 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.0924598Z,[19:51:57+0000] Downloading azure_identity-1.20.0-py3-none-any.whl (188 kB),,0
+	2026-02-02T19:54:20.1695942Z,[19:51:57+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.2/188.2 kB 13.5 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.2357935Z,[19:51:57+0000] Downloading pytest-8.3.5-py3-none-any.whl (343 kB),,0
+	2026-02-02T19:54:20.2678730Z,[19:51:57+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.6/343.6 kB 11.9 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.3232818Z,[19:51:57+0000] Downloading pytest_asyncio-0.25.2-py3-none-any.whl (19 kB),,0
+	2026-02-02T19:54:20.3946127Z,[19:51:57+0000] Downloading pytest_cov-6.0.0-py3-none-any.whl (22 kB),,0
+	2026-02-02T19:54:20.4824345Z,[19:51:57+0000] Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.7 MB),,0
+	2026-02-02T19:54:20.5393750Z,[19:51:57+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 36.2 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.5684419Z,[19:51:57+0000] Downloading ruff-0.9.3-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.4 MB),,0
+	2026-02-02T19:54:20.5881998Z,[19:51:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 12.6 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.6238637Z,[19:51:58+0000] Downloading httpcore-1.0.9-py3-none-any.whl (78 kB),,0
+	2026-02-02T19:54:20.6379237Z,[19:51:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 3.8 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.6901864Z,[19:51:58+0000] Downloading pydantic_core-2.27.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB),,0
+	2026-02-02T19:54:20.7476203Z,[19:51:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 30.2 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.8055001Z,[19:51:58+0000] Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB),,0
+	2026-02-02T19:54:20.8610143Z,[19:51:58+0000] Downloading anyio-4.12.1-py3-none-any.whl (113 kB),,0
+	2026-02-02T19:54:20.8790780Z,[19:51:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.6/113.6 kB 5.4 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.9077554Z,[19:51:58+0000] Downloading azure_core-1.38.0-py3-none-any.whl (217 kB),,0
+	2026-02-02T19:54:20.9299798Z,[19:51:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 217.8/217.8 kB 3.4 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:20.9655152Z,[19:51:58+0000] Downloading click-8.3.1-py3-none-any.whl (108 kB),,0
+	2026-02-02T19:54:20.9871284Z,[19:51:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 5.7 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.0277420Z,[19:51:58+0000] Downloading coverage-7.13.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (251 kB),,0
+	2026-02-02T19:54:21.0496507Z,[19:51:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 251.8/251.8 kB 12.8 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.1514857Z,[19:51:58+0000] Downloading cryptography-46.0.4-cp311-abi3-manylinux_2_28_x86_64.whl (4.5 MB),,0
+	2026-02-02T19:54:21.1712308Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 10.5 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.1861265Z,[19:51:59+0000] Downloading distro-1.9.0-py3-none-any.whl (20 kB),,0
+	2026-02-02T19:54:21.2087492Z,[19:51:59+0000] Downloading h11-0.16.0-py3-none-any.whl (37 kB),,0
+	2026-02-02T19:54:21.2304949Z,[19:51:59+0000] Downloading httptools-0.7.1-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (456 kB),,0
+	2026-02-02T19:54:21.2673135Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 456.6/456.6 kB 9.0 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.3057372Z,[19:51:59+0000] Downloading idna-3.11-py3-none-any.whl (71 kB),,0
+	2026-02-02T19:54:21.3344359Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 5.4 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.3620704Z,[19:51:59+0000] Downloading jiter-0.13.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (362 kB),,0
+	2026-02-02T19:54:21.3813002Z,[19:51:59+0000]    ━━━━━━━━���━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 362.7/362.7 kB 19.7 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.4567709Z,[19:51:59+0000] Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB),,0
+	2026-02-02T19:54:21.4892807Z,[19:51:59+0000] Downloading msal-1.34.0-py3-none-any.whl (116 kB),,0
+	2026-02-02T19:54:21.5200709Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.0/117.0 kB 10.2 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.5362517Z,[19:51:59+0000] Downloading msal_extensions-1.3.1-py3-none-any.whl (20 kB),,0
+	2026-02-02T19:54:21.5497176Z,[19:51:59+0000] Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB),,0
+	2026-02-02T19:54:21.5810215Z,[19:51:59+0000] Downloading packaging-26.0-py3-none-any.whl (74 kB),,0
+	2026-02-02T19:54:21.6376194Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.4/74.4 kB 8.2 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.7018927Z,[19:51:59+0000] Downloading pathspec-1.0.4-py3-none-any.whl (55 kB),,0
+	2026-02-02T19:54:21.7396162Z,[19:51:59+0000]    ━━━━━━━━━━━���━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.2/55.2 kB 5.5 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.7601368Z,[19:51:59+0000] Downloading platformdirs-4.5.1-py3-none-any.whl (18 kB),,0
+	2026-02-02T19:54:21.7795010Z,[19:51:59+0000] Downloading pluggy-1.6.0-py3-none-any.whl (20 kB),,0
+	2026-02-02T19:54:21.8108712Z,[19:51:59+0000] Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB),,0
+	2026-02-02T19:54:21.8371195Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 36.0 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.8559164Z,[19:51:59+0000] Downloading starlette-0.41.3-py3-none-any.whl (73 kB),,0
+	2026-02-02T19:54:21.8844076Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.2/73.2 kB 5.3 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:21.9528734Z,[19:51:59+0000] Downloading tqdm-4.67.2-py3-none-any.whl (78 kB),,0
+	2026-02-02T19:54:22.0338279Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.4/78.4 kB 7.1 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.0819067Z,[19:51:59+0000] Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB),,0
+	2026-02-02T19:54:22.1499713Z,[19:51:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 5.2 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.1827536Z,[19:51:59+0000] Downloading uvloop-0.22.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.8 MB),,0
+	2026-02-02T19:54:22.2067203Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 17.1 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.2434346Z,[19:52:00+0000] Downloading watchfiles-1.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB),,0
+	2026-02-02T19:54:22.2869215Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 456.1/456.1 kB 25.0 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.3185747Z,[19:52:00+0000] Downloading websockets-16.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (184 kB),,0
+	2026-02-02T19:54:22.3480945Z,[19:52:00+0000]    ��━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.6/184.6 kB 15.3 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.3818091Z,[19:52:00+0000] Downloading certifi-2026.1.4-py3-none-any.whl (152 kB),,0
+	2026-02-02T19:54:22.4047184Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 152.9/152.9 kB 13.3 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.5238527Z,[19:52:00+0000] Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB),,0
+	2026-02-02T19:54:22.6192215Z,[19:52:00+0000] Downloading sniffio-1.3.1-py3-none-any.whl (10 kB),,0
+	2026-02-02T19:54:22.6817058Z,[19:52:00+0000] Downloading cffi-2.0.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (215 kB),,0
+	2026-02-02T19:54:22.7476053Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 215.6/215.6 kB 19.5 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.7640925Z,[19:52:00+0000] Downloading pyjwt-2.11.0-py3-none-any.whl (28 kB),,0
+	2026-02-02T19:54:22.7799747Z,[19:52:00+0000] Downloading requests-2.32.5-py3-none-any.whl (64 kB),,0
+	2026-02-02T19:54:22.8783271Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 4.8 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:22.9334161Z,[19:52:00+0000] Downloading charset_normalizer-3.4.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (151 kB),,0
+	2026-02-02T19:54:23.0599961Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.6/151.6 kB 4.8 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:23.1746332Z,[19:52:00+0000] Downloading urllib3-2.6.3-py3-none-any.whl (131 kB),,0
+	2026-02-02T19:54:23.2897321Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.6/131.6 kB 3.3 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:23.3359949Z,[19:52:00+0000] Downloading pycparser-3.0-py3-none-any.whl (48 kB),,0
+	2026-02-02T19:54:23.3669853Z,[19:52:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 kB 4.1 MB/s eta 0:00:00,,0
+	2026-02-02T19:54:23.4174458Z,[19:52:12+0000] Installing collected packages: websockets&comma; uvloop&comma; urllib3&comma; typing-extensions&comma; tqdm&comma; sniffio&comma; ruff&comma; pyyaml&comma; python-multipart&comma; python-dotenv&comma; PyJWT&comma; pycparser&comma; pluggy&comma; platformdirs&comma; pathspec&comma; packaging&comma; mypy-extensions&comma; MarkupSafe&comma; jiter&comma; iniconfig&comma; idna&comma; httptools&comma; h11&comma; distro&comma; coverage&comma; click&comma; charset_normalizer&comma; certifi&comma; annotated-types&comma; uvicorn&comma; requests&comma; pytest&comma; pydantic-core&comma; jinja2&comma; httpcore&comma; cffi&comma; black&comma; anyio&comma; watchfiles&comma; starlette&comma; pytest-cov&comma; pytest-asyncio&comma; pydantic&comma; httpx&comma; cryptography&comma; azure-core&comma; pydantic-settings&comma; openai&comma; fastapi&comma; msal&comma; msal-extensions&comma; azure-identity,,0
+	2026-02-02T19:54:23.4662772Z,[19:54:02+0000] Successfully installed MarkupSafe-3.0.3 PyJWT-2.11.0 annotated-types-0.7.0 anyio-4.12.1 azure-core-1.38.0 azure-identity-1.20.0 black-25.1.0 certifi-2026.1.4 cffi-2.0.0 charset_normalizer-3.4.4 click-8.3.1 coverage-7.13.2 cryptography-46.0.4 distro-1.9.0 fastapi-0.115.6 h11-0.16.0 httpcore-1.0.9 httptools-0.7.1 httpx-0.28.1 idna-3.11 iniconfig-2.3.0 jinja2-3.1.5 jiter-0.13.0 msal-1.34.0 msal-extensions-1.3.1 mypy-extensions-1.1.0 openai-2.16.0 packaging-26.0 pathspec-1.0.4 platformdirs-4.5.1 pluggy-1.6.0 pycparser-3.0 pydantic-2.10.6 pydantic-core-2.27.2 pydantic-settings-2.7.1 pytest-8.3.5 pytest-asyncio-0.25.2 pytest-cov-6.0.0 python-dotenv-1.0.1 python-multipart-0.0.20 pyyaml-6.0.3 requests-2.32.5 ruff-0.9.3 sniffio-1.3.1 starlette-0.41.3 tqdm-4.67.2 typing-extensions-4.15.0 urllib3-2.6.3 uvicorn-0.34.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0,,0
+	2026-02-02T19:54:23.5514822Z,,,0
+	2026-02-02T19:54:23.5890510Z,[notice] A new release of pip is available: 24.0 -> 26.0,,0
+	2026-02-02T19:54:23.6362508Z,[notice] To update&comma; run: pip install --upgrade pip,,0
+	2026-02-02T19:54:23.7281993Z,Not a vso image&comma; so not writing build commands,,0
+	2026-02-02T19:54:23.8592309Z,Preparing output...,,0
+	2026-02-02T19:54:23.9256693Z,,,0
+	2026-02-02T19:54:23.9740040Z,Copying files to destination directory '/tmp/_preCompressedDestinationDir'...,,0
+	2026-02-02T19:54:28.8386504Z,Done in 15 sec(s).,,0
+	2026-02-02T19:54:28.9236666Z,Compressing content of directory '/tmp/_preCompressedDestinationDir'...,,0
+	2026-02-02T19:55:05.7040746Z,Copied the compressed output to '/home/site/wwwroot',,0
+	2026-02-02T19:55:05.8499757Z,,,0
+	2026-02-02T19:55:05.8978844Z,Removing existing manifest file,,0
+	2026-02-02T19:55:05.9275512Z,Creating a manifest file...,,0
+	2026-02-02T19:55:06.0004874Z,Manifest file created.,,0
+	2026-02-02T19:55:06.0508200Z,Copying .ostype to manifest output directory.,,0
+	2026-02-02T19:55:06.1031678Z,,,0
+	2026-02-02T19:55:06.1446435Z,Done in 316 sec(s).,,0
+2026-02-02T19:55:06.8020190Z,Running post deployment command(s)...,93de1e71-4600-4fde-afc2-0835ef720d9d,0
+2026-02-02T19:55:07.0950940Z,,ed5dac57-4fbc-4085-b4e4-fd7b66bedf67,0
+2026-02-02T19:55:07.3082965Z,Generating summary of Oryx build,3bf01daf-5bf6-405d-9a34-82df52202b0b,0
+2026-02-02T19:55:07.7579200Z,Parsing the build logs,5fe172a0-7f51-4e44-8a76-f0d5d8f3f683,0
+2026-02-02T19:55:07.9911967Z,Found 0 issue(s),fff2f2a0-4d6c-474f-8a2e-2795718d76f1,0
+2026-02-02T19:55:08.2016574Z,,ccdee022-4724-4363-9344-0aad30808eb9,0
+2026-02-02T19:55:08.4134306Z,Build Summary :,8af241e2-248f-4f22-8dec-c1803d8b6381,0
+2026-02-02T19:55:08.6307832Z,===============,6e52b53b-899d-42a1-83ed-a35e75e5161f,0
+2026-02-02T19:55:08.8767889Z,Errors (0),f47ae6ff-b6d6-4d19-8b48-79ad39d90113,0
+2026-02-02T19:55:09.0765101Z,Warnings (0),51e0f6f2-6b96-427a-8ec9-acbacebd86d0,0
+2026-02-02T19:55:09.2675942Z,,78cedc92-a604-4408-ad81-c8a0d561e553,0
+2026-02-02T19:55:09.5195111Z,Triggering recycle (preview mode disabled).,14161032-be3c-47ba-9b9a-6430ca56b9c6,0
+2026-02-02T19:55:09.9281470Z,Deployment successful. deployer = Push-Deployer deploymentPath = ZipDeploy. Extract zip. Remote build.,c6aadd9e-da10-4eb5-9038-752729e4bb92,0

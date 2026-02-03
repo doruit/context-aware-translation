@@ -246,6 +246,30 @@
             100% { transform: rotate(360deg); }
         }
         
+        .question-chip {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-weight: 500;
+        }
+        
+        .question-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        
+        .question-chip:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
         .error {
             background: #f8d7da;
             color: #721c24;
@@ -313,6 +337,22 @@
                 <form id="translateForm">
                     <div class="form-group">
                         <label for="sourceText">Text to Translate</label>
+                        
+                        <!-- Example Questions -->
+                        <div style="margin-bottom: 1rem;">
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">💡 <strong>Try these examples:</strong></p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <button type="button" class="question-chip" data-question="The barcode scanner at the checkout counter is malfunctioning and cannot read product codes. Please contact the Action servicedesk to request a replacement device for our store.">Barcode scanner malfunction</button>
+                                <button type="button" class="question-chip" data-question="I need to report a customer complaint regarding incorrect pricing on the sales floor. The customer service team should investigate the discount labels in aisle 3.">Customer complaint - pricing issue</button>
+                                <button type="button" class="question-chip" data-question="Request immediate assistance: the payment terminal at checkout has stopped working during peak hours. Our cashier cannot process Action gift card transactions.">Payment terminal failure</button>
+                                <button type="button" class="question-chip" data-question="Please schedule cash register training for our new employees. They need access to the Action Cash Register Training e-learning course before their first shift.">Staff training request</button>
+                                <button type="button" class="question-chip" data-question="The alarm gates at the exit triggered a false alarm during bag check. Can the Action servicedesk send a technician to recalibrate the anti-theft system?">Security system issue</button>
+                                <button type="button" class="question-chip" data-question="I need clarification on the refund policy for Action gift cards. A customer is requesting a full refund for an unused card purchased last month.">Gift card refund policy</button>
+                                <button type="button" class="question-chip" data-question="The air curtain above the store entrance is not functioning properly. Please create a maintenance ticket for the distribution center to arrange repairs.">Facility maintenance</button>
+                                <button type="button" class="question-chip" data-question="Report incident: aggressive customer behavior at the checkout. Our cashier needs support from management to handle this situation according to Action values.">Incident - customer aggression</button>
+                            </div>
+                        </div>
+                        
                         <textarea 
                             id="sourceText" 
                             name="text" 
@@ -331,42 +371,6 @@
                             <option value="it">Italian (it)</option>
                             <option value="en" selected>English (en)</option>
                         </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="translationMethod">Translation Method</label>
-                        <select id="translationMethod" required>
-                            <option value="standard">Standard (Text v3 - Fast & Deterministic)</option>
-                            {% if preview_available %}<option value="preview">Preview (LLM-Enhanced - Fluent & Flexible)</option>{% endif %}
-                        </select>
-                    </div>
-                    
-                    <!-- Preview-specific options -->
-                    <div id="previewOptions" style="display: none;">
-                        <div class="form-group">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="enableLlm" name="enable_llm" checked>
-                                <label for="enableLlm">Enable LLM Enhancement</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="llmModel">LLM Model</label>
-                            <select id="llmModel" name="llm_model">
-                                <option value="gpt-4o-mini" selected>GPT-4o-mini (Fast)</option>
-                                <option value="gpt-4o">GPT-4o (Quality)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="tone">Translation Tone</label>
-                            <select id="tone" name="tone">
-                                <option value="neutral" selected>Neutral</option>
-                                <option value="formal">Formal</option>
-                                <option value="informal">Informal</option>
-                                <option value="technical">Technical</option>
-                            </select>
-                        </div>
                     </div>
                     
                     {% if post_editor_enabled %}
@@ -409,7 +413,7 @@
                 <div class="result-card" id="finalCard">
                     <h3>
                         🎯 Step 3: Final Translation 
-                        <span class="badge badge-success" id="postEditBadge" style="display: none;">Post-edited</span>
+                        <span class="badge badge-success" id="postEditBadge" style="display: none;">LLM Post-edited</span>
                     </h3>
                     <div class="step-explanation" id="finalStepExplanation">
                         <strong>Result:</strong> Translation with enforced terminology ready for use.
@@ -434,16 +438,13 @@
         const error = document.getElementById('error');
         const results = document.getElementById('results');
         const translateBtn = document.getElementById('translateBtn');
-        const translationMethod = document.getElementById('translationMethod');
-        const previewOptions = document.getElementById('previewOptions');
         
-        // Show/hide preview options based on method selection
-        translationMethod.addEventListener('change', (e) => {
-            if (e.target.value === 'preview') {
-                previewOptions.style.display = 'block';
-            } else {
-                previewOptions.style.display = 'none';
-            }
+        // Question chip click handlers
+        document.querySelectorAll('.question-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.getElementById('sourceText').value = chip.dataset.question;
+                document.getElementById('sourceText').focus();
+            });
         });
         
         form.addEventListener('submit', async (e) => {
@@ -457,29 +458,14 @@
             
             // Get form data
             const formData = new FormData(form);
-            const method = translationMethod.value;
             
-            let endpoint = '/api/translate';
-            let data = {
+            const endpoint = '/api/translate';
+            const data = {
                 text: formData.get('text'),
                 source_language: formData.get('source_language'),
-                enable_post_editor: formData.get('enable_post_editor') === 'on',
-                use_custom_category: true
+                enforce_glossary: true,
+                enable_post_editor: formData.get('enable_post_editor') === 'on'
             };
-            
-            // Add preview-specific data if preview method selected
-            if (method === 'preview') {
-                endpoint = '/api/preview/translate';
-                data = {
-                    text: formData.get('text'),
-                    source_language: formData.get('source_language'),
-                    enable_llm: formData.get('enable_llm') === 'on',
-                    llm_model: document.getElementById('llmModel').value,
-                    tone: document.getElementById('tone').value,
-                    enforce_glossary: true,
-                    enable_post_editor: formData.get('enable_post_editor') === 'on'
-                };
-            }
             
             try {
                 const response = await fetch(endpoint, {
@@ -526,7 +512,7 @@
             const finalStepExplanation = document.getElementById('finalStepExplanation');
             if (result.post_edited) {
                 postEditBadge.style.display = 'inline-block';
-                finalStepExplanation.innerHTML = '<strong>Azure OpenAI API:</strong> GPT-4 improved the fluency and grammar while preserving all glossary terms from Step 2.';
+                finalStepExplanation.innerHTML = '<strong>Azure OpenAI LLM (GPT-4):</strong> Large Language Model improved the fluency, grammar, and naturalness while preserving all glossary terms from Step 2. This optional step uses AI to refine the translation quality.';
             } else {
                 postEditBadge.style.display = 'none';
                 finalStepExplanation.innerHTML = '<strong>Result:</strong> Translation with enforced terminology ready for use.';

@@ -1,0 +1,15 @@
+<step title="Incoming Request" date="2026-02-02T19:31:59.308" instance="eccd12" url="/translate-app-dev-<unique-suffix>.git/git-receive-pack" method="POST" type="request" pid="774,1,15" Accept="application/x-git-receive-pack-result" Host="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" User-Agent="git/2.50.1" Accept-Encoding="deflate, gzip" Authorization="Bas..." Content-Type="application/x-git-receive-pack-request" Content-Length="75237" X-ARR-LOG-ID="0f6fb1c2-b1c8-4f21-b387-6c7d0eeba68e" CLIENT-IP="77.165.216.73:58086" X-SITE-DEPLOYMENT-ID="translate-app-dev-<unique-suffix>" WAS-DEFAULT-HOSTNAME="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/translate-app-dev-<unique-suffix>.git/git-receive-pack" X-Client-IP="77.165.216.73" X-Client-Port="58086" >
+  <step title="Cleanup Xml Logs" date="2026-02-02T19:31:59.319" /><!-- duration: 16ms -->
+  <step title="RpcService.ReceivePack" date="2026-02-02T19:31:59.479" >
+    <step title="Executing external process" date="2026-02-02T19:31:59.505" type="process" path="git" arguments="rev-parse --git-dir" /><!-- duration: 32ms -->
+    <step title="Assuming git repository at /home/site/repository" date="2026-02-02T19:31:59.558" /><!-- duration: 9ms -->
+    <step title="Acquiring Deployment Lock" date="2026-02-02T19:31:59.580" /><!-- duration: 11ms -->
+    <step title="Acquired Deployment Lock" date="2026-02-02T19:31:59.662" /><!-- duration: 22ms -->
+    <step title="Creating temporary deployment" date="2026-02-02T19:31:59.693" /><!-- duration: 142ms -->
+    <step title="GitExeServer.Receive" date="2026-02-02T19:31:59.843" >
+      <step title="Executing external process" date="2026-02-02T19:31:59.852" type="process" path="git" arguments="receive-pack --stateless-rpc &quot;/home/site/repository&quot;" /><!-- duration: 35294ms -->
+    </step><!-- duration: 35417ms -->
+    <step title="Releasing Deployment Lock" date="2026-02-02T19:32:35.856" /><!-- duration: 31ms -->
+  </step><!-- duration: 36496ms -->
+  <step title="Outgoing response" date="2026-02-02T19:32:36.123" type="response" statusCode="200" statusText="OK" /><!-- duration: 27ms -->
+</step><!-- duration: 36862ms -->

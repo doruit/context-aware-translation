@@ -1,0 +1,40 @@
+2026-02-03T09:58:43.0540863Z,Updating submodules.,337b0d44-999d-444d-880c-8b846d3b3cb3,0
+2026-02-03T09:58:44.9091674Z,Preparing deployment for commit id 'd76f4d79-a'.,1cf0fb56-0f7f-4821-9180-acf111c78455,0
+2026-02-03T09:58:47.6785268Z,PreDeployment: context.CleanOutputPath False,6283a4bc-b94a-402e-ba7d-ec7f502efb7c,0
+2026-02-03T09:58:49.0684313Z,PreDeployment: context.OutputPath /home/site/wwwroot,db54635a-db78-4e89-a75c-d3315bc681b4,0
+2026-02-03T09:58:51.0616287Z,Repository path is /tmp/zipdeploy/extracted,b114c878-a89e-4689-8e19-9d5165ce93af,0
+2026-02-03T09:58:52.8476070Z,Running oryx build...,4ecd8c3f-2db1-4bd0-91d6-0f4663ba05bb,0
+	2026-02-03T09:58:53.3135455Z,Command: oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.11 -p virtualenv_name=antenv --log-file /tmp/build-debug.log  -i /tmp/8de630ad286ce4c --compress-destination-dir | tee /tmp/oryx-build.log,,0
+	2026-02-03T09:59:25.7977411Z,Operation performed by Microsoft Oryx&comma; https://github.com/Microsoft/Oryx,,0
+	2026-02-03T09:59:26.4118262Z,You can report issues at https://github.com/Microsoft/Oryx/issues,,0
+	2026-02-03T09:59:27.0636444Z,,,0
+	2026-02-03T09:59:27.6650950Z,Oryx Version: 0.2.20251022.1+bef98bc7139feefaa74be16de9d835e2c85385d4&comma; Commit: bef98bc7139feefaa74be16de9d835e2c85385d4&comma; ReleaseTagName: 20251022.1,,0
+	2026-02-03T09:59:28.6346527Z,,,0
+	2026-02-03T09:59:29.0828585Z,Build Operation ID: ee75934fcab9b5fd,,0
+	2026-02-03T09:59:29.6601103Z,Repository Commit : d76f4d79-af48-44c8-b674-1cc59aa5e5a5,,0
+	2026-02-03T09:59:30.6205670Z,OS Type           : bullseye,,0
+	2026-02-03T09:59:30.9687349Z,Image Type        : githubactions,,0
+	2026-02-03T09:59:31.7750500Z,,,0
+	2026-02-03T09:59:32.3139438Z,Primary SDK Storage URL: https://oryx-cdn.microsoft.io,,0
+	2026-02-03T09:59:32.6324482Z,Backup SDK Storage URL: ,,0
+	2026-02-03T09:59:33.0601592Z,Detecting platforms...,,0
+	2026-02-03T09:59:33.3846858Z,External SDK provider is enabled.,,0
+	2026-02-03T09:59:33.6418564Z,Requesting metadata for platform python from external SDK provider,,0
+	2026-02-03T09:59:35.7268226Z,Requesting metadata for platform python from external SDK provider,,0
+	2026-02-03T09:59:40.4267964Z,Detected following platforms:,,0
+	2026-02-03T09:59:40.9241832Z,  python: 3.11.14,,0
+	2026-02-03T09:59:48.0114506Z,,,0
+	2026-02-03T09:59:49.5565974Z,Using intermediate directory '/tmp/8de630ad286ce4c'.,,0
+	2026-02-03T09:59:50.1591703Z,,,0
+	2026-02-03T09:59:50.5285005Z,Copying files to the intermediate directory...,,0
+	2026-02-03T09:59:53.6105823Z,Done in 3 sec(s).,,0
+	2026-02-03T09:59:54.4894440Z,,,0
+	2026-02-03T09:59:54.9847581Z,Source directory     : /tmp/8de630ad286ce4c,,0
+	2026-02-03T09:59:55.9479631Z,Destination directory: /home/site/wwwroot,,0
+	2026-02-03T09:59:56.9456348Z,,,0
+	2026-02-03T10:00:07.3563875Z,Python Version: /tmp/oryx/platforms/python/3.11.14/bin/python3.11,,0
+	2026-02-03T10:00:09.7825730Z,Creating directory for command manifest file if it does not exist,,0
+	2026-02-03T10:00:12.4253852Z,Removing existing manifest file,,0
+	2026-02-03T10:00:13.9982037Z,Python Virtual Environment: antenv,,0
+	2026-02-03T10:00:18.4286608Z,Creating virtual environment...,,0
+	2026-02-03T10:00:20.6571879Z,Executing: /tmp/oryx/platforms/python/3.11.14/bin/python3.11 -m venv antenv --copies --system-site-packages,,0

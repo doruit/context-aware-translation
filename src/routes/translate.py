@@ -263,15 +263,15 @@ def initialize_services():
             post_editor = None
     
     # Load glossary
-    glossary_path = settings.get_glossary_path()
-    glossary_loader = GlossaryLoader(glossary_path)
+    glossary_paths = settings.get_glossary_paths()
+    glossary_loader = GlossaryLoader(glossary_paths)
     
     try:
         entries = glossary_loader.load()
         terminology_enforcer = TerminologyEnforcer(entries)
-        print(f"Loaded {len(entries)} glossary terms from {glossary_path}")
+        print(f"Loaded {len(entries)} glossary terms from {glossary_paths}")
     except FileNotFoundError:
-        print(f"Warning: Glossary file not found at {glossary_path}")
+        print(f"Warning: Glossary file not found at {glossary_paths}")
         # Initialize with empty glossary
         terminology_enforcer = TerminologyEnforcer([])
     except Exception as e:

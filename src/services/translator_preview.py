@@ -6,7 +6,7 @@ from ..config.env import get_settings
 
 
 class TranslatorPreviewClient:
-    """Client for new Translator API preview with LLM capabilities."""
+    """Client for Translator API preview with GPT-4o-mini deployment support."""
     
     def __init__(self, key: str, endpoint: str, location: str):
         """Initialize preview translator client.
@@ -27,18 +27,18 @@ class TranslatorPreviewClient:
         source_language: str,
         target_language: str = "nl",
         enable_llm: bool = False,
-        model: str = "gpt-4o-mini",
+        deployment_name: Optional[str] = None,
         tone: str = "neutral",
         allow_fallback: bool = True
     ) -> Dict[str, Any]:
-        """Translate text using preview API with optional LLM.
+        """Translate text using preview API with optional GPT-4o-mini deployment.
         
         Args:
             text: Text to translate
             source_language: Source language code
             target_language: Target language code
-            enable_llm: Enable LLM enhancement
-            model: LLM model to use (gpt-4o-mini or gpt-4o)
+            enable_llm: Enable LLM enhancement (requires deployment_name)
+            deployment_name: GPT-4o-mini deployment name from Foundry
             tone: Translation tone (neutral, formal, informal, technical)
             allow_fallback: Fall back to standard if preview fails
             
@@ -46,7 +46,7 @@ class TranslatorPreviewClient:
             Dictionary with translation and metadata
         """
         try:
-            url = f"{self.endpoint}/translator/text/batch/document"
+            url = self._build_translate_url()
             
             headers = {
                 "Ocp-Apim-Subscription-Key": self.key,
@@ -54,20 +54,20 @@ class TranslatorPreviewClient:
                 "Content-Type": "application/json"
             }
             
-            # Build request payload for preview API
+            target_settings = self._build_target_settings(
+                target_language=target_language,
+                enable_llm=enable_llm,
+                deployment_name=deployment_name,
+                tone=tone,
+                allow_fallback=allow_fallback
+            )
+
             payload = {
                 "inputs": [
                     {
-                        "source": {
-                            "language": source_language,
-                            "text": text
-                        },
-                        "targets": [
-                            {
-                                "language": target_language,
-                                "settings": self._build_settings(enable_llm, model, tone)
-                            }
-                        ]
+                        "text": text,
+                        "language": source_language,
+                        "targets": [target_settings]
                     }
                 ]
             }
@@ -88,7 +88,7 @@ class TranslatorPreviewClient:
                     'target_language': target_language,
                     'method': 'preview',
                     'llm_used': enable_llm,
-                    'model': model if enable_llm else None,
+                    'deployment_name': deployment_name if enable_llm else None,
                     'tone': tone
                 }
             else:
@@ -105,27 +105,34 @@ class TranslatorPreviewClient:
                 }
             raise
     
-    def _build_settings(self, enable_llm: bool, model: str, tone: str) -> Dict[str, Any]:
-        """Build translation settings for preview API.
+    def _build_target_settings(
+        self,
+        target_language: str,
+        enable_llm: bool,
+        deployment_name: Optional[str],
+        tone: str,
+        allow_fallback: bool
+    ) -> Dict[str, Any]:
+        """Build target settings for preview API.
         
         Args:
             enable_llm: Enable LLM enhancement
-            model: LLM model name
+            deployment_name: GPT-4o-mini deployment name
             tone: Translation tone
+            allow_fallback: Allow fallback to NMT
             
         Returns:
-            Settings dictionary
+            Target settings dictionary
         """
-        settings = {
-            "tone": tone
+        settings: Dict[str, Any] = {
+            "language": target_language,
+            "tone": tone,
+            "allowFallback": allow_fallback
         }
-        
-        if enable_llm:
-            settings["llm"] = {
-                "model": model,
-                "temperature": 0.3  # Low temperature for consistency
-            }
-        
+
+        if enable_llm and deployment_name:
+            settings["deploymentName"] = deployment_name
+
         return settings
     
     def _extract_translation(self, response: Dict[str, Any]) -> str:
@@ -138,19 +145,30 @@ class TranslatorPreviewClient:
             Translated text
         """
         try:
-            # Navigate the response structure
-            if "results" in response:
-                results = response["results"]
-                if results and len(results) > 0:
-                    translations = results[0].get("translations", [])
-                    if translations and len(translations) > 0:
-                        text = translations[0].get("text", "")
-                        return text
-            
-            # Fallback to direct text field
-            return response.get("text", "")
+            value = response.get("value", [])
+            if value:
+                translations = value[0].get("translations", [])
+                if translations:
+                    return translations[0].get("text", "")
+            return ""
         except (KeyError, IndexError, TypeError):
             return ""
+
+    def _build_translate_url(self) -> str:
+        """Build the preview translate endpoint URL."""
+        api_version = "2025-10-01-preview"
+        endpoint = self.endpoint.rstrip("/")
+
+        if "/translate" in endpoint and "api-version=" in endpoint:
+            return endpoint
+
+        if "api.cognitive.microsofttranslator.com" in endpoint:
+            return f"{endpoint}/translate?api-version={api_version}"
+
+        if "/translator/text/translate" in endpoint:
+            return f"{endpoint}?api-version={api_version}"
+
+        return f"{endpoint}/translator/text/translate?api-version={api_version}"
     
     async def close(self):
         """Close HTTP client."""

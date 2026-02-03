@@ -1,0 +1,874 @@
+2026-02-02T16:48:42.3593055Z Container start method called.
+2026-02-02T16:48:42.4418407Z Establishing network.
+2026-02-02T16:48:42.4420638Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T16:48:42.9694570Z Container is starting.
+2026-02-02T16:48:42.9800947Z Establishing user namespace if not established already.
+2026-02-02T16:48:42.9896656Z Establishing network if not established already.
+2026-02-02T16:48:42.9995258Z Mounting volumes.
+2026-02-02T16:48:43.0566045Z Nested mountpoint 
+2026-02-02T16:48:43.1443477Z Nested mountpoint volatile/logs
+2026-02-02T16:48:43.2592818Z Nested mountpoint 
+2026-02-02T16:48:43.4222806Z Nested mountpoint 
+2026-02-02T16:48:43.4417730Z Nested mountpoint 
+2026-02-02T16:48:44.0588366Z Creating container.
+2026-02-02T16:48:44.0695790Z Creating pipes for streaming container io.
+2026-02-02T16:48:44.0866771Z Creating stdout named pipe at /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stdout_c98eee2155674ff3a72c34e1510dab53.
+2026-02-02T16:48:44.0903232Z Successfully created stdout named pipe at: /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stdout_c98eee2155674ff3a72c34e1510dab53.
+2026-02-02T16:48:44.1062667Z Opening named pipe /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stdout_c98eee2155674ff3a72c34e1510dab53 for reading in non-blocking mode.
+2026-02-02T16:48:44.1164717Z Successfully opened named pipe: /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stdout_c98eee2155674ff3a72c34e1510dab53.
+2026-02-02T16:48:44.1360968Z Successfully removed non-blocking flag from /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stdout_c98eee2155674ff3a72c34e1510dab53.
+2026-02-02T16:48:44.1453430Z Creating stderr named pipe at /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stderr_36e89c08810d4f878802a2859bc8d55c.
+2026-02-02T16:48:44.1550860Z Successfully created stderr named pipe at: /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stderr_36e89c08810d4f878802a2859bc8d55c.
+2026-02-02T16:48:44.1640953Z Opening named pipe /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stderr_36e89c08810d4f878802a2859bc8d55c for reading in non-blocking mode.
+2026-02-02T16:48:44.1661969Z Successfully opened named pipe: /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stderr_36e89c08810d4f878802a2859bc8d55c.
+2026-02-02T16:48:44.1753249Z Successfully removed non-blocking flag from /podr/container/pipe/120e028f5fc9_translate-app-dev-<unique-suffix>/stderr_36e89c08810d4f878802a2859bc8d55c.
+2026-02-02T16:48:44.1945084Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T16:48:46.0272433Z Starting container: 120e028f5fc9_translate-app-dev-<unique-suffix>.
+2026-02-02T16:48:46.5521776Z Starting watchers and probes.
+2026-02-02T16:48:46.7032328Z Starting metrics collection.
+2026-02-02T16:48:46.8098284Z Container is running.
+2026-02-02T16:48:47.8468928Z Container start method finished after 5470 ms.
+2026-02-02T16:49:31.7211274Z Site startup probe succeeded after 43.5390422 seconds.
+2026-02-02T16:49:32.5078537Z Site started.
+2026-02-02T16:49:32.9587558Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T19:29:09.2746143Z Container start method called.
+2026-02-02T19:29:09.2824467Z Establishing network.
+2026-02-02T19:29:09.2826285Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:29:33.8254218Z Container pull image interrupted. Revert by terminate.
+2026-02-02T19:29:34.5802709Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:29:34.6582454Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:29:34.8096077Z Container is terminated. Total time elapsed: 210 ms.
+2026-02-02T19:29:34.8295847Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:29:35.6549897Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:29:45.4973866Z Container start method called.
+2026-02-02T19:29:45.4980611Z Establishing network.
+2026-02-02T19:29:45.5002301Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:30:16.6794571Z Container is starting.
+2026-02-02T19:30:16.6809394Z Establishing user namespace if not established already.
+2026-02-02T19:30:16.6901957Z Establishing network if not established already.
+2026-02-02T19:30:16.6998583Z Mounting volumes.
+2026-02-02T19:30:16.7088831Z Nested mountpoint 
+2026-02-02T19:30:16.7784153Z Nested mountpoint volatile/logs
+2026-02-02T19:30:16.7894069Z Nested mountpoint 
+2026-02-02T19:30:16.8071654Z Nested mountpoint 
+2026-02-02T19:30:16.9244391Z Nested mountpoint 
+2026-02-02T19:30:17.2801651Z Creating container.
+2026-02-02T19:30:17.2805816Z Creating pipes for streaming container io.
+2026-02-02T19:30:17.2810739Z Creating stdout named pipe at /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stdout_779390ea05844e37b68153e8541926b4.
+2026-02-02T19:30:17.2813894Z Successfully created stdout named pipe at: /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stdout_779390ea05844e37b68153e8541926b4.
+2026-02-02T19:30:17.2815021Z Opening named pipe /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stdout_779390ea05844e37b68153e8541926b4 for reading in non-blocking mode.
+2026-02-02T19:30:17.2816524Z Successfully opened named pipe: /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stdout_779390ea05844e37b68153e8541926b4.
+2026-02-02T19:30:17.2823242Z Successfully removed non-blocking flag from /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stdout_779390ea05844e37b68153e8541926b4.
+2026-02-02T19:30:17.2824767Z Creating stderr named pipe at /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stderr_a216c207f63b4b0695fe98b698194422.
+2026-02-02T19:30:17.3013470Z Successfully created stderr named pipe at: /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stderr_a216c207f63b4b0695fe98b698194422.
+2026-02-02T19:30:17.3020856Z Opening named pipe /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stderr_a216c207f63b4b0695fe98b698194422 for reading in non-blocking mode.
+2026-02-02T19:30:17.3198576Z Successfully opened named pipe: /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stderr_a216c207f63b4b0695fe98b698194422.
+2026-02-02T19:30:17.3200766Z Successfully removed non-blocking flag from /podr/container/pipe/4f908963e4d0_translate-app-dev-<unique-suffix>/stderr_a216c207f63b4b0695fe98b698194422.
+2026-02-02T19:30:17.3205862Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T19:30:18.8348674Z Starting container: 4f908963e4d0_translate-app-dev-<unique-suffix>.
+2026-02-02T19:30:18.9435671Z Starting watchers and probes.
+2026-02-02T19:30:18.9519375Z Starting metrics collection.
+2026-02-02T19:30:18.9603554Z Container is running.
+2026-02-02T19:30:19.1347469Z Container start method finished after 33628 ms.
+2026-02-02T19:31:43.6169623Z Site startup probe succeeded after 84.3694969 seconds.
+2026-02-02T19:31:44.9003280Z Site started.
+2026-02-02T19:31:44.9181813Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T19:32:05.3598864Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:32:05.4470565Z Stop and delete container. Retry count = 0
+2026-02-02T19:32:05.4750354Z Stopping container: 120e028f5fc9_translate-app-dev-<unique-suffix>.
+2026-02-02T19:32:10.7718935Z Deleting container: 120e028f5fc9_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:32:11.3217702Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:32:11.3408907Z Container is terminated. Total time elapsed: 5972 ms.
+2026-02-02T19:32:11.3513929Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:32:58.6568831Z Container start method called.
+2026-02-02T19:32:58.6581390Z Establishing network.
+2026-02-02T19:32:58.6668294Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:33:00.5151611Z Container is starting.
+2026-02-02T19:33:00.5332935Z Establishing user namespace if not established already.
+2026-02-02T19:33:00.5337198Z Establishing network if not established already.
+2026-02-02T19:33:00.5340664Z Mounting volumes.
+2026-02-02T19:33:00.5545086Z Nested mountpoint 
+2026-02-02T19:33:00.6529204Z Nested mountpoint volatile/logs
+2026-02-02T19:33:00.7511386Z Nested mountpoint 
+2026-02-02T19:33:00.7816608Z Nested mountpoint 
+2026-02-02T19:33:00.8353362Z Nested mountpoint 
+2026-02-02T19:33:00.9347309Z Volume: DaasLogs cannot be mounted at /var/log/daas during container: translate-app-dev-<unique-suffix> startup. The volume mount is required. Terminate.
+2026-02-02T19:33:01.5916269Z Volume: AppSvcTmp cannot be mounted at /appsvctmp during container: translate-app-dev-<unique-suffix> startup. The volume mount is required. Terminate.
+2026-02-02T19:33:02.4169151Z Volume: DiagnosticServer cannot be mounted at /diagServer during container: translate-app-dev-<unique-suffix> startup. The volume mount is required. Terminate.
+2026-02-02T19:33:02.4173020Z Container start up interrupted. Revert by terminate.
+2026-02-02T19:33:02.4174469Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:33:02.4176037Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:33:02.4177322Z Container is terminated. Total time elapsed: 0 ms.
+2026-02-02T19:33:02.4178689Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:33:02.9262792Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:33:27.5650042Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:33:27.6064258Z Stop and delete container. Retry count = 0
+2026-02-02T19:33:27.6069407Z Stopping container: 4f908963e4d0_translate-app-dev-<unique-suffix>.
+2026-02-02T19:33:33.5685415Z Deleting container: 4f908963e4d0_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:33:33.8845878Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:33:33.8921481Z Container is terminated. Total time elapsed: 6326 ms.
+2026-02-02T19:33:33.9171671Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:33:57.1847567Z Container start method called.
+2026-02-02T19:33:57.1940332Z Establishing network.
+2026-02-02T19:33:57.1941755Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:34:20.0945204Z Container is starting.
+2026-02-02T19:34:20.1123195Z Establishing user namespace if not established already.
+2026-02-02T19:34:20.1124349Z Establishing network if not established already.
+2026-02-02T19:34:20.1125421Z Mounting volumes.
+2026-02-02T19:34:20.1127026Z Nested mountpoint 
+2026-02-02T19:34:20.1423454Z Nested mountpoint volatile/logs
+2026-02-02T19:34:20.1831628Z Nested mountpoint 
+2026-02-02T19:34:20.5642748Z Nested mountpoint 
+2026-02-02T19:34:20.6223627Z Nested mountpoint 
+2026-02-02T19:34:21.2904389Z Creating container.
+2026-02-02T19:34:21.3278457Z Creating pipes for streaming container io.
+2026-02-02T19:34:21.3669568Z Creating stdout named pipe at /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stdout_876dd075173f46deaa57d616a17624d5.
+2026-02-02T19:34:21.3774616Z Successfully created stdout named pipe at: /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stdout_876dd075173f46deaa57d616a17624d5.
+2026-02-02T19:34:21.3866731Z Opening named pipe /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stdout_876dd075173f46deaa57d616a17624d5 for reading in non-blocking mode.
+2026-02-02T19:34:21.3881128Z Successfully opened named pipe: /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stdout_876dd075173f46deaa57d616a17624d5.
+2026-02-02T19:34:21.3979680Z Successfully removed non-blocking flag from /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stdout_876dd075173f46deaa57d616a17624d5.
+2026-02-02T19:34:21.4159314Z Creating stderr named pipe at /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stderr_19f07d8a9d5046a889f5b80dcbd1c9ac.
+2026-02-02T19:34:21.4367623Z Successfully created stderr named pipe at: /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stderr_19f07d8a9d5046a889f5b80dcbd1c9ac.
+2026-02-02T19:34:21.4558094Z Opening named pipe /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stderr_19f07d8a9d5046a889f5b80dcbd1c9ac for reading in non-blocking mode.
+2026-02-02T19:34:21.4631272Z Successfully opened named pipe: /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stderr_19f07d8a9d5046a889f5b80dcbd1c9ac.
+2026-02-02T19:34:21.4640739Z Successfully removed non-blocking flag from /podr/container/pipe/0d52398cf9ca_translate-app-dev-<unique-suffix>/stderr_19f07d8a9d5046a889f5b80dcbd1c9ac.
+2026-02-02T19:34:21.4725497Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T19:34:22.6571586Z Starting container: 0d52398cf9ca_translate-app-dev-<unique-suffix>.
+2026-02-02T19:34:22.7793191Z Starting watchers and probes.
+2026-02-02T19:34:22.8076176Z Starting metrics collection.
+2026-02-02T19:34:22.8099444Z Container is running.
+2026-02-02T19:34:24.1212812Z Container start method finished after 26907 ms.
+2026-02-02T19:35:02.7477363Z Container has finished running with exit code: 1.
+2026-02-02T19:35:02.7484303Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:35:02.7488725Z Stop and delete container. Retry count = 0
+2026-02-02T19:35:02.7489766Z Stopping container: 0d52398cf9ca_translate-app-dev-<unique-suffix>.
+2026-02-02T19:35:03.0098907Z Deleting container: 0d52398cf9ca_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:35:03.3156222Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:35:03.3238907Z Container is terminated. Total time elapsed: 567 ms.
+2026-02-02T19:35:03.3248420Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:35:03.3442439Z Site startup probe failed after 39.2046518 seconds.
+2026-02-02T19:35:03.5950155Z Failed to start site. Revert by stopping site.
+2026-02-02T19:35:03.6133319Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:35:18.0651705Z Container start method called.
+2026-02-02T19:35:18.1198896Z Establishing network.
+2026-02-02T19:35:18.1210470Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:35:43.0327573Z Container is starting.
+2026-02-02T19:35:43.0330298Z Establishing user namespace if not established already.
+2026-02-02T19:35:43.0331224Z Establishing network if not established already.
+2026-02-02T19:35:43.0333292Z Mounting volumes.
+2026-02-02T19:35:43.0404584Z Nested mountpoint 
+2026-02-02T19:35:43.1113053Z Nested mountpoint volatile/logs
+2026-02-02T19:35:43.1395604Z Nested mountpoint 
+2026-02-02T19:35:43.1405580Z Nested mountpoint 
+2026-02-02T19:35:43.1603885Z Nested mountpoint 
+2026-02-02T19:35:43.6895308Z Creating container.
+2026-02-02T19:35:43.7073115Z Creating pipes for streaming container io.
+2026-02-02T19:35:43.7085263Z Creating stdout named pipe at /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stdout_1d287962405741eeaac9e5e414a7d77b.
+2026-02-02T19:35:43.7256755Z Successfully created stdout named pipe at: /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stdout_1d287962405741eeaac9e5e414a7d77b.
+2026-02-02T19:35:43.7268155Z Opening named pipe /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stdout_1d287962405741eeaac9e5e414a7d77b for reading in non-blocking mode.
+2026-02-02T19:35:43.7270231Z Successfully opened named pipe: /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stdout_1d287962405741eeaac9e5e414a7d77b.
+2026-02-02T19:35:43.7271121Z Successfully removed non-blocking flag from /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stdout_1d287962405741eeaac9e5e414a7d77b.
+2026-02-02T19:35:43.7272018Z Creating stderr named pipe at /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stderr_8e6a121d04964cab84aa79a97bcde2af.
+2026-02-02T19:35:43.7273556Z Successfully created stderr named pipe at: /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stderr_8e6a121d04964cab84aa79a97bcde2af.
+2026-02-02T19:35:43.7274351Z Opening named pipe /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stderr_8e6a121d04964cab84aa79a97bcde2af for reading in non-blocking mode.
+2026-02-02T19:35:43.7275211Z Successfully opened named pipe: /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stderr_8e6a121d04964cab84aa79a97bcde2af.
+2026-02-02T19:35:43.7282337Z Successfully removed non-blocking flag from /podr/container/pipe/70a771de81f3_translate-app-dev-<unique-suffix>/stderr_8e6a121d04964cab84aa79a97bcde2af.
+2026-02-02T19:35:43.7288381Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T19:35:44.4285956Z Starting container: 70a771de81f3_translate-app-dev-<unique-suffix>.
+2026-02-02T19:35:44.5534031Z Starting watchers and probes.
+2026-02-02T19:35:44.5730154Z Starting metrics collection.
+2026-02-02T19:35:44.5940934Z Container is running.
+2026-02-02T19:35:44.7804557Z Container start method finished after 26707 ms.
+2026-02-02T19:36:27.8268613Z Container has finished running with exit code: 1.
+2026-02-02T19:36:27.8273693Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:36:27.8277672Z Stop and delete container. Retry count = 0
+2026-02-02T19:36:27.8278639Z Stopping container: 70a771de81f3_translate-app-dev-<unique-suffix>.
+2026-02-02T19:36:28.0446167Z Deleting container: 70a771de81f3_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:36:28.4170113Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:36:28.4275978Z Container is terminated. Total time elapsed: 599 ms.
+2026-02-02T19:36:28.4559441Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:36:28.5090042Z Site startup probe failed after 43.7266699 seconds.
+2026-02-02T19:36:28.8414186Z Failed to start site. Revert by stopping site.
+2026-02-02T19:36:28.8419832Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:36:30.1060472Z Site: translate-app-dev-<unique-suffix> will be blocked for 1 minutes till 02/02/2026 19:37:30
+2026-02-02T19:37:30.1186944Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T19:38:15.2417530Z Container start method called.
+2026-02-02T19:38:15.2428962Z Establishing network.
+2026-02-02T19:38:15.2497936Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:38:38.1044752Z Container is starting.
+2026-02-02T19:38:38.1142619Z Establishing user namespace if not established already.
+2026-02-02T19:38:38.1158807Z Establishing network if not established already.
+2026-02-02T19:38:38.1239679Z Mounting volumes.
+2026-02-02T19:38:38.1346834Z Nested mountpoint 
+2026-02-02T19:38:38.2008270Z Nested mountpoint volatile/logs
+2026-02-02T19:38:38.2708168Z Nested mountpoint 
+2026-02-02T19:38:38.4561950Z Nested mountpoint 
+2026-02-02T19:38:38.5631935Z Nested mountpoint 
+2026-02-02T19:38:42.7407892Z Creating container.
+2026-02-02T19:38:42.7482684Z Creating pipes for streaming container io.
+2026-02-02T19:38:42.7492670Z Creating stdout named pipe at /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stdout_4e4dbb01d0a3476e9d221af62d36e475.
+2026-02-02T19:38:42.7496768Z Successfully created stdout named pipe at: /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stdout_4e4dbb01d0a3476e9d221af62d36e475.
+2026-02-02T19:38:42.7498029Z Opening named pipe /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stdout_4e4dbb01d0a3476e9d221af62d36e475 for reading in non-blocking mode.
+2026-02-02T19:38:42.7500973Z Successfully opened named pipe: /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stdout_4e4dbb01d0a3476e9d221af62d36e475.
+2026-02-02T19:38:42.7578385Z Successfully removed non-blocking flag from /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stdout_4e4dbb01d0a3476e9d221af62d36e475.
+2026-02-02T19:38:42.7580115Z Creating stderr named pipe at /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stderr_364740b6cc3b41bd80de66731bdb7e3d.
+2026-02-02T19:38:42.7585585Z Successfully created stderr named pipe at: /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stderr_364740b6cc3b41bd80de66731bdb7e3d.
+2026-02-02T19:38:42.7586769Z Opening named pipe /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stderr_364740b6cc3b41bd80de66731bdb7e3d for reading in non-blocking mode.
+2026-02-02T19:38:42.7587970Z Successfully opened named pipe: /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stderr_364740b6cc3b41bd80de66731bdb7e3d.
+2026-02-02T19:38:42.7588882Z Successfully removed non-blocking flag from /podr/container/pipe/78c369d3d473_translate-app-dev-<unique-suffix>/stderr_364740b6cc3b41bd80de66731bdb7e3d.
+2026-02-02T19:38:42.7589835Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T19:38:43.5357828Z Starting container: 78c369d3d473_translate-app-dev-<unique-suffix>.
+2026-02-02T19:38:43.7124116Z Starting watchers and probes.
+2026-02-02T19:38:43.7218105Z Starting metrics collection.
+2026-02-02T19:38:43.7224234Z Container is running.
+2026-02-02T19:38:44.1689271Z Container start method finished after 28917 ms.
+2026-02-02T19:39:25.5558928Z Container has finished running with exit code: 1.
+2026-02-02T19:39:25.5633405Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:39:25.5801903Z Stop and delete container. Retry count = 0
+2026-02-02T19:39:25.5803336Z Stopping container: 78c369d3d473_translate-app-dev-<unique-suffix>.
+2026-02-02T19:39:25.7741070Z Deleting container: 78c369d3d473_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:39:26.1033306Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:39:26.1047705Z Container is terminated. Total time elapsed: 540 ms.
+2026-02-02T19:39:26.1113895Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:39:26.1131993Z Site startup probe failed after 41.9164444 seconds.
+2026-02-02T19:39:26.3419031Z Failed to start site. Revert by stopping site.
+2026-02-02T19:39:26.3522700Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:39:27.1473803Z Site: translate-app-dev-<unique-suffix> will be blocked for 1 minutes till 02/02/2026 19:40:27
+2026-02-02T19:40:27.1454152Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T19:43:16.6097207Z Container start method called.
+2026-02-02T19:43:16.6110696Z Establishing network.
+2026-02-02T19:43:16.6207244Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:43:42.5231015Z Container is starting.
+2026-02-02T19:43:42.5418790Z Establishing user namespace if not established already.
+2026-02-02T19:43:42.5432527Z Establishing network if not established already.
+2026-02-02T19:43:42.5508954Z Mounting volumes.
+2026-02-02T19:43:42.5516093Z Nested mountpoint 
+2026-02-02T19:43:42.6195924Z Nested mountpoint volatile/logs
+2026-02-02T19:43:42.6479443Z Nested mountpoint 
+2026-02-02T19:43:42.6566680Z Nested mountpoint 
+2026-02-02T19:43:42.7146118Z Nested mountpoint 
+2026-02-02T19:43:43.2444314Z Creating container.
+2026-02-02T19:43:43.2473670Z Creating pipes for streaming container io.
+2026-02-02T19:43:43.2531409Z Creating stdout named pipe at /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stdout_5335c66dca3649dc99f3b2b9dd9a1d1a.
+2026-02-02T19:43:43.2546761Z Successfully created stdout named pipe at: /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stdout_5335c66dca3649dc99f3b2b9dd9a1d1a.
+2026-02-02T19:43:43.2554489Z Opening named pipe /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stdout_5335c66dca3649dc99f3b2b9dd9a1d1a for reading in non-blocking mode.
+2026-02-02T19:43:43.2628422Z Successfully opened named pipe: /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stdout_5335c66dca3649dc99f3b2b9dd9a1d1a.
+2026-02-02T19:43:43.2632812Z Successfully removed non-blocking flag from /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stdout_5335c66dca3649dc99f3b2b9dd9a1d1a.
+2026-02-02T19:43:43.2635836Z Creating stderr named pipe at /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stderr_7dcc21582b72425dbca1f73f94e6f66e.
+2026-02-02T19:43:43.2641602Z Successfully created stderr named pipe at: /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stderr_7dcc21582b72425dbca1f73f94e6f66e.
+2026-02-02T19:43:43.2646212Z Opening named pipe /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stderr_7dcc21582b72425dbca1f73f94e6f66e for reading in non-blocking mode.
+2026-02-02T19:43:43.2651401Z Successfully opened named pipe: /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stderr_7dcc21582b72425dbca1f73f94e6f66e.
+2026-02-02T19:43:43.2654807Z Successfully removed non-blocking flag from /podr/container/pipe/40a6762312ca_translate-app-dev-<unique-suffix>/stderr_7dcc21582b72425dbca1f73f94e6f66e.
+2026-02-02T19:43:43.2657812Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T19:43:44.5423689Z Starting container: 40a6762312ca_translate-app-dev-<unique-suffix>.
+2026-02-02T19:43:44.7090534Z Starting watchers and probes.
+2026-02-02T19:43:44.7274374Z Starting metrics collection.
+2026-02-02T19:43:44.7546446Z Container is running.
+2026-02-02T19:43:45.2756194Z Container start method finished after 28647 ms.
+2026-02-02T19:44:32.2591334Z Container has finished running with exit code: 1.
+2026-02-02T19:44:32.2600801Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:44:32.2778311Z Stop and delete container. Retry count = 0
+2026-02-02T19:44:32.2959861Z Stopping container: 40a6762312ca_translate-app-dev-<unique-suffix>.
+2026-02-02T19:44:32.4451637Z Deleting container: 40a6762312ca_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:44:32.9847296Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:44:33.0071079Z Container is terminated. Total time elapsed: 745 ms.
+2026-02-02T19:44:33.0134340Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:44:33.0456448Z Site startup probe failed after 47.6831622 seconds.
+2026-02-02T19:44:33.2833012Z Failed to start site. Revert by stopping site.
+2026-02-02T19:44:33.3008624Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:44:34.1350762Z Site: translate-app-dev-<unique-suffix> will be blocked for 2 minutes till 02/02/2026 19:46:34
+2026-02-02T19:46:34.1395548Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T19:48:12.2182467Z Container start method called.
+2026-02-02T19:48:12.2194103Z Establishing network.
+2026-02-02T19:48:12.2195585Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:48:37.6159781Z Container is starting.
+2026-02-02T19:48:37.6256538Z Establishing user namespace if not established already.
+2026-02-02T19:48:37.6257836Z Establishing network if not established already.
+2026-02-02T19:48:37.6258789Z Mounting volumes.
+2026-02-02T19:48:37.6260254Z Nested mountpoint 
+2026-02-02T19:48:37.7028556Z Nested mountpoint volatile/logs
+2026-02-02T19:48:37.7567343Z Nested mountpoint 
+2026-02-02T19:48:37.9217325Z Nested mountpoint 
+2026-02-02T19:48:37.9319839Z Nested mountpoint 
+2026-02-02T19:48:38.5316917Z Creating container.
+2026-02-02T19:48:38.5509120Z Creating pipes for streaming container io.
+2026-02-02T19:48:38.5512775Z Creating stdout named pipe at /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stdout_23de6ecb73a04d89b77f8d09a669f923.
+2026-02-02T19:48:38.5608719Z Successfully created stdout named pipe at: /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stdout_23de6ecb73a04d89b77f8d09a669f923.
+2026-02-02T19:48:38.5620515Z Opening named pipe /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stdout_23de6ecb73a04d89b77f8d09a669f923 for reading in non-blocking mode.
+2026-02-02T19:48:38.5702340Z Successfully opened named pipe: /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stdout_23de6ecb73a04d89b77f8d09a669f923.
+2026-02-02T19:48:38.5897256Z Successfully removed non-blocking flag from /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stdout_23de6ecb73a04d89b77f8d09a669f923.
+2026-02-02T19:48:38.5900546Z Creating stderr named pipe at /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stderr_b2c5bf85bb4948eb98479366c9f067f4.
+2026-02-02T19:48:38.5907413Z Successfully created stderr named pipe at: /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stderr_b2c5bf85bb4948eb98479366c9f067f4.
+2026-02-02T19:48:38.5911086Z Opening named pipe /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stderr_b2c5bf85bb4948eb98479366c9f067f4 for reading in non-blocking mode.
+2026-02-02T19:48:38.5986916Z Successfully opened named pipe: /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stderr_b2c5bf85bb4948eb98479366c9f067f4.
+2026-02-02T19:48:38.5989013Z Successfully removed non-blocking flag from /podr/container/pipe/010702f1c61d_translate-app-dev-<unique-suffix>/stderr_b2c5bf85bb4948eb98479366c9f067f4.
+2026-02-02T19:48:38.5990552Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T19:48:40.8816016Z Starting container: 010702f1c61d_translate-app-dev-<unique-suffix>.
+2026-02-02T19:48:41.9224791Z Starting watchers and probes.
+2026-02-02T19:48:41.9522999Z Starting metrics collection.
+2026-02-02T19:48:41.9531824Z Container is running.
+2026-02-02T19:48:42.4430032Z Container start method finished after 30166 ms.
+2026-02-02T19:49:19.0195344Z Container has finished running with exit code: 1.
+2026-02-02T19:49:19.0206128Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:49:19.0294630Z Stop and delete container. Retry count = 0
+2026-02-02T19:49:19.0296608Z Stopping container: 010702f1c61d_translate-app-dev-<unique-suffix>.
+2026-02-02T19:49:19.1829822Z Deleting container: 010702f1c61d_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:49:19.5187980Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:49:19.5673382Z Container is terminated. Total time elapsed: 537 ms.
+2026-02-02T19:49:19.5758237Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:49:19.6163092Z Site startup probe failed after 37.1430889 seconds.
+2026-02-02T19:49:19.9527126Z Failed to start site. Revert by stopping site.
+2026-02-02T19:49:19.9808146Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:49:21.0701762Z Site: translate-app-dev-<unique-suffix> will be blocked for 2 minutes till 02/02/2026 19:51:21
+2026-02-02T19:49:22.1998169Z Start site prohibitted because the site is being blocked.
+2026-02-02T19:50:50.7801766Z Start site prohibitted because the site is being blocked.
+2026-02-02T19:50:52.6666942Z Start site prohibitted because the site is being blocked.
+2026-02-02T19:51:21.1313275Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T19:51:46.6410838Z Container start method called.
+2026-02-02T19:51:46.6766804Z Establishing network.
+2026-02-02T19:51:46.6784044Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T19:52:27.0472943Z Container is starting.
+2026-02-02T19:52:27.1261770Z Establishing user namespace if not established already.
+2026-02-02T19:52:27.1530294Z Establishing network if not established already.
+2026-02-02T19:52:27.1557459Z Mounting volumes.
+2026-02-02T19:52:27.2052499Z Nested mountpoint 
+2026-02-02T19:52:27.2910945Z Nested mountpoint volatile/logs
+2026-02-02T19:52:27.3260401Z Nested mountpoint 
+2026-02-02T19:52:27.4166051Z Nested mountpoint 
+2026-02-02T19:52:27.4182290Z Nested mountpoint 
+2026-02-02T19:52:29.7210723Z Creating container.
+2026-02-02T19:52:29.7888811Z Creating pipes for streaming container io.
+2026-02-02T19:52:29.8183741Z Creating stdout named pipe at /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stdout_05f3020179ea484d8a98b9b49d9c8fc4.
+2026-02-02T19:52:29.8401347Z Successfully created stdout named pipe at: /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stdout_05f3020179ea484d8a98b9b49d9c8fc4.
+2026-02-02T19:52:29.8481301Z Opening named pipe /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stdout_05f3020179ea484d8a98b9b49d9c8fc4 for reading in non-blocking mode.
+2026-02-02T19:52:29.8498194Z Successfully opened named pipe: /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stdout_05f3020179ea484d8a98b9b49d9c8fc4.
+2026-02-02T19:52:29.9937636Z Successfully removed non-blocking flag from /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stdout_05f3020179ea484d8a98b9b49d9c8fc4.
+2026-02-02T19:52:29.9945211Z Creating stderr named pipe at /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stderr_f5ad5082a6144bc498c0892eb1a38cc2.
+2026-02-02T19:52:29.9947976Z Successfully created stderr named pipe at: /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stderr_f5ad5082a6144bc498c0892eb1a38cc2.
+2026-02-02T19:52:29.9948816Z Opening named pipe /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stderr_f5ad5082a6144bc498c0892eb1a38cc2 for reading in non-blocking mode.
+2026-02-02T19:52:29.9956847Z Successfully opened named pipe: /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stderr_f5ad5082a6144bc498c0892eb1a38cc2.
+2026-02-02T19:52:29.9958206Z Successfully removed non-blocking flag from /podr/container/pipe/6e6ef82f7855_translate-app-dev-<unique-suffix>/stderr_f5ad5082a6144bc498c0892eb1a38cc2.
+2026-02-02T19:52:29.9959369Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T19:52:37.8698581Z Starting container: 6e6ef82f7855_translate-app-dev-<unique-suffix>.
+2026-02-02T19:52:38.2518433Z Starting watchers and probes.
+2026-02-02T19:52:38.2901697Z Starting metrics collection.
+2026-02-02T19:52:38.3686203Z Container is running.
+2026-02-02T19:52:39.0957308Z Container start method finished after 52408 ms.
+2026-02-02T19:53:51.0579707Z Container has finished running with exit code: 1.
+2026-02-02T19:53:51.0589533Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T19:53:51.1135135Z Stop and delete container. Retry count = 0
+2026-02-02T19:53:51.1140253Z Stopping container: 6e6ef82f7855_translate-app-dev-<unique-suffix>.
+2026-02-02T19:53:51.3367868Z Deleting container: 6e6ef82f7855_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T19:53:52.0259547Z Container spec TerminationMessagePolicy  path 
+2026-02-02T19:53:52.0343990Z Container is terminated. Total time elapsed: 958 ms.
+2026-02-02T19:53:52.0351653Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T19:53:52.1229400Z Site startup probe failed after 72.9109341 seconds.
+2026-02-02T19:53:52.7135485Z Failed to start site. Revert by stopping site.
+2026-02-02T19:53:52.7622369Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T19:53:54.7598620Z Site: translate-app-dev-<unique-suffix> will be blocked for 2 minutes till 02/02/2026 19:55:54
+2026-02-02T19:53:56.4150015Z Start site prohibitted because the site is being blocked.
+2026-02-02T19:55:18.3151433Z Start site prohibitted because the site is being blocked.
+2026-02-02T19:55:54.7616789Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T20:00:11.7070950Z Container start method called.
+2026-02-02T20:00:11.7074606Z Establishing network.
+2026-02-02T20:00:11.7094442Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:00:35.2451730Z Container is starting.
+2026-02-02T20:00:35.2637198Z Establishing user namespace if not established already.
+2026-02-02T20:00:35.2700040Z Establishing network if not established already.
+2026-02-02T20:00:35.2702282Z Mounting volumes.
+2026-02-02T20:00:35.2716827Z Nested mountpoint 
+2026-02-02T20:00:35.3222861Z Nested mountpoint volatile/logs
+2026-02-02T20:00:35.4579644Z Nested mountpoint 
+2026-02-02T20:00:35.4768269Z Nested mountpoint 
+2026-02-02T20:00:35.5500577Z Nested mountpoint 
+2026-02-02T20:00:36.1630225Z Creating container.
+2026-02-02T20:00:36.1631324Z Creating pipes for streaming container io.
+2026-02-02T20:00:36.1632194Z Creating stdout named pipe at /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stdout_9d0a33a18c954589bb6a3b20f66318c4.
+2026-02-02T20:00:36.1911132Z Successfully created stdout named pipe at: /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stdout_9d0a33a18c954589bb6a3b20f66318c4.
+2026-02-02T20:00:36.1931461Z Opening named pipe /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stdout_9d0a33a18c954589bb6a3b20f66318c4 for reading in non-blocking mode.
+2026-02-02T20:00:36.2010736Z Successfully opened named pipe: /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stdout_9d0a33a18c954589bb6a3b20f66318c4.
+2026-02-02T20:00:36.2012044Z Successfully removed non-blocking flag from /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stdout_9d0a33a18c954589bb6a3b20f66318c4.
+2026-02-02T20:00:36.2031794Z Creating stderr named pipe at /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stderr_0f3fccef1c7a45bfad540749570d0f5e.
+2026-02-02T20:00:36.2110073Z Successfully created stderr named pipe at: /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stderr_0f3fccef1c7a45bfad540749570d0f5e.
+2026-02-02T20:00:36.2112730Z Opening named pipe /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stderr_0f3fccef1c7a45bfad540749570d0f5e for reading in non-blocking mode.
+2026-02-02T20:00:36.2114608Z Successfully opened named pipe: /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stderr_0f3fccef1c7a45bfad540749570d0f5e.
+2026-02-02T20:00:36.2115711Z Successfully removed non-blocking flag from /podr/container/pipe/504c5674c03c_translate-app-dev-<unique-suffix>/stderr_0f3fccef1c7a45bfad540749570d0f5e.
+2026-02-02T20:00:36.2117000Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:00:37.1345542Z Starting container: 504c5674c03c_translate-app-dev-<unique-suffix>.
+2026-02-02T20:00:37.2440747Z Starting watchers and probes.
+2026-02-02T20:00:37.2621458Z Starting metrics collection.
+2026-02-02T20:00:37.2723456Z Container is running.
+2026-02-02T20:00:38.2664525Z Container start method finished after 26559 ms.
+2026-02-02T20:01:48.4187590Z Site startup probe succeeded after 70.0376619 seconds.
+2026-02-02T20:01:48.7924336Z Site is running with deployment version: 4aefd095-0850-4cd2-a153-ef443cd77902
+2026-02-02T20:01:48.7938921Z Site started.
+2026-02-02T20:01:48.8721132Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T20:06:11.5178807Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:06:33.6297995Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:06:33.6900652Z Stop and delete container. Retry count = 0
+2026-02-02T20:06:33.6902206Z Stopping container: 504c5674c03c_translate-app-dev-<unique-suffix>.
+2026-02-02T20:06:38.8955520Z Deleting container: 504c5674c03c_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:06:41.5269281Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:06:41.5270965Z Container is terminated. Total time elapsed: 7895 ms.
+2026-02-02T20:06:41.5364482Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:07:07.0250733Z Container start method called.
+2026-02-02T20:07:07.0255000Z Establishing network.
+2026-02-02T20:07:07.0297166Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:07:07.4122325Z Container is starting.
+2026-02-02T20:07:07.4132111Z Establishing user namespace if not established already.
+2026-02-02T20:07:07.4135347Z Establishing network if not established already.
+2026-02-02T20:07:07.4145239Z Mounting volumes.
+2026-02-02T20:07:07.4150592Z Nested mountpoint 
+2026-02-02T20:07:07.4632793Z Nested mountpoint volatile/logs
+2026-02-02T20:07:07.4729795Z Nested mountpoint 
+2026-02-02T20:07:07.4810358Z Nested mountpoint 
+2026-02-02T20:07:07.5202634Z Nested mountpoint 
+2026-02-02T20:07:08.1669670Z Creating container.
+2026-02-02T20:07:08.1861344Z Creating pipes for streaming container io.
+2026-02-02T20:07:08.1943655Z Creating stdout named pipe at /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stdout_cee3becef3af48148752e9639eabd9e4.
+2026-02-02T20:07:08.1954903Z Successfully created stdout named pipe at: /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stdout_cee3becef3af48148752e9639eabd9e4.
+2026-02-02T20:07:08.1956171Z Opening named pipe /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stdout_cee3becef3af48148752e9639eabd9e4 for reading in non-blocking mode.
+2026-02-02T20:07:08.1957664Z Successfully opened named pipe: /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stdout_cee3becef3af48148752e9639eabd9e4.
+2026-02-02T20:07:08.1966284Z Successfully removed non-blocking flag from /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stdout_cee3becef3af48148752e9639eabd9e4.
+2026-02-02T20:07:08.1967761Z Creating stderr named pipe at /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stderr_f7dc1a719bed45dea13eb381765fad5d.
+2026-02-02T20:07:08.1969682Z Successfully created stderr named pipe at: /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stderr_f7dc1a719bed45dea13eb381765fad5d.
+2026-02-02T20:07:08.1970738Z Opening named pipe /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stderr_f7dc1a719bed45dea13eb381765fad5d for reading in non-blocking mode.
+2026-02-02T20:07:08.2160823Z Successfully opened named pipe: /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stderr_f7dc1a719bed45dea13eb381765fad5d.
+2026-02-02T20:07:08.2167320Z Successfully removed non-blocking flag from /podr/container/pipe/38e64af084e2_translate-app-dev-<unique-suffix>/stderr_f7dc1a719bed45dea13eb381765fad5d.
+2026-02-02T20:07:08.2171718Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:07:09.0555545Z Starting container: 38e64af084e2_translate-app-dev-<unique-suffix>.
+2026-02-02T20:07:09.2929608Z Starting watchers and probes.
+2026-02-02T20:07:09.3419796Z Starting metrics collection.
+2026-02-02T20:07:09.3421167Z Container is running.
+2026-02-02T20:07:11.8848531Z Container start method finished after 4859 ms.
+2026-02-02T20:08:37.9410863Z Site startup probe succeeded after 86.0523261 seconds.
+2026-02-02T20:08:38.7114010Z Site is running with deployment version: 4aefd095-0850-4cd2-a153-ef443cd77902
+2026-02-02T20:08:38.7268991Z Site started.
+2026-02-02T20:08:38.7764470Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T20:34:08.8331876Z Container start method called.
+2026-02-02T20:34:08.8703831Z Establishing network.
+2026-02-02T20:34:08.8705408Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:34:11.4693570Z Container is starting.
+2026-02-02T20:34:11.5368914Z Establishing user namespace if not established already.
+2026-02-02T20:34:11.5483240Z Establishing network if not established already.
+2026-02-02T20:34:11.5639122Z Mounting volumes.
+2026-02-02T20:34:11.5915993Z Nested mountpoint 
+2026-02-02T20:34:11.7039087Z Nested mountpoint volatile/logs
+2026-02-02T20:34:11.7344317Z Nested mountpoint 
+2026-02-02T20:34:12.0404709Z Nested mountpoint 
+2026-02-02T20:34:12.2640129Z Nested mountpoint 
+2026-02-02T20:34:13.8954913Z Creating container.
+2026-02-02T20:34:13.8978673Z Creating pipes for streaming container io.
+2026-02-02T20:34:13.9048725Z Creating stdout named pipe at /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stdout_fd9c864ff7ef4b0aba0debe900755fd6.
+2026-02-02T20:34:13.9064036Z Successfully created stdout named pipe at: /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stdout_fd9c864ff7ef4b0aba0debe900755fd6.
+2026-02-02T20:34:13.9070351Z Opening named pipe /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stdout_fd9c864ff7ef4b0aba0debe900755fd6 for reading in non-blocking mode.
+2026-02-02T20:34:13.9156134Z Successfully opened named pipe: /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stdout_fd9c864ff7ef4b0aba0debe900755fd6.
+2026-02-02T20:34:13.9241170Z Successfully removed non-blocking flag from /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stdout_fd9c864ff7ef4b0aba0debe900755fd6.
+2026-02-02T20:34:13.9250226Z Creating stderr named pipe at /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stderr_518c92de50e544debd387228fdfb1d1f.
+2026-02-02T20:34:13.9539671Z Successfully created stderr named pipe at: /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stderr_518c92de50e544debd387228fdfb1d1f.
+2026-02-02T20:34:13.9560616Z Opening named pipe /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stderr_518c92de50e544debd387228fdfb1d1f for reading in non-blocking mode.
+2026-02-02T20:34:13.9836955Z Successfully opened named pipe: /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stderr_518c92de50e544debd387228fdfb1d1f.
+2026-02-02T20:34:13.9857991Z Successfully removed non-blocking flag from /podr/container/pipe/85f1e530a783_translate-app-dev-<unique-suffix>/stderr_518c92de50e544debd387228fdfb1d1f.
+2026-02-02T20:34:14.0042004Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:34:17.3043573Z Starting container: 85f1e530a783_translate-app-dev-<unique-suffix>.
+2026-02-02T20:34:17.6593909Z Starting watchers and probes.
+2026-02-02T20:34:17.6704646Z Starting metrics collection.
+2026-02-02T20:34:17.6785771Z Container is running.
+2026-02-02T20:34:17.9449021Z Container start method finished after 9104 ms.
+2026-02-02T20:36:33.3827387Z Site startup probe succeeded after 135.1984392 seconds.
+2026-02-02T20:36:33.8274514Z Site is running with deployment version: a517b14b-c5e4-4972-86ca-e5b0d3747c73
+2026-02-02T20:36:33.8286163Z Site started.
+2026-02-02T20:36:33.8474050Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T20:36:54.0759499Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:36:54.1431511Z Stop and delete container. Retry count = 0
+2026-02-02T20:36:54.1525307Z Stopping container: 38e64af084e2_translate-app-dev-<unique-suffix>.
+2026-02-02T20:36:59.3686680Z Deleting container: 38e64af084e2_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:37:00.6840292Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:37:00.6920775Z Container is terminated. Total time elapsed: 6588 ms.
+2026-02-02T20:37:00.6939642Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:37:08.3646276Z Container start method called.
+2026-02-02T20:37:08.3648475Z Establishing network.
+2026-02-02T20:37:08.3649667Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:37:43.1646384Z Container is starting.
+2026-02-02T20:37:43.1661976Z Establishing user namespace if not established already.
+2026-02-02T20:37:43.1664197Z Establishing network if not established already.
+2026-02-02T20:37:43.1667055Z Mounting volumes.
+2026-02-02T20:37:43.1671301Z Nested mountpoint 
+2026-02-02T20:37:43.2450145Z Nested mountpoint volatile/logs
+2026-02-02T20:37:43.4145393Z Nested mountpoint 
+2026-02-02T20:37:43.5787043Z Nested mountpoint 
+2026-02-02T20:37:43.6934878Z Nested mountpoint 
+2026-02-02T20:37:44.5804035Z Creating container.
+2026-02-02T20:37:44.6066979Z Creating pipes for streaming container io.
+2026-02-02T20:37:44.6074370Z Creating stdout named pipe at /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stdout_0d38491e51024eb19ad9094c84c1765c.
+2026-02-02T20:37:44.6535362Z Successfully created stdout named pipe at: /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stdout_0d38491e51024eb19ad9094c84c1765c.
+2026-02-02T20:37:44.6537703Z Opening named pipe /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stdout_0d38491e51024eb19ad9094c84c1765c for reading in non-blocking mode.
+2026-02-02T20:37:44.6539443Z Successfully opened named pipe: /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stdout_0d38491e51024eb19ad9094c84c1765c.
+2026-02-02T20:37:44.6629143Z Successfully removed non-blocking flag from /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stdout_0d38491e51024eb19ad9094c84c1765c.
+2026-02-02T20:37:44.6707134Z Creating stderr named pipe at /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stderr_e061d5db96d84bb8905c933b79d1027f.
+2026-02-02T20:37:44.6717080Z Successfully created stderr named pipe at: /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stderr_e061d5db96d84bb8905c933b79d1027f.
+2026-02-02T20:37:44.6789544Z Opening named pipe /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stderr_e061d5db96d84bb8905c933b79d1027f for reading in non-blocking mode.
+2026-02-02T20:37:44.6796052Z Successfully opened named pipe: /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stderr_e061d5db96d84bb8905c933b79d1027f.
+2026-02-02T20:37:44.6806069Z Successfully removed non-blocking flag from /podr/container/pipe/169b0e1ebccf_translate-app-dev-<unique-suffix>/stderr_e061d5db96d84bb8905c933b79d1027f.
+2026-02-02T20:37:44.6881218Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:37:45.6020153Z Starting container: 169b0e1ebccf_translate-app-dev-<unique-suffix>.
+2026-02-02T20:37:45.8578037Z Starting watchers and probes.
+2026-02-02T20:37:45.8591879Z Starting metrics collection.
+2026-02-02T20:37:45.8593971Z Container is running.
+2026-02-02T20:37:46.7944773Z Container start method finished after 38353 ms.
+2026-02-02T20:39:05.9678763Z Site startup probe succeeded after 79.1632074 seconds.
+2026-02-02T20:39:06.4365018Z Site is running with deployment version: a517b14b-c5e4-4972-86ca-e5b0d3747c73
+2026-02-02T20:39:06.4692651Z Site started.
+2026-02-02T20:39:06.4778557Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T20:39:27.1166026Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:39:27.1699772Z Stop and delete container. Retry count = 0
+2026-02-02T20:39:27.1711565Z Stopping container: 85f1e530a783_translate-app-dev-<unique-suffix>.
+2026-02-02T20:39:32.5217392Z Deleting container: 85f1e530a783_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:39:33.9782386Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:39:33.9873699Z Container is terminated. Total time elapsed: 6861 ms.
+2026-02-02T20:39:33.9876267Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:41:14.8899180Z Container start method called.
+2026-02-02T20:41:14.8902266Z Establishing network.
+2026-02-02T20:41:14.8903560Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:41:16.3665630Z Container is starting.
+2026-02-02T20:41:16.3667943Z Establishing user namespace if not established already.
+2026-02-02T20:41:16.3668709Z Establishing network if not established already.
+2026-02-02T20:41:16.3669650Z Mounting volumes.
+2026-02-02T20:41:16.3670935Z Nested mountpoint 
+2026-02-02T20:41:16.8192128Z Nested mountpoint volatile/logs
+2026-02-02T20:41:17.1047792Z Nested mountpoint 
+2026-02-02T20:41:17.1074901Z Nested mountpoint 
+2026-02-02T20:41:17.8482119Z Nested mountpoint 
+2026-02-02T20:41:19.5318926Z Creating container.
+2026-02-02T20:41:19.5320108Z Creating pipes for streaming container io.
+2026-02-02T20:41:19.5320920Z Creating stdout named pipe at /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stdout_76ad43af8a00425580ed62455a2d2638.
+2026-02-02T20:41:19.5323255Z Successfully created stdout named pipe at: /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stdout_76ad43af8a00425580ed62455a2d2638.
+2026-02-02T20:41:19.5324048Z Opening named pipe /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stdout_76ad43af8a00425580ed62455a2d2638 for reading in non-blocking mode.
+2026-02-02T20:41:19.5325134Z Successfully opened named pipe: /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stdout_76ad43af8a00425580ed62455a2d2638.
+2026-02-02T20:41:19.5325915Z Successfully removed non-blocking flag from /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stdout_76ad43af8a00425580ed62455a2d2638.
+2026-02-02T20:41:19.5326724Z Creating stderr named pipe at /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stderr_0ea6a0bb84914da68315c4df1d2d6cf6.
+2026-02-02T20:41:19.5327829Z Successfully created stderr named pipe at: /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stderr_0ea6a0bb84914da68315c4df1d2d6cf6.
+2026-02-02T20:41:19.5328611Z Opening named pipe /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stderr_0ea6a0bb84914da68315c4df1d2d6cf6 for reading in non-blocking mode.
+2026-02-02T20:41:19.5329410Z Successfully opened named pipe: /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stderr_0ea6a0bb84914da68315c4df1d2d6cf6.
+2026-02-02T20:41:19.5330088Z Successfully removed non-blocking flag from /podr/container/pipe/d91161a9128c_translate-app-dev-<unique-suffix>/stderr_0ea6a0bb84914da68315c4df1d2d6cf6.
+2026-02-02T20:41:19.5331062Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:41:22.6632938Z Starting container: d91161a9128c_translate-app-dev-<unique-suffix>.
+2026-02-02T20:41:23.1726464Z Starting watchers and probes.
+2026-02-02T20:41:23.2057990Z Starting metrics collection.
+2026-02-02T20:41:23.2540154Z Container is running.
+2026-02-02T20:41:23.6040794Z Container start method finished after 8546 ms.
+2026-02-02T20:44:09.9321764Z Container has finished running with exit code: 2.
+2026-02-02T20:44:09.9523729Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:44:10.5885207Z Stop and delete container. Retry count = 0
+2026-02-02T20:44:10.6078684Z Stopping container: d91161a9128c_translate-app-dev-<unique-suffix>.
+2026-02-02T20:44:12.6548068Z Deleting container: d91161a9128c_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:44:14.3113865Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:44:14.3389511Z Container is terminated. Total time elapsed: 4356 ms.
+2026-02-02T20:44:14.3656722Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T20:44:14.5862848Z Site startup probe failed after 170.9719589 seconds.
+2026-02-02T20:44:15.5922578Z Failed to start site. Revert by stopping site.
+2026-02-02T20:44:15.7948307Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:44:42.1253148Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:44:42.1976174Z Stop and delete container. Retry count = 0
+2026-02-02T20:44:42.1990315Z Stopping container: 169b0e1ebccf_translate-app-dev-<unique-suffix>.
+2026-02-02T20:44:48.1200094Z Deleting container: 169b0e1ebccf_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:44:52.9745811Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:44:52.9762172Z Container is terminated. Total time elapsed: 10850 ms.
+2026-02-02T20:44:53.0137769Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:46:05.2460754Z Container start method called.
+2026-02-02T20:46:05.3321571Z Establishing network.
+2026-02-02T20:46:05.3900754Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:46:08.3387241Z Container is starting.
+2026-02-02T20:46:08.3564411Z Establishing user namespace if not established already.
+2026-02-02T20:46:08.3577431Z Establishing network if not established already.
+2026-02-02T20:46:08.3658774Z Mounting volumes.
+2026-02-02T20:46:08.4159736Z Nested mountpoint 
+2026-02-02T20:46:08.6498884Z Nested mountpoint volatile/logs
+2026-02-02T20:46:08.9176759Z Nested mountpoint 
+2026-02-02T20:46:09.3769473Z Nested mountpoint 
+2026-02-02T20:46:09.5698138Z Nested mountpoint 
+2026-02-02T20:46:12.0428679Z Creating container.
+2026-02-02T20:46:12.0703197Z Creating pipes for streaming container io.
+2026-02-02T20:46:12.0724684Z Creating stdout named pipe at /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stdout_7fb0c3f7d6ed4fb2a84588dccd5447ee.
+2026-02-02T20:46:12.0816460Z Successfully created stdout named pipe at: /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stdout_7fb0c3f7d6ed4fb2a84588dccd5447ee.
+2026-02-02T20:46:12.1272531Z Opening named pipe /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stdout_7fb0c3f7d6ed4fb2a84588dccd5447ee for reading in non-blocking mode.
+2026-02-02T20:46:12.2010953Z Successfully opened named pipe: /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stdout_7fb0c3f7d6ed4fb2a84588dccd5447ee.
+2026-02-02T20:46:12.2115416Z Successfully removed non-blocking flag from /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stdout_7fb0c3f7d6ed4fb2a84588dccd5447ee.
+2026-02-02T20:46:12.2135442Z Creating stderr named pipe at /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stderr_a0c67cc35b2a4aa59962b09be61f5b7b.
+2026-02-02T20:46:12.2371000Z Successfully created stderr named pipe at: /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stderr_a0c67cc35b2a4aa59962b09be61f5b7b.
+2026-02-02T20:46:12.2372889Z Opening named pipe /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stderr_a0c67cc35b2a4aa59962b09be61f5b7b for reading in non-blocking mode.
+2026-02-02T20:46:12.2374359Z Successfully opened named pipe: /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stderr_a0c67cc35b2a4aa59962b09be61f5b7b.
+2026-02-02T20:46:12.2375207Z Successfully removed non-blocking flag from /podr/container/pipe/8e092cb28288_translate-app-dev-<unique-suffix>/stderr_a0c67cc35b2a4aa59962b09be61f5b7b.
+2026-02-02T20:46:12.2562603Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:46:15.1338412Z Starting container: 8e092cb28288_translate-app-dev-<unique-suffix>.
+2026-02-02T20:46:15.2798968Z Starting watchers and probes.
+2026-02-02T20:46:15.2912984Z Starting metrics collection.
+2026-02-02T20:46:15.3459237Z Container is running.
+2026-02-02T20:46:15.8157032Z Container start method finished after 10569 ms.
+2026-02-02T20:47:45.9300559Z Container has finished running with exit code: 2.
+2026-02-02T20:47:45.9642511Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:47:45.9756536Z Stop and delete container. Retry count = 0
+2026-02-02T20:47:45.9758390Z Stopping container: 8e092cb28288_translate-app-dev-<unique-suffix>.
+2026-02-02T20:47:46.4275300Z Deleting container: 8e092cb28288_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:47:48.2451377Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:47:48.3135491Z Container is terminated. Total time elapsed: 2339 ms.
+2026-02-02T20:47:48.3141564Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T20:47:48.5062423Z Site startup probe failed after 92.5781521 seconds.
+2026-02-02T20:47:49.7638748Z Failed to start site. Revert by stopping site.
+2026-02-02T20:47:49.7645303Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:47:51.7246118Z Site: translate-app-dev-<unique-suffix> will be blocked for 1 minutes till 02/02/2026 20:48:51
+2026-02-02T20:48:19.8165635Z Start site prohibitted because the site is being blocked.
+2026-02-02T20:48:34.6712715Z Start site prohibitted because the site is being blocked.
+2026-02-02T20:48:36.1791034Z Start site prohibitted because the site is being blocked.
+2026-02-02T20:48:38.7588800Z Start site prohibitted because the site is being blocked.
+2026-02-02T20:48:40.3769222Z Start site prohibitted because the site is being blocked.
+2026-02-02T20:48:51.7248086Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T20:49:37.1399031Z Container start method called.
+2026-02-02T20:49:37.1762878Z Establishing network.
+2026-02-02T20:49:37.1772087Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:49:38.4927657Z Container is starting.
+2026-02-02T20:49:38.5026032Z Establishing user namespace if not established already.
+2026-02-02T20:49:38.5224421Z Establishing network if not established already.
+2026-02-02T20:49:38.5401855Z Mounting volumes.
+2026-02-02T20:49:38.5418502Z Nested mountpoint 
+2026-02-02T20:49:38.6492894Z Nested mountpoint volatile/logs
+2026-02-02T20:49:38.6901887Z Nested mountpoint 
+2026-02-02T20:49:38.8723814Z Nested mountpoint 
+2026-02-02T20:49:38.8795371Z Nested mountpoint 
+2026-02-02T20:49:41.0730559Z Creating container.
+2026-02-02T20:49:41.0923736Z Creating pipes for streaming container io.
+2026-02-02T20:49:41.0929639Z Creating stdout named pipe at /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stdout_7bbaafc29e5740dc85b04c8c3a2c1cab.
+2026-02-02T20:49:41.1013220Z Successfully created stdout named pipe at: /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stdout_7bbaafc29e5740dc85b04c8c3a2c1cab.
+2026-02-02T20:49:41.1020937Z Opening named pipe /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stdout_7bbaafc29e5740dc85b04c8c3a2c1cab for reading in non-blocking mode.
+2026-02-02T20:49:41.1022745Z Successfully opened named pipe: /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stdout_7bbaafc29e5740dc85b04c8c3a2c1cab.
+2026-02-02T20:49:41.1023892Z Successfully removed non-blocking flag from /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stdout_7bbaafc29e5740dc85b04c8c3a2c1cab.
+2026-02-02T20:49:41.1025410Z Creating stderr named pipe at /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stderr_d06e3f0a626741e2a8985cbac69503e3.
+2026-02-02T20:49:41.1027243Z Successfully created stderr named pipe at: /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stderr_d06e3f0a626741e2a8985cbac69503e3.
+2026-02-02T20:49:41.1028301Z Opening named pipe /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stderr_d06e3f0a626741e2a8985cbac69503e3 for reading in non-blocking mode.
+2026-02-02T20:49:41.1029659Z Successfully opened named pipe: /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stderr_d06e3f0a626741e2a8985cbac69503e3.
+2026-02-02T20:49:41.1032259Z Successfully removed non-blocking flag from /podr/container/pipe/c83761afa50a_translate-app-dev-<unique-suffix>/stderr_d06e3f0a626741e2a8985cbac69503e3.
+2026-02-02T20:49:41.1033709Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:49:43.4819894Z Container get mounts received unexpected exception.
+2026-02-02T20:49:43.4822645Z Container get mounts received unexpected exception.
+2026-02-02T20:49:43.6285391Z Container get processes received unexpected exception.
+2026-02-02T20:49:43.6674815Z Container get processes received unexpected exception.
+2026-02-02T20:49:45.8425169Z Starting container: c83761afa50a_translate-app-dev-<unique-suffix>.
+2026-02-02T20:49:45.9620525Z Starting watchers and probes.
+2026-02-02T20:49:45.9808693Z Starting metrics collection.
+2026-02-02T20:49:45.9980694Z Container is running.
+2026-02-02T20:49:46.4114771Z Container start method finished after 9270 ms.
+2026-02-02T20:50:49.1001183Z Container has finished running with exit code: 2.
+2026-02-02T20:50:49.1213447Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:50:49.1883129Z Stop and delete container. Retry count = 0
+2026-02-02T20:50:49.1885333Z Stopping container: c83761afa50a_translate-app-dev-<unique-suffix>.
+2026-02-02T20:50:49.3761261Z Deleting container: c83761afa50a_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:50:49.9964175Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:50:50.0453222Z Container is terminated. Total time elapsed: 904 ms.
+2026-02-02T20:50:50.0461747Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T20:50:50.1631276Z Site startup probe failed after 63.6368907 seconds.
+2026-02-02T20:50:50.7928619Z Failed to start site. Revert by stopping site.
+2026-02-02T20:50:50.8702832Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:50:51.7326317Z Site: translate-app-dev-<unique-suffix> will be blocked for 1 minutes till 02/02/2026 20:51:51
+2026-02-02T20:51:17.9902285Z Start site prohibitted because the site is being blocked.
+2026-02-02T20:51:51.7304407Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T20:53:39.3082907Z Container start method called.
+2026-02-02T20:53:39.3274927Z Establishing network.
+2026-02-02T20:53:39.3299700Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:53:40.4660498Z Container is starting.
+2026-02-02T20:53:40.4669315Z Establishing user namespace if not established already.
+2026-02-02T20:53:40.4670194Z Establishing network if not established already.
+2026-02-02T20:53:40.4671208Z Mounting volumes.
+2026-02-02T20:53:40.4673500Z Nested mountpoint 
+2026-02-02T20:53:40.6153958Z Nested mountpoint volatile/logs
+2026-02-02T20:53:40.6362215Z Nested mountpoint 
+2026-02-02T20:53:40.7241512Z Nested mountpoint 
+2026-02-02T20:53:40.7532919Z Nested mountpoint 
+2026-02-02T20:53:42.1639623Z Creating container.
+2026-02-02T20:53:42.1728488Z Creating pipes for streaming container io.
+2026-02-02T20:53:42.1828817Z Creating stdout named pipe at /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stdout_e1370192ead442bd85659a553c5abfbe.
+2026-02-02T20:53:42.1926026Z Successfully created stdout named pipe at: /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stdout_e1370192ead442bd85659a553c5abfbe.
+2026-02-02T20:53:42.1928539Z Opening named pipe /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stdout_e1370192ead442bd85659a553c5abfbe for reading in non-blocking mode.
+2026-02-02T20:53:42.2199009Z Successfully opened named pipe: /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stdout_e1370192ead442bd85659a553c5abfbe.
+2026-02-02T20:53:42.2200853Z Successfully removed non-blocking flag from /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stdout_e1370192ead442bd85659a553c5abfbe.
+2026-02-02T20:53:42.2201841Z Creating stderr named pipe at /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stderr_42bfcc61277e4d109bd31472913826a0.
+2026-02-02T20:53:42.2203616Z Successfully created stderr named pipe at: /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stderr_42bfcc61277e4d109bd31472913826a0.
+2026-02-02T20:53:42.2204387Z Opening named pipe /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stderr_42bfcc61277e4d109bd31472913826a0 for reading in non-blocking mode.
+2026-02-02T20:53:42.2205298Z Successfully opened named pipe: /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stderr_42bfcc61277e4d109bd31472913826a0.
+2026-02-02T20:53:42.2205992Z Successfully removed non-blocking flag from /podr/container/pipe/ad069ac2bce2_translate-app-dev-<unique-suffix>/stderr_42bfcc61277e4d109bd31472913826a0.
+2026-02-02T20:53:42.2207008Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:53:43.6462428Z Starting container: ad069ac2bce2_translate-app-dev-<unique-suffix>.
+2026-02-02T20:53:43.7601886Z Starting watchers and probes.
+2026-02-02T20:53:43.7617133Z Starting metrics collection.
+2026-02-02T20:53:43.7620714Z Container is running.
+2026-02-02T20:53:44.0472148Z Container start method finished after 4728 ms.
+2026-02-02T20:54:23.5074476Z Container has finished running with exit code: 2.
+2026-02-02T20:54:23.5076843Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:54:23.5089202Z Stop and delete container. Retry count = 0
+2026-02-02T20:54:23.5167397Z Stopping container: ad069ac2bce2_translate-app-dev-<unique-suffix>.
+2026-02-02T20:54:23.6525447Z Deleting container: ad069ac2bce2_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:54:24.2427380Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:54:24.2570547Z Container is terminated. Total time elapsed: 748 ms.
+2026-02-02T20:54:24.2629605Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T20:54:24.3184630Z Site startup probe failed after 40.23359 seconds.
+2026-02-02T20:54:24.6429237Z Failed to start site. Revert by stopping site.
+2026-02-02T20:54:24.6507457Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:54:25.9371649Z Site: translate-app-dev-<unique-suffix> will be blocked for 2 minutes till 02/02/2026 20:56:25
+2026-02-02T20:55:48.0008860Z Start site prohibitted because the site is being blocked.
+2026-02-02T20:56:25.9441628Z Site: translate-app-dev-<unique-suffix> is unblocked.
+2026-02-02T20:56:53.2007309Z Container start method called.
+2026-02-02T20:56:53.2217474Z Establishing network.
+2026-02-02T20:56:53.2510882Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:56:54.4929745Z Container is starting.
+2026-02-02T20:56:54.4933852Z Establishing user namespace if not established already.
+2026-02-02T20:56:54.4935156Z Establishing network if not established already.
+2026-02-02T20:56:54.4948324Z Mounting volumes.
+2026-02-02T20:56:54.5118303Z Nested mountpoint 
+2026-02-02T20:56:54.6104104Z Nested mountpoint volatile/logs
+2026-02-02T20:56:54.6487294Z Nested mountpoint 
+2026-02-02T20:56:54.8121766Z Nested mountpoint 
+2026-02-02T20:56:55.0019662Z Nested mountpoint 
+2026-02-02T20:56:56.2821487Z Creating container.
+2026-02-02T20:56:56.2822870Z Creating pipes for streaming container io.
+2026-02-02T20:56:56.2833278Z Creating stdout named pipe at /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stdout_9d6e6eabfe29413c91bd998d9cdceb4a.
+2026-02-02T20:56:56.3219551Z Successfully created stdout named pipe at: /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stdout_9d6e6eabfe29413c91bd998d9cdceb4a.
+2026-02-02T20:56:56.3224756Z Opening named pipe /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stdout_9d6e6eabfe29413c91bd998d9cdceb4a for reading in non-blocking mode.
+2026-02-02T20:56:56.3228028Z Successfully opened named pipe: /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stdout_9d6e6eabfe29413c91bd998d9cdceb4a.
+2026-02-02T20:56:56.3431162Z Successfully removed non-blocking flag from /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stdout_9d6e6eabfe29413c91bd998d9cdceb4a.
+2026-02-02T20:56:56.3432891Z Creating stderr named pipe at /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stderr_fc91dbb1ed754902b5b42046d78fb5b9.
+2026-02-02T20:56:56.3434809Z Successfully created stderr named pipe at: /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stderr_fc91dbb1ed754902b5b42046d78fb5b9.
+2026-02-02T20:56:56.3435635Z Opening named pipe /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stderr_fc91dbb1ed754902b5b42046d78fb5b9 for reading in non-blocking mode.
+2026-02-02T20:56:56.3437492Z Successfully opened named pipe: /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stderr_fc91dbb1ed754902b5b42046d78fb5b9.
+2026-02-02T20:56:56.3438318Z Successfully removed non-blocking flag from /podr/container/pipe/070fb0edef96_translate-app-dev-<unique-suffix>/stderr_fc91dbb1ed754902b5b42046d78fb5b9.
+2026-02-02T20:56:56.3713140Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:56:58.7564125Z Starting container: 070fb0edef96_translate-app-dev-<unique-suffix>.
+2026-02-02T20:56:59.1702428Z Starting watchers and probes.
+2026-02-02T20:56:59.2200761Z Starting metrics collection.
+2026-02-02T20:56:59.2460936Z Container is running.
+2026-02-02T20:56:59.7354390Z Container start method finished after 6533 ms.
+2026-02-02T20:58:42.4103752Z Container has finished running with exit code: 2.
+2026-02-02T20:58:42.4202093Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T20:58:42.4656321Z Stop and delete container. Retry count = 0
+2026-02-02T20:58:42.4847233Z Stopping container: 070fb0edef96_translate-app-dev-<unique-suffix>.
+2026-02-02T20:58:42.6216519Z Deleting container: 070fb0edef96_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T20:58:43.1063755Z Container spec TerminationMessagePolicy  path 
+2026-02-02T20:58:43.1436954Z Container is terminated. Total time elapsed: 713 ms.
+2026-02-02T20:58:43.1444477Z Site container: translate-app-dev-<unique-suffix> terminated during site startup.
+2026-02-02T20:58:43.2674989Z Site startup probe failed after 103.3836189 seconds.
+2026-02-02T20:58:43.6923679Z Failed to start site. Revert by stopping site.
+2026-02-02T20:58:43.7397813Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T20:59:11.3350851Z Container start method called.
+2026-02-02T20:59:11.3637079Z Establishing network.
+2026-02-02T20:59:11.3640313Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T20:59:12.0847153Z Container is starting.
+2026-02-02T20:59:12.1037216Z Establishing user namespace if not established already.
+2026-02-02T20:59:12.1040724Z Establishing network if not established already.
+2026-02-02T20:59:12.1230615Z Mounting volumes.
+2026-02-02T20:59:12.1233869Z Nested mountpoint 
+2026-02-02T20:59:12.2889877Z Nested mountpoint volatile/logs
+2026-02-02T20:59:12.3382162Z Nested mountpoint 
+2026-02-02T20:59:12.3390443Z Nested mountpoint 
+2026-02-02T20:59:12.8070140Z Nested mountpoint 
+2026-02-02T20:59:13.8194051Z Creating container.
+2026-02-02T20:59:13.8198713Z Creating pipes for streaming container io.
+2026-02-02T20:59:13.8199897Z Creating stdout named pipe at /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stdout_0d38f52a9aba428eba9defdfa0400752.
+2026-02-02T20:59:13.8202599Z Successfully created stdout named pipe at: /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stdout_0d38f52a9aba428eba9defdfa0400752.
+2026-02-02T20:59:13.8203652Z Opening named pipe /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stdout_0d38f52a9aba428eba9defdfa0400752 for reading in non-blocking mode.
+2026-02-02T20:59:13.8205055Z Successfully opened named pipe: /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stdout_0d38f52a9aba428eba9defdfa0400752.
+2026-02-02T20:59:13.8482295Z Successfully removed non-blocking flag from /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stdout_0d38f52a9aba428eba9defdfa0400752.
+2026-02-02T20:59:13.9189912Z Creating stderr named pipe at /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stderr_929c1154c3e24e3db2adbf33f5c551fe.
+2026-02-02T20:59:13.9197545Z Successfully created stderr named pipe at: /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stderr_929c1154c3e24e3db2adbf33f5c551fe.
+2026-02-02T20:59:13.9199294Z Opening named pipe /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stderr_929c1154c3e24e3db2adbf33f5c551fe for reading in non-blocking mode.
+2026-02-02T20:59:13.9211771Z Successfully opened named pipe: /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stderr_929c1154c3e24e3db2adbf33f5c551fe.
+2026-02-02T20:59:13.9480948Z Successfully removed non-blocking flag from /podr/container/pipe/ac35bd7aa926_translate-app-dev-<unique-suffix>/stderr_929c1154c3e24e3db2adbf33f5c551fe.
+2026-02-02T20:59:13.9491793Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T20:59:15.7728266Z Starting container: ac35bd7aa926_translate-app-dev-<unique-suffix>.
+2026-02-02T20:59:16.1439077Z Starting watchers and probes.
+2026-02-02T20:59:16.2086833Z Starting metrics collection.
+2026-02-02T20:59:16.2109590Z Container is running.
+2026-02-02T20:59:16.4305480Z Container start method finished after 5067 ms.
+2026-02-02T21:01:17.6369665Z Site startup probe succeeded after 121.0900802 seconds.
+2026-02-02T21:01:18.3074019Z Site is running with deployment version: 7590691f-d518-4946-9a4c-b6083511bc88
+2026-02-02T21:01:18.3081505Z Site started.
+2026-02-02T21:01:18.3579577Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T21:01:23.4360585Z Container start method called.
+2026-02-02T21:01:23.4374896Z Establishing network.
+2026-02-02T21:01:23.4468829Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T21:01:50.9161028Z Container is starting.
+2026-02-02T21:01:50.9164173Z Establishing user namespace if not established already.
+2026-02-02T21:01:50.9165214Z Establishing network if not established already.
+2026-02-02T21:01:50.9166352Z Mounting volumes.
+2026-02-02T21:01:50.9167898Z Nested mountpoint 
+2026-02-02T21:01:51.0339103Z Nested mountpoint volatile/logs
+2026-02-02T21:01:51.0549841Z Nested mountpoint 
+2026-02-02T21:01:51.0931691Z Nested mountpoint 
+2026-02-02T21:01:51.4074540Z Nested mountpoint 
+2026-02-02T21:01:51.8076945Z Creating container.
+2026-02-02T21:01:51.8169787Z Creating pipes for streaming container io.
+2026-02-02T21:01:51.8178337Z Creating stdout named pipe at /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stdout_ee4e7604c33a47e180859b0564219974.
+2026-02-02T21:01:51.8260080Z Successfully created stdout named pipe at: /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stdout_ee4e7604c33a47e180859b0564219974.
+2026-02-02T21:01:51.8261265Z Opening named pipe /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stdout_ee4e7604c33a47e180859b0564219974 for reading in non-blocking mode.
+2026-02-02T21:01:51.8262417Z Successfully opened named pipe: /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stdout_ee4e7604c33a47e180859b0564219974.
+2026-02-02T21:01:51.8263196Z Successfully removed non-blocking flag from /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stdout_ee4e7604c33a47e180859b0564219974.
+2026-02-02T21:01:51.8264039Z Creating stderr named pipe at /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stderr_24a1d8789ea6494bb8882a67e36f86d0.
+2026-02-02T21:01:51.8265317Z Successfully created stderr named pipe at: /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stderr_24a1d8789ea6494bb8882a67e36f86d0.
+2026-02-02T21:01:51.8266016Z Opening named pipe /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stderr_24a1d8789ea6494bb8882a67e36f86d0 for reading in non-blocking mode.
+2026-02-02T21:01:51.8266860Z Successfully opened named pipe: /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stderr_24a1d8789ea6494bb8882a67e36f86d0.
+2026-02-02T21:01:51.8267673Z Successfully removed non-blocking flag from /podr/container/pipe/001066b70d66_translate-app-dev-<unique-suffix>/stderr_24a1d8789ea6494bb8882a67e36f86d0.
+2026-02-02T21:01:51.8268586Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T21:01:53.1758162Z Starting container: 001066b70d66_translate-app-dev-<unique-suffix>.
+2026-02-02T21:01:53.3015356Z Starting watchers and probes.
+2026-02-02T21:01:53.3126956Z Starting metrics collection.
+2026-02-02T21:01:53.4005830Z Container is running.
+2026-02-02T21:01:53.8357453Z Container start method finished after 30364 ms.
+2026-02-02T21:03:41.3426700Z Site startup probe succeeded after 107.3026614 seconds.
+2026-02-02T21:03:41.8186594Z Site is running with deployment version: 7590691f-d518-4946-9a4c-b6083511bc88
+2026-02-02T21:03:41.8389127Z Site started.
+2026-02-02T21:03:41.8887105Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T21:04:02.0592326Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T21:04:02.1747072Z Stop and delete container. Retry count = 0
+2026-02-02T21:04:02.1758740Z Stopping container: ac35bd7aa926_translate-app-dev-<unique-suffix>.
+2026-02-02T21:04:08.0975543Z Deleting container: ac35bd7aa926_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T21:04:09.4502045Z Container spec TerminationMessagePolicy  path 
+2026-02-02T21:04:09.4509176Z Container is terminated. Total time elapsed: 7382 ms.
+2026-02-02T21:04:09.4606618Z Site: translate-app-dev-<unique-suffix> stopped.
+2026-02-02T21:10:00.9559801Z Container start method called.
+2026-02-02T21:10:00.9957605Z Establishing network.
+2026-02-02T21:10:01.0148764Z Pulling image: appsvc/python:3.11_20251017.5.tuxprod.
+2026-02-02T21:10:01.4343564Z Container is starting.
+2026-02-02T21:10:01.4346448Z Establishing user namespace if not established already.
+2026-02-02T21:10:01.4412570Z Establishing network if not established already.
+2026-02-02T21:10:01.4415024Z Mounting volumes.
+2026-02-02T21:10:01.4502966Z Nested mountpoint 
+2026-02-02T21:10:01.5333902Z Nested mountpoint volatile/logs
+2026-02-02T21:10:01.6056253Z Nested mountpoint 
+2026-02-02T21:10:01.7587439Z Nested mountpoint 
+2026-02-02T21:10:01.7787164Z Nested mountpoint 
+2026-02-02T21:10:02.8632656Z Creating container.
+2026-02-02T21:10:02.9710346Z Creating pipes for streaming container io.
+2026-02-02T21:10:02.9712866Z Creating stdout named pipe at /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stdout_2bf366f25ccc46618cc74a57fd448a59.
+2026-02-02T21:10:03.0085104Z Successfully created stdout named pipe at: /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stdout_2bf366f25ccc46618cc74a57fd448a59.
+2026-02-02T21:10:03.0087201Z Opening named pipe /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stdout_2bf366f25ccc46618cc74a57fd448a59 for reading in non-blocking mode.
+2026-02-02T21:10:03.0088536Z Successfully opened named pipe: /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stdout_2bf366f25ccc46618cc74a57fd448a59.
+2026-02-02T21:10:03.0106666Z Successfully removed non-blocking flag from /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stdout_2bf366f25ccc46618cc74a57fd448a59.
+2026-02-02T21:10:03.0695438Z Creating stderr named pipe at /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stderr_b9ff6bba0cf0412186932293b9aaa5e1.
+2026-02-02T21:10:03.1056989Z Successfully created stderr named pipe at: /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stderr_b9ff6bba0cf0412186932293b9aaa5e1.
+2026-02-02T21:10:03.1146977Z Opening named pipe /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stderr_b9ff6bba0cf0412186932293b9aaa5e1 for reading in non-blocking mode.
+2026-02-02T21:10:03.1444370Z Successfully opened named pipe: /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stderr_b9ff6bba0cf0412186932293b9aaa5e1.
+2026-02-02T21:10:03.1825703Z Successfully removed non-blocking flag from /podr/container/pipe/9129705c084c_translate-app-dev-<unique-suffix>/stderr_b9ff6bba0cf0412186932293b9aaa5e1.
+2026-02-02T21:10:03.2243387Z Creating container with image: appsvc/python:3.11_20251017.5.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20251017.5.tuxprod
+2026-02-02T21:10:06.4957066Z Starting container: 9129705c084c_translate-app-dev-<unique-suffix>.
+2026-02-02T21:10:07.2213171Z Starting watchers and probes.
+2026-02-02T21:10:07.3121370Z Starting metrics collection.
+2026-02-02T21:10:07.3331984Z Container is running.
+2026-02-02T21:10:08.3939675Z Container start method finished after 7436 ms.
+2026-02-02T21:11:14.6327837Z Site startup probe succeeded after 66.0581808 seconds.
+2026-02-02T21:11:15.2360478Z Site is running with deployment version: 95ba96b1-0428-4cb7-ab0c-513c130d0fc2
+2026-02-02T21:11:15.2886767Z Site started.
+2026-02-02T21:11:15.2976159Z Site is running with patch version PYTHON 3.11.14
+2026-02-02T21:11:35.4268425Z Container is terminating. Grace period: 5 seconds.
+2026-02-02T21:11:35.4927716Z Stop and delete container. Retry count = 0
+2026-02-02T21:11:35.5011663Z Stopping container: 001066b70d66_translate-app-dev-<unique-suffix>.
+2026-02-02T21:11:41.1843826Z Deleting container: 001066b70d66_translate-app-dev-<unique-suffix>. Retry count = 0
+2026-02-02T21:11:44.9339232Z Container spec TerminationMessagePolicy  path 
+2026-02-02T21:11:44.9370497Z Container is terminated. Total time elapsed: 9501 ms.
+2026-02-02T21:11:44.9457337Z Site: translate-app-dev-<unique-suffix> stopped.

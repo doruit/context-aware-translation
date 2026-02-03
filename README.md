@@ -499,7 +499,21 @@ request.send(JSON.stringify(payload));
 - Batch multiple translations in single request
 - Consider Azure CDN for static assets
 
-## 🐛 Troubleshooting
+## � Learn More
+
+### Understanding the Problem & Solution
+
+Before implementing, it's helpful to understand the architectural challenge this solution addresses:
+
+- **[Problem Statement Analysis](docs/PROBLEM_STATEMENT_ANALYSIS.md)** - In-depth analysis of:
+  - Why real-time translation with guaranteed terminology consistency is challenging
+  - How this service implements a two-layer enforcement mechanism
+  - Performance characteristics and deployment options
+  - Suitability assessment for different use cases
+
+This analysis includes the Contoso Corp case study showing how organizations can translate real-time support tickets while maintaining strict terminology consistency.
+
+## �🐛 Troubleshooting
 
 **"Glossary file not found"**
 - Create `data/glossary.tsv` with at least one term

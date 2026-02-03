@@ -1,0 +1,13 @@
+<step title="Incoming Request" date="2026-02-03T10:51:01.543" instance="eccd12" url="/api/command" method="POST" type="request" pid="772,1,16" Accept="*/*" Host="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" User-Agent="curl/8.7.1" Authorization="Bas..." Content-Type="application/json" Content-Length="104" X-ARR-LOG-ID="5e2a0bfe-672c-4604-9c02-c46c7f6219b9" CLIENT-IP="147.161.132.90:15099" X-SITE-DEPLOYMENT-ID="translate-app-dev-<unique-suffix>" WAS-DEFAULT-HOSTNAME="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/command" X-Client-IP="147.161.132.90" X-Client-Port="15099" >
+  <step title="Cleanup Xml Logs" date="2026-02-03T10:51:01.631" /><!-- duration: 15ms -->
+  <step title="Executing user command. " date="2026-02-03T10:51:01.762" CWD="/home/site/wwwroot" >
+    <step title="Cpu: gzip(871,1.190s)+tar(869,0.860s)=total(2.050s)" date="2026-02-03T10:52:02.441" /><!-- duration: 111ms -->
+    <step title="starter.sh: no io activity for 60s, prev-cpu=-1.000s, current-cpu=2.050s" date="2026-02-03T10:52:02.589" /><!-- duration: 78ms -->
+    <step title="Cpu: gzip(871,1.430s)+tar(869,1.760s)=total(3.190s)" date="2026-02-03T10:53:02.838" /><!-- duration: 39ms -->
+    <step title="starter.sh: no io activity for 121s, prev-cpu=2.050s, current-cpu=3.190s" date="2026-02-03T10:53:02.904" /><!-- duration: 13ms -->
+    <step title="Cpu: gzip(871,1.570s)+tar(869,2.450s)=total(4.020s)" date="2026-02-03T10:54:03.834" /><!-- duration: 61ms -->
+    <step title="starter.sh: no io activity for 181s, prev-cpu=3.190s, current-cpu=4.020s" date="2026-02-03T10:54:03.983" /><!-- duration: 40ms -->
+    <step title="Cpu: gzip(871,2.080s)+tar(869,3.050s)=total(5.130s)" date="2026-02-03T10:55:04.158" /><!-- duration: 64ms -->
+    <step title="starter.sh: no io activity for 242s, prev-cpu=4.020s, current-cpu=5.130s" date="2026-02-03T10:55:04.258" /><!-- duration: 88ms -->
+    <step title="Cpu: gzip(871,2.130s)+tar(869,3.490s)=total(5.620s)" date="2026-02-03T10:56:05.646" /><!-- duration: 765ms -->
+    <step title="starter.sh: no io activity for 303s, prev-cpu=5.130s, current-cpu=5.620s" date="2026-02-03T10:56:06.596" /><!-- duration: 247ms -->

@@ -1,0 +1,1 @@
+2026-02-02T20:45:13  Startup Request, url: /api/publish?type=zip&async=False, method: POST, type: request, pid: 794,1,15, SCM_DO_BUILD_DURING_DEPLOYMENT: true, ScmType: LocalGit

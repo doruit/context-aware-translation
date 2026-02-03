@@ -1,0 +1,4 @@
+<step title="Incoming Request" date="2026-02-03T10:55:13.927" instance="eccd12" url="/api/vfs/site/wwwroot/run.py" method="GET" type="request" pid="772,1,17" Accept="*/*" Host="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" User-Agent="curl/8.7.1" Authorization="Bas..." X-ARR-LOG-ID="c8193a07-d32e-4b23-98b8-41555c4a4e95" CLIENT-IP="147.161.133.92:18949" X-SITE-DEPLOYMENT-ID="translate-app-dev-<unique-suffix>" WAS-DEFAULT-HOSTNAME="translate-app-dev-<unique-suffix>.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/vfs/site/wwwroot/run.py" X-Client-IP="147.161.133.92" X-Client-Port="18949" >
+  <step title="Cleanup Xml Logs" date="2026-02-03T10:55:13.978" /><!-- duration: 94ms -->
+  <step title="Outgoing response" date="2026-02-03T10:55:14.240" type="response" statusCode="404" statusText="NotFound" /><!-- duration: 65ms -->
+</step><!-- duration: 484ms -->
