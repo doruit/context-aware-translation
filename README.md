@@ -8,11 +8,7 @@
 
 A production-ready service for translating text to any target language using **Azure Translator Text v3** with **Custom Translator** categories and deterministic **TSV glossary enforcement**. Preserve domain-specific terminology while improving fluency with optional **Azure OpenAI** post-editing.
 
-<p align="center">
-  <img src="assets/screenshot.png" alt="Translation Service Demo" width="800">
-</p>
-
-*Live demonstration showing glossary term enforcement: "critical incident" → "incident" and "service desk" → "servicedesk" are correctly preserved from the glossary during translation.*
+> **Live demonstration:** The service enforces glossary terms like "critical incident" → "incident" and "service desk" → "servicedesk", preserving them correctly during translation.
 
 ## 🎯 The Problem This Solves
 
