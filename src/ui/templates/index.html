@@ -342,14 +342,14 @@
                         <div style="margin-bottom: 1rem;">
                             <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">💡 <strong>Try these examples:</strong></p>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                                <button type="button" class="question-chip" data-question="The barcode scanner at the checkout counter is malfunctioning and cannot read product codes. Please contact the Action servicedesk to request a replacement device for our store.">Barcode scanner malfunction</button>
-                                <button type="button" class="question-chip" data-question="I need to report a customer complaint regarding incorrect pricing on the sales floor. The customer service team should investigate the discount labels in aisle 3.">Customer complaint - pricing issue</button>
-                                <button type="button" class="question-chip" data-question="Request immediate assistance: the payment terminal at checkout has stopped working during peak hours. Our cashier cannot process Action gift card transactions.">Payment terminal failure</button>
-                                <button type="button" class="question-chip" data-question="Please schedule cash register training for our new employees. They need access to the Action Cash Register Training e-learning course before their first shift.">Staff training request</button>
-                                <button type="button" class="question-chip" data-question="The alarm gates at the exit triggered a false alarm during bag check. Can the Action servicedesk send a technician to recalibrate the anti-theft system?">Security system issue</button>
-                                <button type="button" class="question-chip" data-question="I need clarification on the refund policy for Action gift cards. A customer is requesting a full refund for an unused card purchased last month.">Gift card refund policy</button>
-                                <button type="button" class="question-chip" data-question="The air curtain above the store entrance is not functioning properly. Please create a maintenance ticket for the distribution center to arrange repairs.">Facility maintenance</button>
-                                <button type="button" class="question-chip" data-question="Report incident: aggressive customer behavior at the checkout. Our cashier needs support from management to handle this situation according to Action values.">Incident - customer aggression</button>
+                                <button type="button" class="question-chip" data-question="barcode scanner at checkout counter not working cant scan products need help from Action servicedesk for replacement">Barcode scanner issue</button>
+                                <button type="button" class="question-chip" data-question="customer complain about wrong price on sales floor customer service need check discount label in aisle 3 urgent">Price complaint</button>
+                                <button type="button" class="question-chip" data-question="payment terminal broken at checkout cant do Action gift card transaction need fix now is busy time">Payment terminal down</button>
+                                <button type="button" class="question-chip" data-question="new employee need cash register training must have Action Cash Register Training e-learning course before start work">Training needed</button>
+                                <button type="button" class="question-chip" data-question="alarm gate at exit make false alarm during bag check can Action servicedesk send technician fix anti theft">Security alarm problem</button>
+                                <button type="button" class="question-chip" data-question="customer want refund for Action gift card not used bought last month what is policy for this">Gift card refund question</button>
+                                <button type="button" class="question-chip" data-question="air curtain above store entrance broken not work good need maintenance ticket for distribution center repair">Maintenance request</button>
+                                <button type="button" class="question-chip" data-question="aggressive customer at checkout cashier need help from manager handle situation with Action values">Customer incident</button>
                             </div>
                         </div>
                         
@@ -512,7 +512,7 @@
             const finalStepExplanation = document.getElementById('finalStepExplanation');
             if (result.post_edited) {
                 postEditBadge.style.display = 'inline-block';
-                finalStepExplanation.innerHTML = '<strong>Azure OpenAI LLM (GPT-4):</strong> Large Language Model improved the fluency, grammar, and naturalness while preserving all glossary terms from Step 2. This optional step uses AI to refine the translation quality.';
+                finalStepExplanation.innerHTML = '<strong>Azure OpenAI LLM (GPT-4o-mini):</strong> Large Language Model improved the fluency, grammar, and naturalness while preserving all glossary terms from Step 2. This optional step uses AI to refine the translation quality.';
             } else {
                 postEditBadge.style.display = 'none';
                 finalStepExplanation.innerHTML = '<strong>Result:</strong> Translation with enforced terminology ready for use.';
