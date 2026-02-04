@@ -8,11 +8,13 @@
 
 A production-ready service for translating text to any target language using **Azure Translator Text v3** with **Custom Translator** categories and deterministic **TSV glossary enforcement**. Preserve domain-specific terminology while improving fluency with optional **Azure OpenAI** post-editing.
 
+> **🤖 Development Transparency:** This repository was built using AI coding agents (GitHub Copilot, Claude) for implementation, with human-led design, architecture decisions, and orchestration. The approach demonstrates how AI can accelerate development while maintaining professional code quality and best practices.
+
 <div align="center">
     <img src="https://github.com/doruit/azure-translation-glossary/blob/main/src/ui/media/screenshot2.png?raw=true" alt="UI Screenshot" width="80%" />
 </div>
 
-> **Live demonstration:** The service enforces glossary terms like "critical incident" → "incident" and "service desk" → "servicedesk", preserving them correctly during translation.
+> **Live demonstration:** The service enforces glossary terms like "customer" → "klant" and "service desk" → "servicedesk", preserving them correctly during translation.
 
 ## 🎯 The Problem This Solves
 
@@ -547,6 +549,17 @@ MIT License - see LICENSE file for details
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
+
+## 🎯 Development & Credits
+
+This project demonstrates a modern AI-assisted development workflow:
+
+- **Architecture & Design**: Human-led system design, use case analysis, and solution architecture
+- **Implementation**: AI coding agents (GitHub Copilot, Claude Sonnet 4.5) for code generation, testing, and documentation
+- **Orchestration**: Human oversight for quality control, integration decisions, and deployment strategy
+- **Result**: Production-ready code with comprehensive testing, professional documentation, and enterprise deployment capabilities
+
+The combination of human expertise in design/orchestration with AI acceleration in implementation showcases how AI tools can enhance developer productivity while maintaining code quality and architectural integrity.
 
 ## 📧 Support
 

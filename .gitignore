@@ -50,3 +50,14 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+
+# Azure Deployment
+deployments/
+*.zip
+LogFiles/
+app-logs.zip
+latest-logs.zip
+deploy.zip
+
+# Ruff cache
+.ruff_cache/
