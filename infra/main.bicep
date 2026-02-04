@@ -187,7 +187,7 @@ resource appService 'Microsoft.Web/sites@2025-03-01' = {
         }
         {
           name: 'GLOSSARY_PATH'
-          value: 'data/glossary.tsv,data/glossary-action.tsv'
+          value: 'data/glossary.tsv,data/glossary-contoso.tsv'
         }
         {
           name: 'ENABLE_POST_EDITOR'
