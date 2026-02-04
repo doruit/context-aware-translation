@@ -1,3 +1,0 @@
-<step title="Startup Request" date="2026-02-02T19:31:53.071" instance="eccd12" url="/translate-app-dev-<unique-suffix>.git/info/refs?service=git-receive-pack" method="GET" type="request" pid="774,1,7" SCM_DO_BUILD_DURING_DEPLOYMENT="true" ScmType="LocalGit" >
-  <step title="Cleanup Xml Logs" date="2026-02-02T19:31:53.140" /><!-- duration: 68ms -->
-</step><!-- duration: 176ms -->

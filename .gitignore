@@ -61,3 +61,28 @@ deploy.zip
 
 # Ruff cache
 .ruff_cache/
+
+# Python version management
+.python-version
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Distribution / packaging
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.tox/
+.nox/
+.hypothesis/
+.pytest_tmp/
