@@ -255,270 +255,13 @@ Result: **< 1 second latency with guaranteed terminology consistency**
 - (Optional) Azure Custom Translator category
 - (Optional) Azure OpenAI resource
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
-### 1. Clone and Setup
+Ready to start? Follow these guides:
 
-```bash
-# Clone repository
-cd context-aware-translation
-
-# Create virtual environment
-python3.11 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### 2. Configure Environment
-
-```bash
-# Copy example environment file
-cp .env.example .env
-
-# Edit .env with your Azure credentials
-nano .env  # or use your preferred editor
-```
-
-**Required Configuration:**
-
-```ini
-# Azure Translator (REQUIRED)
-AZURE_TRANSLATOR_KEY=your_key_from_azure_portal
-AZURE_TRANSLATOR_ENDPOINT=https://api.cognitive.microsofttranslator.com
-AZURE_TRANSLATOR_REGION=westeurope
-
-# Target Language (customize for your needs)
-TARGET_LANGUAGE=nl  # Dutch, or change to: fr, de, es, it, etc.
-
-# Custom Translator (OPTIONAL - leave empty to use default translation)
-AZURE_TRANSLATOR_CATEGORY=your_custom_category_id
-
-# Glossary
-GLOSSARY_PATH=data/glossary.tsv
-
-# Azure OpenAI Post-Editor (OPTIONAL)
-ENABLE_POST_EDITOR=false
-AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
-AZURE_OPENAI_KEY=your_openai_key
-AZURE_OPENAI_DEPLOYMENT=gpt-4
-```
-### 3. Create Glossary
-
-Edit `data/glossary.tsv` with your domain-specific terminology:
-
-```tsv
-# source<TAB>target format
-# IT Service Management (Contoso Corp example)
-critical incident	incident
-service desk	servicedesk
-help desk	helpdesk
-knowledge base	kennisbank
-store manager	filiaalbeheerder
-cash register	kassa
-customer	klant
-problem	probleem
-ticket	ticket
-priority	prioriteit
-resolved	opgelost
-pending	in behandeling
-
-# Healthcare Example (uncomment to use)
-# patient	patiënt
-# prescription	voorschrift
-# diagnosis	diagnose
-# follow-up appointment	vervolgafspraak
-# severe headache	ernstige hoofdpijn
-
-# Legal Example (uncomment to use)
-# contract	contract
-# liability	aansprakelijkheid
-# jurisdiction	rechtsgebied
-# both parties	beide partijen
-```
-
-**Why These Terms Matter:**
-
-Without glossary:
-- "service desk" → "servicebalie" ❌ (literal translation, not company term)
-- "critical incident" → "kritiek voorval" ❌ (inconsistent, should be "incident")
-- "store manager" → "winkelbeheerder" ❌ (wrong, should be "filiaalbeheerder")
-
-With glossary:
-- "service desk" → "servicedesk" ✅ (company-specific compound)
-- "critical incident" → "incident" ✅ (consistent terminology)
-- "store manager" → "filiaalbeheerder" ✅ (correct domain term)
-
-**Format Rules:**
-- Tab-separated (source → target)
-- One term per line
-- Comments start with `#`
-- Sorted longest-first automatically
-
-### 4. Run Application
-
-```bash
-# Run with uvicorn
-python -m src.app
-
-# Or use uvicorn directly
-uvicorn src.app:app --reload --host 0.0.0.0 --port 8000
-```
-
-Access the web UI at: `http://localhost:8000`
-
----
-
-## 📡 API Usage
-
-### `POST /api/translate`
-
-Translate text with glossary enforcement and optional post-editing.
-
-**Example Request:**
-
-```bash
-curl -X POST http://localhost:8000/api/translate \
-  -H "Content-Type: application/json" \
-  -d '{
-  "text": "The service desk received a critical incident. The customer reports the cash register is not working. Store manager needs immediate help.",
-  "source_language": "en",
-  "enable_post_editor": false,
-  "use_custom_category": true
-}'
-```
-
-**Response:**
-```json
-{
-  "raw_translation": "De servicebalie ontving een kritiek voorval. De klant meldt dat de kassa niet werkt. Winkelbeheerder heeft onmiddellijke hulp nodig.",
-  "enforced_translation": "De servicedesk ontving een incident. De klant meldt dat de kassa niet werkt. Filiaalbeheerder heeft onmiddellijke hulp nodig.",
-  "final_translation": "De servicedesk ontving een incident. De klant meldt dat de kassa niet werkt. Filiaalbeheerder heeft onmiddellijke hulp nodig.",
-  "post_edited": false,
-  "applied_terms": [
-    {
-      "source_term": "service desk",
-      "target_term": "servicedesk",
-      "original_text": "service desk",
-      "position": 4
-    },
-    {
-      "source_term": "critical incident",
-      "target_term": "incident",
-      "original_text": "critical incident",
-      "position": 35
-    },
-    {
-      "source_term": "customer",
-      "target_term": "klant",
-      "original_text": "customer",
-      "position": 58
-    },
-    {
-      "source_term": "cash register",
-      "target_term": "kassa",
-      "original_text": "cash register",
-      "position": 82
-    },
-    {
-      "source_term": "store manager",
-      "target_term": "filiaalbeheerder",
-      "original_text": "Store manager",
-      "position": 114
-    }
-  ],
-  "source_language": "en",
-  "target_language": "nl",
-  "detected_language": "en",
-  "category_used": "your_category_id"
-}
-```
-
-### `GET /api/languages`
-
-Get supported languages.
-
-### `GET /api/health`
-
-Health check and configuration status.
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=src --cov-report=html
-
-# Run specific test file
-pytest tests/test_enforcer.py -v
-
-# Run specific test
-pytest tests/test_enforcer.py::TestTerminologyEnforcer::test_case_preservation_uppercase -v
-```
-
-## 🔧 Azure Setup Guide
-
-### Azure Translator Text v3
-
-1. **Create Translator Resource**
-   - Azure Portal → Create Resource → Translator
-   - Note: Key, Endpoint, Region
-
-2. **Custom Translator (Optional)**
-   - Visit: https://portal.customtranslator.azure.ai/
-   - Create workspace → Create project
-   - Upload parallel training data (source + Dutch)
-   - Train model → Get category ID
-   - Add category ID to `.env`
-
-### Azure OpenAI (Optional)
-
-1. **Create Azure OpenAI Resource**
-   - Azure Portal → Create Resource → Azure OpenAI
-   - Note: Endpoint, Key
-
-2. **Deploy Model**
-   - Azure OpenAI Studio → Deployments
-   - Deploy GPT-4 or GPT-3.5-turbo
-   - Note deployment name
-
-3. **Configure**
-   - Set `ENABLE_POST_EDITOR=true` in `.env`
-   - Add endpoint, key, deployment name
-
-## 📁 Project Structure
-
-```
-.
-├── src/
-│   ├── app.py                  # FastAPI application
-│   ├── config/
-│   │   ├── env.py              # Environment configuration
-│   │   └── languages.py        # Supported languages
-│   ├── services/
-│   │   ├── translator.py       # Azure Translator client
-│   │   └── post_editor.py      # Azure OpenAI post-editor
-│   ├── terminology/
-│   │   ├── glossary_loader.py  # TSV parser
-│   │   ├── enforcer.py         # Term enforcement engine
-│   │   └── audit.py            # Audit tracking
-│   ├── routes/
-│   │   └── translate.py        # API routes
-│   └── ui/
-│       └── templates/
-│           └── index.html      # Web interface
-├── tests/
-│   ├── conftest.py
-│   └── test_enforcer.py        # Enforcer unit tests
-├── data/
-│   └── glossary.tsv            # Terminology glossary
-├── requirements.txt
-├── .env.example
-└── README.md
-```
+- **[Quick Start Guide](docs/QUICKSTART.md)** - Installation, configuration, and running the application
+- **[Azure Setup Guide](docs/AZURE_SETUP.md)** - Configure Azure Translator, Custom Translator, and Azure OpenAI
+- **[API Reference](docs/API_GUIDE.md)** - Complete API documentation with examples
 
 ## ⚙️ How It Works
 
@@ -585,81 +328,13 @@ else:
 - Company-specific terms MUST remain consistent ("servicedesk", not "servicebalie")
 - Translation happens automatically when ticket is created
 
-**ServiceNow Workflow:**
-```
-1. Customer submits ticket: "Critical incident at service desk - cash register offline"
-2. ServiceNow Business Rule triggers on insert
-3. Calls translation API with ticket text
-4. API returns: "Incident bij servicedesk - kassa offline"
-5. Updates ticket description field with translation
-6. Support team immediately sees correctly-translated ticket
-```
-
-**ServiceNow Business Rule (Server-side JavaScript):**
-```javascript
-// Business Rule: Translate Incident Description
-// When: before insert
-// Condition: incident.short_description is not empty
-
-(function executeRule(current, previous) {
-    try {
-        // Only translate if not already in Dutch
-        if (current.short_description && !isDutch(current.short_description)) {
-            var translationResult = callTranslationService(
-                current.short_description,
-                detectLanguage(current.short_description)
-            );
-            
-            // Use enforced translation (with guaranteed terminology)
-            current.description = translationResult.enforced_translation;
-            
-            // Store original for reference
-            current.work_notes = 'Original (' + translationResult.source_language + '): ' + 
-                                 current.short_description;
-            
-            // Log applied terms for audit
-            if (translationResult.applied_terms.length > 0) {
-                gs.info('Glossary terms applied: ' + 
-                       JSON.stringify(translationResult.applied_terms));
-            }
-        }
-    } catch (e) {
-        gs.error('Translation failed: ' + e.message);
-        // Fallback: keep original text
-    }
-})(current, previous);
-
-function callTranslationService(text, sourceLang) {
-    var request = new sn_ws.RESTMessageV2();
-    request.setEndpoint('https://your-service.azurewebsites.net/api/translate');
-    request.setHttpMethod('POST');
-    request.setRequestHeader('Content-Type', 'application/json');
-    
-    var payload = {
-        text: text,
-        source_language: sourceLang,
-        enable_post_editor: false,  // Keep fast for real-time
-        use_custom_category: true
-    };
-    
-    request.setRequestBody(JSON.stringify(payload));
-    
-    var response = request.execute();
-    if (response.getStatusCode() == 200) {
-        return JSON.parse(response.getBody());
-    } else {
-        throw new Error('API returned ' + response.getStatusCode());
-    }
-}
-```
-
 **Example Results:**
 
 | Original (English) | Without Glossary | With Glossary ✅ |
 |-------------------|------------------|-----------------|
 | "Critical incident at service desk" | "Kritiek voorval bij servicebalie" | "Incident bij servicedesk" |
-| "Contact help desk for support" | "Neem contact op met helpdesk voor ondersteuning" | "Neem contact op met helpdesk voor ondersteuning" |
 | "Store manager reports cash register error" | "Winkelbeheerder meldt kassafout" | "Filiaalbeheerder meldt kassafout" |
+| "Customer contacted knowledge base" | "Klant heeft kennisdatabase geraadpleegd" | "Klant heeft kennisbank geraadpleegd" |
 
 **Benefits for Contoso:**
 - ✅ All 50+ daily tickets translated consistently
@@ -667,6 +342,8 @@ function callTranslationService(text, sourceLang) {
 - ✅ < 1 second latency (users don't notice)
 - ✅ Audit trail of applied terms for compliance
 - ✅ Support team works in native language with correct terminology
+
+For detailed ServiceNow integration code and examples, see the **[API Reference Guide](docs/API_GUIDE.md#servicenow-integration-example)**.
 
 ---
 
@@ -706,17 +383,10 @@ function callTranslationService(text, sourceLang) {
 
 ## � Learn More
 
-### Understanding the Problem & Solution
-
-Before implementing, it's helpful to understand the architectural challenge this solution addresses:
-
-- **[Problem Statement Analysis](docs/PROBLEM_STATEMENT_ANALYSIS.md)** - In-depth analysis of:
-  - Why real-time translation with guaranteed terminology consistency is challenging
-  - How this service implements a two-layer enforcement mechanism
-  - Performance characteristics and deployment options
-  - Suitability assessment for different use cases
-
-This analysis includes the Contoso Corp case study showing how organizations can translate real-time support tickets while maintaining strict terminology consistency.
+- **[Problem Statement Analysis](docs/PROBLEM_STATEMENT_ANALYSIS.md)** - In-depth analysis of the architectural challenge and solution approach
+- **[Testing Guide](docs/TESTING_GUIDE.md)** - Comprehensive testing documentation
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Deploy to Azure App Service, Docker, or Kubernetes
+- **[Architecture Overview](docs/ARCHITECTURE.md)** - Detailed system architecture and design decisions
 
 ## �� Troubleshooting
 
@@ -764,9 +434,12 @@ The combination of human expertise in design/orchestration with AI acceleration 
 ## 📧 Support
 
 For issues and questions:
-- GitHub Issues: [Create an issue](../../issues)
-- Azure Translator Docs: https://docs.microsoft.com/azure/cognitive-services/translator/
-- Azure OpenAI Docs: https://learn.microsoft.com/azure/ai-services/openai/
+- **GitHub Issues:** [Create an issue](../../issues)
+- **[Quick Start Guide](docs/QUICKSTART.md)** - Installation and configuration help
+- **[Azure Setup Guide](docs/AZURE_SETUP.md)** - Azure resource configuration
+- **[API Reference](docs/API_GUIDE.md)** - API usage and examples
+- **Azure Translator Docs:** https://docs.microsoft.com/azure/cognitive-services/translator/
+- **Azure OpenAI Docs:** https://learn.microsoft.com/azure/ai-services/openai/
 
 ---
 
