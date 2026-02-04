@@ -1,15 +1,16 @@
-name: CI/CD Pipeline
+name: CI/CD Pipeline (DISABLED)
 
-on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
-  workflow_dispatch:
+# Workflow disabled - uncomment 'on:' section to re-enable
+# on:
+#   push:
+#     branches:
+#       - main
+#       - develop
+#   pull_request:
+#     branches:
+#       - main
+#       - develop
+#   workflow_dispatch:
 
 jobs:
   test:

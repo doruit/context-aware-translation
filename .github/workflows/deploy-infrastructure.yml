@@ -1,20 +1,21 @@
-name: Deploy Infrastructure
+name: Deploy Infrastructure (DISABLED)
 
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to deploy'
-        required: true
-        type: choice
-        options:
-          - dev
-          - staging
-          - prod
-      location:
-        description: 'Azure region'
-        required: false
-        default: 'westeurope'
+# Workflow disabled - uncomment 'on:' section to re-enable
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       environment:
+#         description: 'Environment to deploy'
+#         required: true
+#         type: choice
+#         options:
+#           - dev
+#           - staging
+#           - prod
+#       location:
+#         description: 'Azure region'
+#         required: false
+#         default: 'westeurope'
 
 permissions:
   id-token: write
