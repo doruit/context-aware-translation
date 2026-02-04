@@ -157,7 +157,7 @@ Choose one:
 **Option B: Manual Deployment**
 ```bash
 # Zip application
-cd /Users/doruit/action-translation-dict
+cd /path/to/your/project
 zip -r app.zip src/ requirements.txt run.py .env
 
 # Deploy via Azure CLI

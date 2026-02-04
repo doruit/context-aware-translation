@@ -37,7 +37,7 @@ All packages updated to latest versions:
 ### 3. Virtual Environment Ready
 ```bash
 # Venv location
-/Users/doruit/action-translation-dict/venv
+/path/to/your/project/venv
 
 # Python version
 Python 3.11

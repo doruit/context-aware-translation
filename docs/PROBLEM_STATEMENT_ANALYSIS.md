@@ -1,7 +1,7 @@
 # Analyse: Oplossingsgraad voor Real-time Translation Problem Statement
 
 **Datum:** 3 februari 2026  
-**Repository:** azure-translation-service  
+**Repository:** context-aware-translation  
 **Doel:** Toetsen of deze repo een oplossing biedt voor real-time translation met terminologie-consistentie
 
 ---

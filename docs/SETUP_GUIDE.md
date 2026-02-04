@@ -206,7 +206,7 @@ Generated: 2024-02-02 10:30:45
 - Subscription Name: My Azure Subscription
 
 ## Azure AD Application
-- Application Name: GitHub-azure-translation-service
+- Application Name: GitHub-context-aware-translation
 - Client ID: abcdef12-3456-7890-abcd-ef1234567890
 - Service Principal Object ID: ...
 

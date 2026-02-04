@@ -144,7 +144,7 @@ def get_azure_info() -> Dict[str, str]:
     }
 
 
-def setup_azure_ad_app(app_name: str = "GitHub-azure-translation-service") -> str:
+def setup_azure_ad_app(app_name: str = "GitHub-context-aware-translation") -> str:
     """Create or retrieve Azure AD application for OIDC"""
     print_header("Setting Up Azure AD Application for OIDC")
     
@@ -216,7 +216,7 @@ def setup_role_assignment(
 def setup_oidc_credentials(
     client_id: str,
     repo_owner: str = "doruit",
-    repo_name: str = "azure-translation-service"
+    repo_name: str = "context-aware-translation"
 ) -> bool:
     """Configure GitHub OIDC federated credentials"""
     print_header("Configuring GitHub OIDC Federated Credentials")
@@ -431,7 +431,7 @@ Generated: {subprocess.run(['date'], capture_output=True, text=True).stdout.stri
 
 ## Azure AD Application
 
-- **Application Name:** GitHub-azure-translation-service
+- **Application Name:** GitHub-context-aware-translation
 - **Client ID:** {config['client_id']}
 - **Service Principal Object ID:** {config['sp_object_id']}
 
@@ -448,7 +448,7 @@ Configured for:
 
 ## GitHub Configuration
 
-- **Repository:** https://github.com/doruit/azure-translation-service
+- **Repository:** https://github.com/doruit/context-aware-translation
 - **Secrets:** AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_SUBSCRIPTION_ID
 - **Environments:** dev, staging, prod
 
@@ -456,7 +456,7 @@ Configured for:
 
 1. If you haven't already, create the GitHub repository:
    ```bash
-   gh repo create doruit/azure-translation-service --public
+   gh repo create doruit/context-aware-translation --public
    git push -u origin main
    ```
 

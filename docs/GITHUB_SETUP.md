@@ -8,16 +8,16 @@ Follow these steps to create the public GitHub repository under `github.com/doru
 
 ```bash
 # Navigate to the project directory
-cd /Users/doruit/action-translation-dict
+cd /path/to/your/project
 
 # Initialize git if not already done
 git init
 
 # Create GitHub repository
-gh repo create doruit/azure-translation-service \
+gh repo create doruit/context-aware-translation \
   --public \
   --description "Azure Translation Service with glossary enforcement - preserve domain-specific terminology during translation" \
-  --homepage "https://github.com/doruit/azure-translation-service"
+  --homepage "https://github.com/doruit/context-aware-translation"
 
 # Add all files
 git add .
@@ -38,7 +38,7 @@ git commit -m "Initial commit: Azure Translation Service with Glossary Enforceme
 git branch -M main
 
 # Push to GitHub
-git remote add origin https://github.com/doruit/azure-translation-service.git
+git remote add origin https://github.com/doruit/context-aware-translation.git
 git push -u origin main
 
 # Create develop branch
@@ -54,7 +54,7 @@ git push -u origin develop
 
 2. **Repository Settings:**
    - Owner: `doruit`
-   - Repository name: `azure-translation-service`
+   - Repository name: `context-aware-translation`
    - Description: `Azure Translation Service with glossary enforcement - preserve domain-specific terminology during translation`
    - Visibility: **Public**
    - ✅ Add a README file: **No** (we already have one)
@@ -65,12 +65,12 @@ git push -u origin develop
 
 4. **Push Local Code:**
    ```bash
-   cd /Users/doruit/action-translation-dict
+   cd /path/to/your/project
    git init
    git add .
    git commit -m "Initial commit: Azure Translation Service with Glossary Enforcement"
    git branch -M main
-   git remote add origin https://github.com/doruit/azure-translation-service.git
+   git remote add origin https://github.com/doruit/context-aware-translation.git
    git push -u origin main
    
    # Create develop branch
@@ -84,7 +84,7 @@ git push -u origin develop
 
 ```bash
 # Via GitHub CLI
-gh api repos/doruit/azure-translation-service/branches/main/protection \
+gh api repos/doruit/context-aware-translation/branches/main/protection \
   --method PUT \
   --field required_status_checks='{"strict":true,"contexts":["test"]}' \
   --field enforce_admins=false \
@@ -114,12 +114,12 @@ Create three environments: `dev`, `staging`, `prod`
 ```bash
 # Via GitHub CLI
 for ENV in dev staging prod; do
-  gh api repos/doruit/azure-translation-service/environments/$ENV \
+  gh api repos/doruit/context-aware-translation/environments/$ENV \
     --method PUT
 done
 
 # Add protection rules for prod
-gh api repos/doruit/azure-translation-service/environments/prod \
+gh api repos/doruit/context-aware-translation/environments/prod \
   --method PUT \
   --field reviewers='[{"type":"User","id":YOUR_USER_ID}]'
 ```
@@ -134,7 +134,7 @@ Or via web interface:
 ### 4. Add Topics/Tags
 
 ```bash
-gh repo edit doruit/azure-translation-service \
+gh repo edit doruit/context-aware-translation \
   --add-topic azure \
   --add-topic translation \
   --add-topic translator \
@@ -216,7 +216,7 @@ Perfect for IT service management, healthcare, legal, or any domain requiring te
 After pushing, your repository will have:
 
 ```
-azure-translation-service/
+context-aware-translation/
 ├── .github/
 │   └── workflows/
 │       ├── ci-cd.yml
@@ -256,7 +256,7 @@ Add these badges to the top of README.md:
 ```markdown
 # Azure Translation Service with Glossary Enforcement
 
-[![CI/CD](https://github.com/doruit/azure-translation-service/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/doruit/azure-translation-service/actions/workflows/ci-cd.yml)
+[![CI/CD](https://github.com/doruit/context-aware-translation/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/doruit/context-aware-translation/actions/workflows/ci-cd.yml)
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Azure](https://img.shields.io/badge/Azure-Translator-0078D4?logo=microsoft-azure)](https://azure.microsoft.com/en-us/services/cognitive-services/translator/)
@@ -308,8 +308,8 @@ Add these badges to the top of README.md:
 
 After creation, your repository will be accessible at:
 
-- **Repository:** https://github.com/doruit/azure-translation-service
-- **Issues:** https://github.com/doruit/azure-translation-service/issues
-- **Actions:** https://github.com/doruit/azure-translation-service/actions
-- **Releases:** https://github.com/doruit/azure-translation-service/releases
-- **Container Registry:** ghcr.io/doruit/azure-translation-service
+- **Repository:** https://github.com/doruit/context-aware-translation
+- **Issues:** https://github.com/doruit/context-aware-translation/issues
+- **Actions:** https://github.com/doruit/context-aware-translation/actions
+- **Releases:** https://github.com/doruit/context-aware-translation/releases
+- **Container Registry:** ghcr.io/doruit/context-aware-translation

@@ -11,7 +11,7 @@ A production-ready service for translating text to any target language using **A
 > **🤖 Development Transparency:** This repository was built using AI coding agents (GitHub Copilot, Claude) for implementation, with human-led design, architecture decisions, and orchestration. The approach demonstrates how AI can accelerate development while maintaining professional code quality and best practices.
 
 <div align="center">
-    <img src="https://github.com/doruit/azure-translation-glossary/blob/main/src/ui/media/screenshot2.png?raw=true" alt="UI Screenshot" width="80%" />
+    <img src="https://github.com/doruit/context-aware-translation/blob/main/src/ui/media/screenshot2.png?raw=true" alt="UI Screenshot" width="80%" />
 </div>
 
 > **Live demonstration:** The service enforces glossary terms like "customer" → "klant" and "service desk" → "servicedesk", preserving them correctly during translation.
@@ -100,36 +100,151 @@ Result: **< 1 second latency with guaranteed terminology consistency**
 - **Scenario B:** You don't have custom training → Deterministic regex enforcer guarantees consistency
 - **Result:** Works in both cases, and provides audit trail for compliance
 
-### Real Example: Contoso Corp Support Ticket
+### Real Examples: When Glossary & LLM Make the Difference
+
+#### Example 1: IT Support Ticket (Glossary Impact)
 
 **Input (English):**
 ```
-"We have a critical incident affecting the service desk. 
- Please escalate this problem to the knowledge base team."
+"The service desk received a critical incident about the cash register at store 42. 
+ The store manager reports customers can't complete payments."
 ```
 
-**Step 1 - Raw Translation:**
+**Without Glossary (Raw Azure Translation):**
+```dutch
+"De servicebalie ontving een kritiek voorval over de kassa bij winkel 42.
+ De winkelbeheerder meldt dat klanten betalingen niet kunnen voltooien."
 ```
-"We hebben een critical incident dat de service desk raakt. 
- Escaleer dit problem naar het kennisbank team."
+❌ **Problems:**
+- "service desk" → "servicebalie" (wrong: should be compound "servicedesk")
+- "critical incident" → "kritiek voorval" (inconsistent: should be just "incident")
+- "store manager" → "winkelbeheerder" (wrong: should be "filiaalbeheerder")
+
+**With Glossary Enforcement:**
+```dutch
+"De servicedesk ontving een incident over de kassa bij winkel 42.
+ De filiaalbeheerder meldt dat klanten betalingen niet kunnen voltooien."
+```
+✅ **Fixed:**
+- Company-specific terminology enforced
+- Consistent across all tickets
+- 100% deterministic
+
+---
+
+#### Example 2: Healthcare Record (Glossary + LLM)
+
+**Input (English):**
+```
+"Patient reports severe headache and dizziness. Prescription adjusted. 
+ Follow-up appointment scheduled."
 ```
 
-**Step 2 - Glossary Enforcement** (applying Contoso glossary):
-```
-"We hebben een CRITICAL INCIDENT (→ incident) dat de SERVICE DESK (→ servicedesk) raakt.
- Escaleer dit PROBLEM (→ probleem) naar het KNOWLEDGE BASE (→ kennisbank) team."
-
-Result: "We hebben een incident dat de servicedesk raakt. 
-         Escaleer dit probleem naar het kennisbank team."
+**Raw Translation:**
+```dutch
+"Patiënt meldt ernstige hoofdpijn en duizeligheid. Recept aangepast.
+ Vervolgafspraak gepland."
 ```
 
-**Step 3 - Optional Post-Edit** (improve fluency):
+**After Glossary (medical terms enforced):**
+```dutch
+"Patiënt meldt ernstige hoofdpijn en duizeligheid. Voorschrift aangepast.
+ Vervolgafspraak gepland."
 ```
-"We hebben een incident dat het servicedesk team raakt. 
- Escaleer dit probleem naar het kennisbank team."
+✅ "Prescription" → "voorschrift" (medical term, not "recept")
+
+**After LLM Post-Edit (fluency improved):**
+```dutch
+"De patiënt klaagt over ernstige hoofdpijn en duizeligheid. Het voorschrift is aangepast
+ en er is een vervolgafspraak ingepland."
+```
+✅ **Improvements:**
+- More natural phrasing ("klaagt over" vs "meldt")
+- Better flow ("er is een vervolgafspraak ingepland")
+- Preserved: "patiënt", "voorschrift" (protected terms)
+
+---
+
+#### Example 3: Legal Contract (Critical Terminology)
+
+**Input (English):**
+```
+"This contract establishes liability terms. Both parties accept jurisdiction 
+ under Dutch law."
 ```
 
-**Guarantee:** No matter how many similar tickets, "critical incident" ALWAYS becomes "incident", "service desk" ALWAYS becomes "servicedesk".
+**Without Glossary:**
+```dutch
+"Dit contract stelt aansprakelijkheidsvoorwaarden vast. Beide partijen accepteren 
+ jurisdictie onder Nederlands recht."
+```
+❌ "jurisdiction" → "jurisdictie" (legal Anglicism, should be "rechtsgebied")
+
+**With Glossary:**
+```dutch
+"Dit contract stelt aansprakelijkheidsvoorwaarden vast. Beide partijen accepteren 
+ rechtsgebied onder Nederlands recht."
+```
+✅ Legal precision maintained
+
+**With LLM Post-Edit:**
+```dutch
+"Dit contract bepaalt de voorwaarden voor aansprakelijkheid. Beide partijen erkennen
+ het rechtsgebied van Nederlands recht."
+```
+✅ **Improvements:**
+- More formal legal language ("bepaalt", "erkennen")
+- Better structure
+- Protected: "contract", "aansprakelijkheid", "rechtsgebied"
+
+---
+
+#### Example 4: Technical Documentation (Complex Domain Terms)
+
+**Input (English):**
+```
+"The knowledge base contains troubleshooting steps for printer problems. 
+ Contact help desk if issue persists."
+```
+
+**Without Glossary:**
+```dutch
+"De kennisdatabase bevat stappen voor het oplossen van printerproblemen.
+ Neem contact op met de helpdesk als het probleem aanhoudt."
+```
+❌ **Inconsistencies:**
+- "knowledge base" → "kennisdatabase" (should be compound "kennisbank")
+- "help desk" → "helpdesk" (correct, but needs guarantee)
+- "problems" → "problemen" (generic, should be "storingen" for technical issues)
+
+**With Glossary:**
+```dutch
+"De kennisbank bevat stappen voor het oplossen van printerstoringen.
+ Neem contact op met de helpdesk als de storing aanhoudt."
+```
+✅ Company terminology enforced consistently
+
+**With LLM Post-Edit:**
+```dutch
+"In de kennisbank vindt u instructies voor het oplossen van printerstoringen.
+ Als de storing aanhoudt, neem dan contact op met de helpdesk."
+```
+✅ **Improvements:**
+- More professional tone ("vindt u instructies")
+- Better sentence structure
+- Preserved all technical terms
+
+---
+
+**Key Takeaway:**
+
+| Layer | Purpose | Example Impact |
+|-------|---------|----------------|
+| **Glossary** | Enforce company/domain terminology | "service desk" → "servicedesk" (not "servicebalie") |
+| **LLM Post-Edit** | Improve fluency while preserving terms | "Patient reports" → "De patiënt klaagt over" (more natural) |
+| **Both** | Professional, consistent, fluent output | Business-ready translations |
+
+**Guarantee:** With glossary enforcement, "critical incident" ALWAYS becomes "incident", "service desk" ALWAYS becomes "servicedesk", across all translations.
 
 ---
 
@@ -146,7 +261,7 @@ Result: "We hebben een incident dat de servicedesk raakt.
 
 ```bash
 # Clone repository
-cd action-translation-dict
+cd context-aware-translation
 
 # Create virtual environment
 python3.11 -m venv venv
@@ -189,35 +304,51 @@ AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
 AZURE_OPENAI_KEY=your_openai_key
 AZURE_OPENAI_DEPLOYMENT=gpt-4
 ```
-domain-specific terminology:
+### 3. Create Glossary
+
+Edit `data/glossary.tsv` with your domain-specific terminology:
 
 ```tsv
 # source<TAB>target format
-# Retail & Service Management Example (Contoso Corp)
-incident	incident
-problem	probleem
+# IT Service Management (Contoso Corp example)
 critical incident	incident
 service desk	servicedesk
 help desk	helpdesk
-customer	klant
-cash register	kassa
-store manager	filiaalbeheerder
 knowledge base	kennisbank
+store manager	filiaalbeheerder
+cash register	kassa
+customer	klant
+problem	probleem
 ticket	ticket
 priority	prioriteit
 resolved	opgelost
 pending	in behandeling
 
-# Healthcare Example
-# diagnosis	diagnose
+# Healthcare Example (uncomment to use)
 # patient	patiënt
 # prescription	voorschrift
+# diagnosis	diagnose
+# follow-up appointment	vervolgafspraak
+# severe headache	ernstige hoofdpijn
 
-# Legal Example
+# Legal Example (uncomment to use)
 # contract	contract
 # liability	aansprakelijkheid
-# jurisdiction	rechtsgebiedverzoek
+# jurisdiction	rechtsgebied
+# both parties	beide partijen
 ```
+
+**Why These Terms Matter:**
+
+Without glossary:
+- "service desk" → "servicebalie" ❌ (literal translation, not company term)
+- "critical incident" → "kritiek voorval" ❌ (inconsistent, should be "incident")
+- "store manager" → "winkelbeheerder" ❌ (wrong, should be "filiaalbeheerder")
+
+With glossary:
+- "service desk" → "servicedesk" ✅ (company-specific compound)
+- "critical incident" → "incident" ✅ (consistent terminology)
+- "store manager" → "filiaalbeheerder" ✅ (correct domain term)
 
 **Format Rules:**
 - Tab-separated (source → target)
@@ -234,44 +365,67 @@ python -m src.app
 # Or use uvicorn directly
 uvicorn src.app:app --reload --host 0.0.0.0 --port 8000
 ```
-affecting multiple users",
+
+Access the web UI at: `http://localhost:8000`
+
+---
+
+## 📡 API Usage
+
+### `POST /api/translate`
+
+Translate text with glossary enforcement and optional post-editing.
+
+**Example Request:**
+
+```bash
+curl -X POST http://localhost:8000/api/translate \
+  -H "Content-Type: application/json" \
+  -d '{
+  "text": "The service desk received a critical incident. The customer reports the cash register is not working. Store manager needs immediate help.",
   "source_language": "en",
   "enable_post_editor": false,
   "use_custom_category": true
-}
+}'
 ```
 
 **Response:**
 ```json
 {
-  "raw_translation": "We hebben een critical incident dat meerdere gebruikers treft",
-  "enforced_translation": "We hebben een kritiek incident dat meerdere gebruikers treft",
-  "final_translation": "We hebben een kritiek incident dat meerdere gebruikers treft
-  "source_language": "en",
-  "enable_post_editor": false,
-  "use_custom_category": true
-}
-```
-
-**Response:**
-```json
-{
-  "raw_translation": "We hebben een critical incident in de service desk",
-  "enforced_translation": "We hebben een kritiek incident in de servicedesk",
-  "final_translation": "We hebben een kritiek incident in de servicedesk",
+  "raw_translation": "De servicebalie ontving een kritiek voorval. De klant meldt dat de kassa niet werkt. Winkelbeheerder heeft onmiddellijke hulp nodig.",
+  "enforced_translation": "De servicedesk ontving een incident. De klant meldt dat de kassa niet werkt. Filiaalbeheerder heeft onmiddellijke hulp nodig.",
+  "final_translation": "De servicedesk ontving een incident. De klant meldt dat de kassa niet werkt. Filiaalbeheerder heeft onmiddellijke hulp nodig.",
   "post_edited": false,
   "applied_terms": [
-    {
-      "source_term": "critical incident",
-      "target_term": "kritiek incident",
-      "original_text": "critical incident",
-      "position": 14
-    },
     {
       "source_term": "service desk",
       "target_term": "servicedesk",
       "original_text": "service desk",
-      "position": 43
+      "position": 4
+    },
+    {
+      "source_term": "critical incident",
+      "target_term": "incident",
+      "original_text": "critical incident",
+      "position": 35
+    },
+    {
+      "source_term": "customer",
+      "target_term": "klant",
+      "original_text": "customer",
+      "position": 58
+    },
+    {
+      "source_term": "cash register",
+      "target_term": "kassa",
+      "original_text": "cash register",
+      "position": 82
+    },
+    {
+      "source_term": "store manager",
+      "target_term": "filiaalbeheerder",
+      "original_text": "Store manager",
+      "position": 114
     }
   ],
   "source_language": "en",
@@ -425,48 +579,94 @@ else:
 
 **Scenario:** Translate customer support ticket descriptions in real-time as they arrive in ServiceNow
 
+**Real-World Problem:**
+- Tickets arrive in multiple languages (English, German, Polish, French)
+- Must translate to Dutch for support team
+- Company-specific terms MUST remain consistent ("servicedesk", not "servicebalie")
+- Translation happens automatically when ticket is created
+
 **ServiceNow Workflow:**
 ```
-1. Customer submits ticket in English
-2. ServiceNow triggers REST API call to translation service
-3. Service returns translated text with guaranteed terminology
-4. Translation automatically updates ticket description
-5. Support team works with consistently-translated tickets
+1. Customer submits ticket: "Critical incident at service desk - cash register offline"
+2. ServiceNow Business Rule triggers on insert
+3. Calls translation API with ticket text
+4. API returns: "Incident bij servicedesk - kassa offline"
+5. Updates ticket description field with translation
+6. Support team immediately sees correctly-translated ticket
 ```
 
-**ServiceNow Integration Code (REST API Call):**
+**ServiceNow Business Rule (Server-side JavaScript):**
 ```javascript
-// In ServiceNow Business Rule or Flow Designer
-var request = new XMLHttpRequest();
-var payload = {
-  "text": incident.short_description,  // Original English text
-  "source_language": "en",
-  "enable_post_editor": false,
-  "use_custom_category": true
-};
+// Business Rule: Translate Incident Description
+// When: before insert
+// Condition: incident.short_description is not empty
 
-request.open('POST', 'https://your-service.azurewebsites.net/api/translate', true);
-request.setRequestHeader('Content-Type', 'application/json');
-request.onload = function() {
-  var response = JSON.parse(request.responseText);
-  
-  // Use the enforced translation with guaranteed terms
-  incident.description = response.enforced_translation;
-  incident.setWorkflow(false);
-  incident.update();
-  
-  // Log which terms were applied
-  gs.log('Applied terms: ' + JSON.stringify(response.applied_terms));
-};
-request.send(JSON.stringify(payload));
+(function executeRule(current, previous) {
+    try {
+        // Only translate if not already in Dutch
+        if (current.short_description && !isDutch(current.short_description)) {
+            var translationResult = callTranslationService(
+                current.short_description,
+                detectLanguage(current.short_description)
+            );
+            
+            // Use enforced translation (with guaranteed terminology)
+            current.description = translationResult.enforced_translation;
+            
+            // Store original for reference
+            current.work_notes = 'Original (' + translationResult.source_language + '): ' + 
+                                 current.short_description;
+            
+            // Log applied terms for audit
+            if (translationResult.applied_terms.length > 0) {
+                gs.info('Glossary terms applied: ' + 
+                       JSON.stringify(translationResult.applied_terms));
+            }
+        }
+    } catch (e) {
+        gs.error('Translation failed: ' + e.message);
+        // Fallback: keep original text
+    }
+})(current, previous);
+
+function callTranslationService(text, sourceLang) {
+    var request = new sn_ws.RESTMessageV2();
+    request.setEndpoint('https://your-service.azurewebsites.net/api/translate');
+    request.setHttpMethod('POST');
+    request.setRequestHeader('Content-Type', 'application/json');
+    
+    var payload = {
+        text: text,
+        source_language: sourceLang,
+        enable_post_editor: false,  // Keep fast for real-time
+        use_custom_category: true
+    };
+    
+    request.setRequestBody(JSON.stringify(payload));
+    
+    var response = request.execute();
+    if (response.getStatusCode() == 200) {
+        return JSON.parse(response.getBody());
+    } else {
+        throw new Error('API returned ' + response.getStatusCode());
+    }
+}
 ```
 
-**Result for Contoso:**
-- All incoming tickets translated consistently
-- "critical incident" always becomes "incident"
-- "service desk" always becomes "servicedesk"
-- Support team immediately sees correct terminology
-- Audit trail available for compliance
+**Example Results:**
+
+| Original (English) | Without Glossary | With Glossary ✅ |
+|-------------------|------------------|-----------------|
+| "Critical incident at service desk" | "Kritiek voorval bij servicebalie" | "Incident bij servicedesk" |
+| "Contact help desk for support" | "Neem contact op met helpdesk voor ondersteuning" | "Neem contact op met helpdesk voor ondersteuning" |
+| "Store manager reports cash register error" | "Winkelbeheerder meldt kassafout" | "Filiaalbeheerder meldt kassafout" |
+
+**Benefits for Contoso:**
+- ✅ All 50+ daily tickets translated consistently
+- ✅ "service desk" ALWAYS → "servicedesk" (never "servicebalie", "service desk", etc.)
+- ✅ < 1 second latency (users don't notice)
+- ✅ Audit trail of applied terms for compliance
+- ✅ Support team works in native language with correct terminology
 
 ---
 

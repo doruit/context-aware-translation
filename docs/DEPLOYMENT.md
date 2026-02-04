@@ -45,18 +45,18 @@ Complete guide for deploying the Translation Service to Azure with GitHub Action
 
 1. **Create GitHub Repository:**
    ```bash
-   # Recommended name: azure-translation-service or glossary-translation-service
-   gh repo create doruit/azure-translation-service --public
+   # Recommended name: context-aware-translation
+   gh repo create doruit/context-aware-translation --public
    ```
 
 2. **Initialize Local Repository:**
    ```bash
-   cd action-translation-dict
+   cd context-aware-translation
    git init
    git add .
    git commit -m "Initial commit: Azure Translation Service with Glossary"
    git branch -M main
-   git remote add origin https://github.com/doruit/azure-translation-service.git
+   git remote add origin https://github.com/doruit/context-aware-translation.git
    git push -u origin main
    
    # Create develop branch
@@ -76,7 +76,7 @@ Complete guide for deploying the Translation Service to Azure with GitHub Action
    ```bash
    # Set variables
    export GITHUB_ORG="doruit"
-   export GITHUB_REPO="azure-translation-service"
+   export GITHUB_REPO="context-aware-translation"
    export SUBSCRIPTION_ID=$(az account show --query id -o tsv)
    export TENANT_ID=$(az account show --query tenantId -o tsv)
    

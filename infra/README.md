@@ -22,7 +22,7 @@ The infrastructure includes:
    ```bash
    # Set variables
    GITHUB_ORG="doruit"
-   GITHUB_REPO="azure-translation-service"
+   GITHUB_REPO="context-aware-translation"
    SUBSCRIPTION_ID="your-subscription-id"
    
    # Create Azure AD App Registration

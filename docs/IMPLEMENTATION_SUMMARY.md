@@ -7,7 +7,7 @@ A complete, production-ready **Azure Translation Service with Glossary Enforceme
 ### 📦 Repository Structure
 
 ```
-action-translation-dict/  (to be renamed: azure-translation-service)
+context-aware-translation/
 ├── .github/workflows/
 │   ├── ci-cd.yml                    # CI/CD pipeline (test, build, deploy)
 │   └── deploy-infrastructure.yml    # Infrastructure deployment workflow
@@ -136,17 +136,17 @@ action-translation-dict/  (to be renamed: azure-translation-service)
 ### 1. Create GitHub Repository
 
 ```bash
-cd /Users/doruit/action-translation-dict
+cd /path/to/your/project
 
 # Option A: Using GitHub CLI (recommended)
-gh repo create doruit/azure-translation-service --public \
+gh repo create doruit/context-aware-translation --public \
   --description "Azure Translation Service with glossary enforcement - preserve domain-specific terminology"
 
 git init
 git add .
 git commit -m "Initial commit: Azure Translation Service with Glossary Enforcement"
 git branch -M main
-git remote add origin https://github.com/doruit/azure-translation-service.git
+git remote add origin https://github.com/doruit/context-aware-translation.git
 git push -u origin main
 git checkout -b develop
 git push -u origin develop

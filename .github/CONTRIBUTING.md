@@ -6,8 +6,8 @@ Thank you for your interest in contributing! This project welcomes contributions
 
 1. **Fork and clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/action-translation-dict.git
-   cd action-translation-dict
+   git clone https://github.com/YOUR_USERNAME/context-aware-translation.git
+   cd context-aware-translation
    ```
 
 2. **Create a virtual environment**
