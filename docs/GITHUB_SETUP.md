@@ -70,7 +70,7 @@ git push -u origin develop
    git add .
    git commit -m "Initial commit: Azure Translation Service with Glossary Enforcement"
    git branch -M main
-   git remote add origin https://github.com/doruit/context-aware-translation.git
+   git remote add origin https://github.com/<your-username>/<your-repo>.git
    git push -u origin main
    
    # Create develop branch

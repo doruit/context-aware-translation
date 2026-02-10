@@ -8,8 +8,8 @@
 ### Resource Group
 - **Name:** `rg-translation-dev`
 - **Location:** West Europe (westeurope)
-- **Subscription:** Microsoft GenAI (<your-subscription-id>)
-- **Tenant:** <your-tenant-id>
+- **Subscription:** `<your-subscription-name>` (`<your-subscription-id>`)
+- **Tenant:** `<your-tenant-id>`
 
 ---
 
