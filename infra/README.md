@@ -21,8 +21,8 @@ The infrastructure includes:
 1. **Configure OIDC for GitHub Actions:**
    ```bash
    # Set variables
-   GITHUB_ORG="doruit"
-   GITHUB_REPO="context-aware-translation"
+   GITHUB_ORG="YOUR_GITHUB_USERNAME"
+   GITHUB_REPO="YOUR_REPO_NAME"
    SUBSCRIPTION_ID="your-subscription-id"
    
    # Create Azure AD App Registration

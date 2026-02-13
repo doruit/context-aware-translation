@@ -40,6 +40,9 @@ ENV/
 # Customer-specific data
 data/glossary.tsv
 data/glossary-*.tsv
+!data/glossary.example.tsv
+!data/glossary-acme.tsv
+*.bak
 
 # Testing
 .pytest_cache/

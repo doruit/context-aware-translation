@@ -1,5 +1,13 @@
 # Azure Translation Service with Glossary Enforcement
 
+> **⚠️ TEMPLATE REPOSITORY NOTICE**  
+> This is a template repository. Before deploying:
+> 1. Replace all `YOUR_GITHUB_USERNAME` with your GitHub username
+> 2. Replace all `YOUR_REPO_NAME` with your repository name  
+> 3. Update or remove the screenshot URL below
+> 4. Generate fresh Azure service keys (never use examples)
+> 5. Review and customize glossary files in [`data/`](data/)
+
 [![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Azure](https://img.shields.io/badge/Azure-Translator-0078D4?logo=microsoft-azure)](https://azure.microsoft.com/services/cognitive-services/translator/)
@@ -11,16 +19,17 @@ A production-ready service for translating text to any target language using **A
 > **🤖 Development Transparency:** This repository was built using AI coding agents (GitHub Copilot, Claude) for implementation, with human-led design, architecture decisions, and orchestration. The approach demonstrates how AI can accelerate development while maintaining professional code quality and best practices.
 
 <div align="center">
-    <img src="https://github.com/doruit/context-aware-translation/blob/main/src/ui/media/screenshot2.png?raw=true" alt="UI Screenshot" width="80%" />
+    <!-- TODO: Update this URL with your actual repository path or remove if screenshot doesn't exist -->
+    <img src="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/src/ui/media/screenshot2.png?raw=true" alt="UI Screenshot" width="80%" />
 </div>
 
 > **Live demonstration:** The service enforces glossary terms like "customer" → "klant" and "service desk" → "servicedesk", preserving them correctly during translation.
 
 ## 🎯 The Problem This Solves
 
-### Real-World Challenge: Contoso Corp Case Study
+### Real-World Challenge: Retail IT Service Management
 
-**Contoso Corp**, a multinational retail and service organization, needed to translate customer support tickets in real-time through their ServiceNow platform. The core challenge:
+**Large retail organizations** need to translate customer support tickets in real-time through their ServiceNow platform. The core challenge:
 
 > "We need **real-time translation** for customer support tickets, but also **guaranteed terminology consistency**. Our technical terms, product names, and internal jargon must ALWAYS translate the same way, regardless of context. However, Azure's Text Translation API doesn't natively support glossary injection like Document Translation does."
 

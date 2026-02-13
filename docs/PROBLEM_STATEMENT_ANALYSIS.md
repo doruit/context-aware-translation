@@ -20,7 +20,7 @@ De repo implementeert een **real-time translation pipeline met deterministische 
 ## 🎯 Problem Statement (Generiek)
 
 ### Kernprobleem
-Organisaties (zoals Contoso Corp) willen:
+Organisaties (zoals Example Corp) willen:
 1. **Real-time vertaling** in ServiceNow (latentie-kritisch)
 2. **Harde terminologie-consistentie** (vaste termen altijd gelijk vertaald)
 3. **Geen native glossary-support in Text Translation API** (limitatie Azure)

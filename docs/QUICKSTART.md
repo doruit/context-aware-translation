@@ -65,7 +65,7 @@ Edit `data/glossary.tsv` with your domain-specific terminology:
 
 ```tsv
 # source<TAB>target format
-# IT Service Management (Contoso Corp example)
+# IT Service Management (Example Corp)
 critical incident	incident
 service desk	servicedesk
 help desk	helpdesk
