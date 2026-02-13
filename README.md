@@ -18,10 +18,9 @@ A production-ready service for translating text to any target language using **A
 
 > **🤖 Development Transparency:** This repository was built using AI coding agents (GitHub Copilot, Claude) for implementation, with human-led design, architecture decisions, and orchestration. The approach demonstrates how AI can accelerate development while maintaining professional code quality and best practices.
 
-<div align="center">
-    <!-- TODO: Update this URL with your actual repository path or remove if screenshot doesn't exist -->
-    <img src="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/src/ui/media/screenshot2.png?raw=true" alt="UI Screenshot" width="80%" />
-</div>
+<p align="center">
+  <img src="src/ui/media/screenshot2.png" alt="Azure Translation Service UI Screenshot" width="80%" />
+</p>
 
 > **Live demonstration:** The service enforces glossary terms like "customer" → "klant" and "service desk" → "servicedesk", preserving them correctly during translation.
 
